@@ -1,0 +1,27 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #4e6958;
+
+  .landing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    background-image: url("images/dek.svg");
+    background-size: 20%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    h1 {
+        text-align: center;
+        display: flex;
+        justify-content: end;
+        align-items: end;
+        align-self: start;
+        font-size:1em;
+      }
+  }
+ 
+}

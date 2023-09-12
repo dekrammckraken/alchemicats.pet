@@ -1,0 +1,282 @@
+$pink: #e97ab0;
+$darkPink: #d056b0;
+$green: #ccff00;
+$darkGreen: #8fb300;
+$white: white;
+$article-fore-color: #cad3d6;
+$footer-fore-color: #dbe4e7;
+$ornament-color: #785e79;
+
+* {
+  font-family: "Roboto Bold";
+  src: url("fonts/Roboto-Bold.ttf");
+  margin: 0px;
+  padding: 0px;
+}
+
+.html,
+body {
+  
+  background-image: linear-gradient(210deg,
+      hsl(316deg 56% 58%) 0%,
+      hsl(315deg 47% 54%) 1%,
+      hsl(314deg 38% 51%) 2%,
+      hsl(313deg 34% 48%) 3%,
+      hsl(312deg 31% 45%) 5%,
+      hsl(310deg 28% 41%) 7%,
+      hsl(307deg 25% 38%) 10%,
+      hsl(301deg 21% 35%) 14%,
+      hsl(293deg 18% 32%) 19%,
+      hsl(279deg 16% 30%) 26%,
+      hsl(257deg 13% 27%) 36%,
+      hsl(223deg 15% 24%) 47%,
+      hsl(194deg 5% 25%) 58%,
+      hsl(94deg 7% 28%) 68%,
+      hsl(80deg 15% 30%) 75%,
+      hsl(76deg 23% 31%) 81%,
+      hsl(75deg 30% 33%) 86%,
+      hsl(75deg 38% 34%) 90%,
+      hsl(74deg 45% 35%) 93%,
+      hsl(74deg 53% 37%) 95%,
+      hsl(74deg 63% 37%) 97%,
+      hsl(73deg 75% 37%) 99%,
+      hsl(72deg 100% 35%) 100%);
+      
+  header {
+    height: 2.2em;
+    padding: 0.5em;
+    text-align: center;
+    background-image: url("images/dekram-watermark.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-origin: content-box;
+    display: flex;
+    justify-content: center;
+  }
+
+  footer {
+    letter-spacing: 0.1em;
+    line-height: 2em;
+    text-align: justify;
+    padding: 8px;
+    margin: 8px;
+    font-size: 0.8em;
+    color: $footer-fore-color;
+    border-radius: 1em;
+    padding: 25px;
+    width: 80%;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.295);
+
+    a {
+      color: $green;
+    }
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    text-align: center;
+    margin: auto;
+   
+    @media (min-width: 767px) {
+      width: 40%;
+    }
+
+    @media (max-width: 767px) {
+      width: 100%;
+    }
+
+    color: $white;
+
+    a {
+      text-decoration: underline;
+      text-decoration-style: dotted;
+      &.disabled {
+        text-decoration: line-through;
+        color:$ornament-color;
+        cursor: not-allowed;
+      }
+    }
+
+    .divider {
+      width: 80%;
+      border-bottom: 3px dashed #fff;
+      display: flex;
+      filter: invert(0.4) contrast(1);
+      margin: 10px;
+    }
+
+    .title {
+      text-align: center;
+      padding: 10px;
+    }
+
+    .ciriandzelda {
+      height: 40px;
+      width: 100px;
+      background-image: url("images/ciri-and-zelda-watermark.svg");
+      background-size: 100px;
+      background-repeat: no-repeat;
+      background-position: center;
+
+      &:hover {
+        opacity: 0.2;
+      }
+    }
+
+    .alchelogo {
+      height: 100px;
+      width: 100px;
+      background-image: url("images/alchemicats.svg");
+      background-size: 100px;
+      background-repeat: no-repeat;
+      background-position: center;
+
+      &:hover {
+        opacity: 0.2;
+      }
+    }
+
+    .portrait {
+      img {
+        border-radius: 90px;
+        height: 9em;
+        box-shadow: 0px 5px 5px rgb(44, 43, 43);
+        float: left;
+        margin: 1em;
+
+        &.ciri {
+          border: 2px dotted $green;
+        }
+
+        &.zelda {
+          border: 2px dotted $pink;
+        }
+      }
+
+      h3 {
+        text-align: left;
+
+        @media (max-width: 767px) {
+          font-size: 0.9em;
+        }
+      }
+    }
+
+    .bio {
+      display: flex;
+      align-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      article {
+        display: flex;
+        align-content: center;
+        align-items: center;
+        flex-direction: column;
+        letter-spacing: 0.1em;
+        line-height: 2em;
+        text-align: center;
+        padding: 8px;
+        margin: 8px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 1em;
+        padding: 25px;
+        width: 80%;
+        text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.295);
+        .switch {
+          align-self: first baseline;
+          margin-bottom: -2em;
+          animation: pulseGrayscale 2s infinite alternate;
+          height: 2em;
+        }
+        .switch:hover {
+          cursor: pointer;
+        }
+        header {
+          font-weight: bolder;
+          height: fit-content;
+        }
+
+        p {
+          font-weight: normal;
+          text-align: left;
+          color:$article-fore-color;
+          br {
+            display: block;
+            margin-bottom: 0.6em;
+          }
+          video {
+            height: 29em;
+            border-radius: 1em;
+            margin-right: 20px;
+            margin-bottom: 20px;
+            margin-top: 10px;
+            box-shadow: 0px 5px 5px rgb(44, 43, 43);
+            float: left;
+
+            @media (max-width: 767px) {
+              height: 13em;
+              margin-bottom: 0px;
+            }
+          }
+        }
+
+        h1 {
+          color: $green;
+          font-size: 1.6em;
+          mix-blend-mode: screen;
+          text-shadow: 3px 3px 6px rgba(128, 0, 0, 0.43);
+
+        }
+
+        h2 {
+          color: $pink;
+          font-size: 1em;
+          mix-blend-mode: screen;
+        }
+
+        h3 {
+          align-self: end;
+
+          &.ciri {
+            color: $green;
+          }
+
+          &.zelda {
+            color: $pink;
+          }
+        }
+
+        a {
+          color: $green;
+        }
+      }
+    }
+
+    .mini-gallery {
+      img {
+        height: 8em;
+        border-radius: 1em;
+        border: 2px dotted $pink;
+      }
+    }
+  }
+}
+
+.grayscale-filter {
+  filter: grayscale(100%);
+}
+@keyframes pulseGrayscale {
+  0% {
+      transform: scale(1);
+      filter: grayscale(0%);
+  }
+  100% {
+      transform: scale(1.1);
+      filter: grayscale(100%);
+  }
+}

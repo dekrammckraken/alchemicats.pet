@@ -1,0 +1,259 @@
+* {
+  font-family: "Roboto Bold";
+  src: url("fonts/Roboto-Bold.ttf");
+  margin: 0px;
+  padding: 0px;
+}
+
+.html,
+body {
+  background-image: linear-gradient(210deg, hsl(316, 56%, 58%) 0%, hsl(315, 47%, 54%) 1%, hsl(314, 38%, 51%) 2%, hsl(313, 34%, 48%) 3%, hsl(312, 31%, 45%) 5%, hsl(310, 28%, 41%) 7%, hsl(307, 25%, 38%) 10%, hsl(301, 21%, 35%) 14%, hsl(293, 18%, 32%) 19%, hsl(279, 16%, 30%) 26%, hsl(257, 13%, 27%) 36%, hsl(223, 15%, 24%) 47%, hsl(194, 5%, 25%) 58%, hsl(94, 7%, 28%) 68%, hsl(80, 15%, 30%) 75%, hsl(76, 23%, 31%) 81%, hsl(75, 30%, 33%) 86%, hsl(75, 38%, 34%) 90%, hsl(74, 45%, 35%) 93%, hsl(74, 53%, 37%) 95%, hsl(74, 63%, 37%) 97%, hsl(73, 75%, 37%) 99%, hsl(72, 100%, 35%) 100%);
+}
+.html header,
+body header {
+  height: 2.2em;
+  padding: 0.5em;
+  text-align: center;
+  background-image: url("images/dekram-watermark.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-origin: content-box;
+  display: flex;
+  justify-content: center;
+}
+.html footer,
+body footer {
+  letter-spacing: 0.1em;
+  line-height: 2em;
+  text-align: justify;
+  padding: 8px;
+  margin: 8px;
+  font-size: 0.8em;
+  color: #dbe4e7;
+  border-radius: 1em;
+  padding: 25px;
+  width: 80%;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.295);
+}
+.html footer a,
+body footer a {
+  color: #ccff00;
+}
+.html .container,
+body .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+  text-align: center;
+  margin: auto;
+  color: white;
+}
+@media (min-width: 767px) {
+  .html .container,
+  body .container {
+    width: 40%;
+  }
+}
+@media (max-width: 767px) {
+  .html .container,
+  body .container {
+    width: 100%;
+  }
+}
+.html .container a,
+body .container a {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+}
+.html .container a.disabled,
+body .container a.disabled {
+  text-decoration: line-through;
+  color: #785e79;
+  cursor: not-allowed;
+}
+.html .container .divider,
+body .container .divider {
+  width: 80%;
+  border-bottom: 3px dashed #fff;
+  display: flex;
+  filter: invert(0.4) contrast(1);
+  margin: 10px;
+}
+.html .container .title,
+body .container .title {
+  text-align: center;
+  padding: 10px;
+}
+.html .container .ciriandzelda,
+body .container .ciriandzelda {
+  height: 40px;
+  width: 100px;
+  background-image: url("images/ciri-and-zelda-watermark.svg");
+  background-size: 100px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.html .container .ciriandzelda:hover,
+body .container .ciriandzelda:hover {
+  opacity: 0.2;
+}
+.html .container .alchelogo,
+body .container .alchelogo {
+  height: 100px;
+  width: 100px;
+  background-image: url("images/alchemicats.svg");
+  background-size: 100px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.html .container .alchelogo:hover,
+body .container .alchelogo:hover {
+  opacity: 0.2;
+}
+.html .container .portrait img,
+body .container .portrait img {
+  border-radius: 90px;
+  height: 9em;
+  box-shadow: 0px 5px 5px rgb(44, 43, 43);
+  float: left;
+  margin: 1em;
+}
+.html .container .portrait img.ciri,
+body .container .portrait img.ciri {
+  border: 2px dotted #ccff00;
+}
+.html .container .portrait img.zelda,
+body .container .portrait img.zelda {
+  border: 2px dotted #e97ab0;
+}
+.html .container .portrait h3,
+body .container .portrait h3 {
+  text-align: left;
+}
+@media (max-width: 767px) {
+  .html .container .portrait h3,
+  body .container .portrait h3 {
+    font-size: 0.9em;
+  }
+}
+.html .container .bio,
+body .container .bio {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.html .container .bio article,
+body .container .bio article {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  flex-direction: column;
+  letter-spacing: 0.1em;
+  line-height: 2em;
+  text-align: center;
+  padding: 8px;
+  margin: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 1em;
+  padding: 25px;
+  width: 80%;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.295);
+}
+.html .container .bio article .switch,
+body .container .bio article .switch {
+  align-self: first baseline;
+  margin-bottom: -2em;
+  animation: pulseGrayscale 2s infinite alternate;
+  height: 2em;
+}
+.html .container .bio article .switch:hover,
+body .container .bio article .switch:hover {
+  cursor: pointer;
+}
+.html .container .bio article header,
+body .container .bio article header {
+  font-weight: bolder;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.html .container .bio article p,
+body .container .bio article p {
+  font-weight: normal;
+  text-align: left;
+  color: #cad3d6;
+}
+.html .container .bio article p br,
+body .container .bio article p br {
+  display: block;
+  margin-bottom: 0.6em;
+}
+.html .container .bio article p video,
+body .container .bio article p video {
+  height: 29em;
+  border-radius: 1em;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  box-shadow: 0px 5px 5px rgb(44, 43, 43);
+  float: left;
+}
+@media (max-width: 767px) {
+  .html .container .bio article p video,
+  body .container .bio article p video {
+    height: 13em;
+    margin-bottom: 0px;
+  }
+}
+.html .container .bio article h1,
+body .container .bio article h1 {
+  color: #ccff00;
+  font-size: 1.6em;
+  mix-blend-mode: screen;
+  text-shadow: 3px 3px 6px rgba(128, 0, 0, 0.43);
+}
+.html .container .bio article h2,
+body .container .bio article h2 {
+  color: #e97ab0;
+  font-size: 1em;
+  mix-blend-mode: screen;
+}
+.html .container .bio article h3,
+body .container .bio article h3 {
+  align-self: end;
+}
+.html .container .bio article h3.ciri,
+body .container .bio article h3.ciri {
+  color: #ccff00;
+}
+.html .container .bio article h3.zelda,
+body .container .bio article h3.zelda {
+  color: #e97ab0;
+}
+.html .container .bio article a,
+body .container .bio article a {
+  color: #ccff00;
+}
+.html .container .mini-gallery img,
+body .container .mini-gallery img {
+  height: 8em;
+  border-radius: 1em;
+  border: 2px dotted #e97ab0;
+}
+
+.grayscale-filter {
+  filter: grayscale(100%);
+}
+
+@keyframes pulseGrayscale {
+  0% {
+    transform: scale(1);
+    filter: grayscale(0%);
+  }
+  100% {
+    transform: scale(1.1);
+    filter: grayscale(100%);
+  }
+}/*# sourceMappingURL=main.css.map */
