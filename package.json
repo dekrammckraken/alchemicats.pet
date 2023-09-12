@@ -1,0 +1,33 @@
+{
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "copy-webpack-plugin": "^12.0.2",
+    "css-loader": "^6.10.0",
+    "file-loader": "^6.2.0",
+    "html-replace-webpack-plugin": "^2.6.0",
+    "html-webpack-plugin": "^5.6.0",
+    "live-server": "^1.2.2",
+    "webpack": "^5.90.2",
+    "webpack-cli": "^5.1.4"
+  },
+  "scripts": {
+    "dev": "concurrently \"npx sass assets/main.scss -w assets/main.css\" \"npx live-server\""
+  },
+  "name": "alchemicats.pet",
+  "description": "Home of the Ciri and Zelda",
+  "version": "1.0.0",
+  "main": "webpack.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dekrammckraken/alchemicats.pet.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dekrammckraken/alchemicats.pet/issues"
+  },
+  "homepage": "https://github.com/dekrammckraken/alchemicats.pet#readme",
+  "dependencies": {
+    "sass": "^1.85.1"
+  }
+}
