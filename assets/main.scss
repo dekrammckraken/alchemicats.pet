@@ -94,11 +94,17 @@ body {
     }
 
     .divider {
-      width: auto;
-      border-bottom: 3px dashed #fff;
+      height: 2.2em;
+      padding: 0.5em;
+      text-align: center;
+      background-image: url("images/divider.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      background-origin: content-box;
       display: flex;
-      filter: invert(0.4) contrast(1);
-      margin: 10px;
+      justify-content: center;
+      width: 200px;
     }
 
     .title {
@@ -214,6 +220,9 @@ body {
               height: 13em;
               margin-bottom: 0px;
             }
+          }
+          img {
+            height: 3em;
           }
         }
 

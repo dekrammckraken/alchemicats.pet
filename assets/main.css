@@ -75,11 +75,17 @@ body .container a.disabled {
 }
 .html .container .divider,
 body .container .divider {
-  width: auto;
-  border-bottom: 3px dashed #fff;
+  height: 2.2em;
+  padding: 0.5em;
+  text-align: center;
+  background-image: url("images/divider.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-origin: content-box;
   display: flex;
-  filter: invert(0.4) contrast(1);
-  margin: 10px;
+  justify-content: center;
+  width: 200px;
 }
 .html .container .title,
 body .container .title {
@@ -206,6 +212,10 @@ body .container .bio article p video {
     height: 13em;
     margin-bottom: 0px;
   }
+}
+.html .container .bio article p img,
+body .container .bio article p img {
+  height: 3em;
 }
 .html .container .bio article h1,
 body .container .bio article h1 {
