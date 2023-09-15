@@ -24,7 +24,7 @@ $(document).ready(function () {
         const daysElapsed = Math.floor(timeDifferenceInMilliseconds / millisecondsInADay);
         const yearsElapsed = Math.floor(daysElapsed / 365);
         const remainingDays = daysElapsed % 365;
-        return `${yearsElapsed} years and ${remainingDays} days`;
+        return `${yearsElapsed} y and ${remainingDays} d`;
     }
 
     function calculateTimeUntilDate(targetDay, targetMonth) {
@@ -49,7 +49,7 @@ $(document).ready(function () {
         const formattedSeconds = secondsUntil < 10 ? `0${secondsUntil}` : secondsUntil;
   
 
-        return `${daysUntil} days, ${hoursUntil} hours, ${minutesUntil} minutes and ${formattedSeconds} seconds`;
+        return `${daysUntil}d, ${hoursUntil}h, ${minutesUntil}m and ${formattedSeconds}s`;
     }
 
 
