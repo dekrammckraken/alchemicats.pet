@@ -11,10 +11,9 @@ body {
 }
 .html header,
 body header {
-  height: 2.2em;
+  height: 1.2em;
   padding: 0.5em;
   text-align: center;
-  background-image: url("images/dekram-watermark.svg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -26,15 +25,22 @@ body header {
 body footer {
   letter-spacing: 0.1em;
   line-height: 2em;
-  text-align: justify;
   padding: 8px;
-  margin: 18px;
   font-size: 0.8em;
   color: #dbe4e7;
   border-radius: 1em;
   padding: 25px;
   width: 80%;
   text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.295);
+}
+.html footer img,
+body footer img {
+  text-align: center;
+  height: 4em;
+}
+.html footer p,
+body footer p {
+  text-align: justify;
 }
 .html footer a,
 body footer a {
@@ -105,19 +111,6 @@ body .container .ciriandzelda {
 body .container .ciriandzelda:hover {
   opacity: 0.2;
 }
-.html .container .alchelogo,
-body .container .alchelogo {
-  height: 100px;
-  width: 100px;
-  background-image: url("images/alchemicats.svg");
-  background-size: 100px;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.html .container .alchelogo:hover,
-body .container .alchelogo:hover {
-  opacity: 0.2;
-}
 .html .container .portrait img,
 body .container .portrait img {
   border-radius: 90px;
@@ -168,6 +161,18 @@ body .container .bio article {
   width: 80%;
   text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.295);
 }
+.html .container .bio article img,
+body .container .bio article img {
+  height: 2em;
+}
+.html .container .bio article .alchelogo,
+body .container .bio article .alchelogo {
+  height: 3.5em;
+}
+.html .container .bio article .alchelogo:hover,
+body .container .bio article .alchelogo:hover {
+  opacity: 0.2;
+}
 .html .container .bio article .switch,
 body .container .bio article .switch {
   align-self: first baseline;
@@ -215,7 +220,7 @@ body .container .bio article p video {
 }
 .html .container .bio article p img,
 body .container .bio article p img {
-  height: 3em;
+  height: 5em;
 }
 .html .container .bio article h1,
 body .container .bio article h1 {

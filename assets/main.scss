@@ -34,10 +34,9 @@ body {
       hsl(75deg 30% 33%) 86%);
       
   header {
-    height: 2.2em;
+    height: 1.2em;
     padding: 0.5em;
     text-align: center;
-    background-image: url("images/dekram-watermark.svg");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -49,16 +48,21 @@ body {
   footer {
     letter-spacing: 0.1em;
     line-height: 2em;
-    text-align: justify;
     padding: 8px;
-    margin: 18px;
+  
     font-size: 0.8em;
     color: $footer-fore-color;
     border-radius: 1em;
     padding: 25px;
     width: 80%;
     text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.295);
-   
+    img {
+      text-align: center;
+      height: 4em;
+    }
+    p{
+      text-align: justify;
+    }
     a {
      color:$green;
     }
@@ -125,18 +129,7 @@ body {
       }
     }
 
-    .alchelogo {
-      height: 100px;
-      width: 100px;
-      background-image: url("images/alchemicats.svg");
-      background-size: 100px;
-      background-repeat: no-repeat;
-      background-position: center;
-
-      &:hover {
-        opacity: 0.2;
-      }
-    }
+    
 
     .portrait {
       img {
@@ -185,6 +178,18 @@ body {
         padding: 25px;
         width: 80%;
         text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.295);
+
+        img {
+          height: 2em;
+        }
+        .alchelogo {
+     
+          height: 3.5em;
+          
+          &:hover {
+            opacity: 0.2;
+          }
+        }
         .switch {
           align-self: first baseline;
           margin-bottom: -2em;
@@ -194,6 +199,7 @@ body {
         .switch:hover {
           cursor: pointer;
         }
+        
         header {
           font-weight: bolder;
           height: fit-content;
@@ -222,7 +228,7 @@ body {
             }
           }
           img {
-            height: 3em;
+            height: 5em;
           }
         }
 
