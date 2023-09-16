@@ -1,20 +1,14 @@
 $(document).ready(function () {
 
     const startDate = "2021-04-12";
-    
     const elapsedDuration = calculateElapsedTime(startDate);
-   
-    
-    setInterval(() => {
-        const targetDay = 12;
-        const targetMonth = 4; // Aprile
-        const timeUntilTarget = calculateTimeUntilDate(targetDay, targetMonth);
-        $("#timeToBirthday").text(timeUntilTarget);
-      }, 1000);
+    const targetDay = 12;
+    const targetMonth = 4; // Aprile
+    const timeUntilTarget = calculateTimeUntilDate(targetDay, targetMonth);
 
-
+    $("#timeToBirthday").text(timeUntilTarget);
     $("#timeElapsed").text(elapsedDuration);
-  
+
 
     function calculateElapsedTime(startDate) {
         const initialDate = new Date(startDate);
@@ -24,7 +18,7 @@ $(document).ready(function () {
         const daysElapsed = Math.floor(timeDifferenceInMilliseconds / millisecondsInADay);
         const yearsElapsed = Math.floor(daysElapsed / 365);
         const remainingDays = daysElapsed % 365;
-        return `${yearsElapsed} y and ${remainingDays} d`;
+        return `${yearsElapsed} years`;
     }
 
     function calculateTimeUntilDate(targetDay, targetMonth) {
@@ -47,14 +41,14 @@ $(document).ready(function () {
         const secondsUntil = Math.floor((timeDifferenceInMilliseconds % millisecondsInAMinute) / millisecondsInASecond);
 
         const formattedSeconds = secondsUntil < 10 ? `0${secondsUntil}` : secondsUntil;
-  
 
-        return `${daysUntil}d, ${hoursUntil}h, ${minutesUntil}m and ${formattedSeconds}s`;
+
+        return `${daysUntil} days`;
     }
 
 
 
-    $(".switch").on('click', function() {
+    $(".switch").on('click', function () {
 
         $("html").toggleClass('grayscale-filter');
     });

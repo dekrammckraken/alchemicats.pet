@@ -10,29 +10,30 @@ $ornament-color: #785e79;
 * {
   font-family: "Roboto Bold";
   src: url("fonts/Roboto-Bold.ttf");
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
 }
 
 .html,
 body {
-  
-  background-image: linear-gradient(210deg,
-      hsl(313deg 34% 48%) 3%,
-      hsl(312deg 31% 45%) 5%,
-      hsl(310deg 28% 41%) 7%,
-      hsl(307deg 25% 38%) 10%,
-      hsl(301deg 21% 35%) 14%,
-      hsl(293deg 18% 32%) 19%,
-      hsl(279deg 16% 30%) 26%,
-      hsl(257deg 13% 27%) 36%,
-      hsl(223deg 15% 24%) 47%,
-      hsl(194deg 5% 25%) 58%,
-      hsl(94deg 7% 28%) 68%,
-      hsl(80deg 15% 30%) 75%,
-      hsl(76deg 23% 31%) 81%,
-      hsl(75deg 30% 33%) 86%);
-      
+  background-image: linear-gradient(
+    210deg,
+    hsl(313deg 34% 48%) 3%,
+    hsl(312deg 31% 45%) 5%,
+    hsl(310deg 28% 41%) 7%,
+    hsl(307deg 25% 38%) 10%,
+    hsl(301deg 21% 35%) 14%,
+    hsl(293deg 18% 32%) 19%,
+    hsl(279deg 16% 30%) 26%,
+    hsl(257deg 13% 27%) 36%,
+    hsl(223deg 15% 24%) 47%,
+    hsl(194deg 5% 25%) 58%,
+    hsl(94deg 7% 28%) 68%,
+    hsl(80deg 15% 30%) 75%,
+    hsl(76deg 23% 31%) 81%,
+    hsl(75deg 30% 33%) 86%
+  );
+
   header {
     height: 1.2em;
     padding: 0.5em;
@@ -48,35 +49,35 @@ body {
   footer {
     letter-spacing: 0.1em;
     line-height: 2em;
-    padding: 8px;
-  
     font-size: 0.8em;
     color: $footer-fore-color;
     border-radius: 1em;
     padding: 25px;
     width: 80%;
     text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.295);
+
     img {
       text-align: center;
       height: 4em;
     }
-    p{
+
+    p {
       text-align: justify;
     }
+
     a {
-     color:$green;
+      color: $green;
     }
-   
   }
 
   .container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    display: flex;
     text-align: center;
     margin: auto;
-   
+    color: $white;
+
     @media (min-width: 767px) {
       width: 40%;
     }
@@ -85,14 +86,13 @@ body {
       width: 100%;
     }
 
-    color: $white;
-
     a {
       text-decoration: underline;
       text-decoration-style: dotted;
+
       &.disabled {
         text-decoration: line-through;
-        color:$ornament-color;
+        color: $ornament-color;
         cursor: not-allowed;
       }
     }
@@ -129,8 +129,6 @@ body {
       }
     }
 
-    
-
     .portrait {
       img {
         border-radius: 90px;
@@ -157,119 +155,138 @@ body {
       }
     }
 
-    .bio {
+    article {
       display: flex;
       align-content: center;
       align-items: center;
       flex-direction: column;
-
-      article {
+      letter-spacing: 0.1em;
+      line-height: 2em;
+      text-align: center;
+      padding: 8px;
+      margin: 8px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 1em;
+      padding: 25px;
+      width: 80%;
+      text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.295);
+     
+      .info {
         display: flex;
-        align-content: center;
-        align-items: center;
-        flex-direction: column;
-        letter-spacing: 0.1em;
-        line-height: 2em;
-        text-align: center;
-        padding: 8px;
-        margin: 8px;
-        background-color: rgba(255, 255, 255, 0.1);
-        border-radius: 1em;
-        padding: 25px;
-        width: 80%;
-        text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.295);
+        justify-content: space-between;
+        width: 100%;
+        .item {
+          flex: 1;
+          padding: 10px;
+          text-align: left;
+          border-bottom: 1px dotted $pink;
+          &.right {
+            text-align: right;
+          }
+        }
+      }
+      img {
+        height: 2em;
+      }
+
+      .alchelogo {
+        height: 3.5em;
+
+        &:hover {
+          opacity: 0.2;
+        }
+      }
+
+      .switch {
+        align-self: baseline;
+        margin-bottom: -2em;
+        animation: pulseGrayscale 2s infinite alternate;
+        height: 2em;
+      }
+
+      .switch:hover {
+        cursor: pointer;
+      }
+
+      header {
+        font-weight: bolder;
+        height: fit-content;
+      }
+
+      p {
+        font-weight: normal;
+        text-align: left;
+        color: $article-fore-color;
+
+        &.center {
+          text-align: center;
+        }
+        br {
+          display: block;
+          margin-bottom: 0.6em;
+        }
+
+        video {
+          height: 29em;
+          border-radius: 1em;
+          margin-right: 20px;
+          margin-bottom: 20px;
+          margin-top: 10px;
+          border: 2px dotted $footer-fore-color;
+          float: left;
+
+          @media (max-width: 767px) {
+            height: 13em;
+            margin-bottom: 0px;
+          }
+        }
 
         img {
-          height: 2em;
+          height: 5em;
         }
-        .alchelogo {
-     
-          height: 3.5em;
-          
-          &:hover {
-            opacity: 0.2;
-          }
-        }
-        .switch {
-          align-self: first baseline;
-          margin-bottom: -2em;
-          animation: pulseGrayscale 2s infinite alternate;
-          height: 2em;
-        }
-        .switch:hover {
-          cursor: pointer;
-        }
-        
-        header {
-          font-weight: bolder;
-          height: fit-content;
-        }
+      }
 
-        p {
-          font-weight: normal;
-          text-align: left;
-          color:$article-fore-color;
-          br {
-            display: block;
-            margin-bottom: 0.6em;
-          }
-          video {
-            height: 29em;
-            border-radius: 1em;
-            margin-right: 20px;
-            margin-bottom: 20px;
-            margin-top: 10px;
-            border: 2px dotted $footer-fore-color;
-            float: left;
-
-            @media (max-width: 767px) {
-              height: 13em;
-              margin-bottom: 0px;
-            }
-          }
-          img {
-            height: 5em;
-          }
+      h1 {
+        color: $green;
+        font-size: 1.6em;
+        mix-blend-mode: screen;
+        text-shadow: 3px 3px 6px rgba(128, 0, 0, 0.43);
+        @media (max-width: 767px) {
+          font-size: 1.1em;
         }
+      }
 
-        h1 {
+      h2 {
+        color: $pink;
+        font-size: 1.2em;
+        mix-blend-mode: screen;
+        text-shadow: 3px 3px 6px black;
+      }
+
+      h3 {
+        align-self: flex-start;
+        text-align: left;
+
+        &.ciri {
           color: $green;
-          font-size: 1.6em;
-          mix-blend-mode: screen;
-          text-shadow: 3px 3px 6px rgba(128, 0, 0, 0.43);
-
         }
 
-        h2 {
+        &.zelda {
           color: $pink;
-          font-size: 1.2em;
-          mix-blend-mode: screen;
         }
+      }
 
-        h3 {
-          align-self: flex-start;
-          text-align: left;
-          &.ciri {
-            color: $green;
-          }
-
-          &.zelda {
-            color: $pink;
-          }
-        }
-
-        a {
-          color: $green;
-        }
+      a {
+        color: $green;
       }
     }
+  }
 
-    .mini-gallery {
-      img {
-        height: 8em;
-        border-radius: 1em;
-        border: 2px dotted $pink;
-      }
+  .mini-gallery {
+    img {
+      height: 8em;
+      border-radius: 1em;
+      border: 2px dotted $pink;
     }
   }
 }
@@ -277,13 +294,15 @@ body {
 .grayscale-filter {
   filter: grayscale(100%);
 }
+
 @keyframes pulseGrayscale {
   0% {
-      transform: scale(1);
-      filter: grayscale(0%);
+    transform: scale(1);
+    filter: grayscale(0%);
   }
+
   100% {
-      transform: scale(1.1);
-      filter: grayscale(100%);
+    transform: scale(1.1);
+    filter: grayscale(100%);
   }
 }

@@ -1,8 +1,8 @@
 * {
   font-family: "Roboto Bold";
   src: url("fonts/Roboto-Bold.ttf");
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
 }
 
 .html,
@@ -25,7 +25,6 @@ body header {
 body footer {
   letter-spacing: 0.1em;
   line-height: 2em;
-  padding: 8px;
   font-size: 0.8em;
   color: #dbe4e7;
   border-radius: 1em;
@@ -51,7 +50,6 @@ body .container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  display: flex;
   text-align: center;
   margin: auto;
   color: white;
@@ -137,15 +135,8 @@ body .container .portrait h3 {
     font-size: 0.9em;
   }
 }
-.html .container .bio,
-body .container .bio {
-  display: flex;
-  align-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-.html .container .bio article,
-body .container .bio article {
+.html .container article,
+body .container article {
   display: flex;
   align-content: center;
   align-items: center;
@@ -161,48 +152,69 @@ body .container .bio article {
   width: 80%;
   text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.295);
 }
-.html .container .bio article img,
-body .container .bio article img {
+.html .container article .info,
+body .container article .info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.html .container article .info .item,
+body .container article .info .item {
+  flex: 1;
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px dotted #e97ab0;
+}
+.html .container article .info .item.right,
+body .container article .info .item.right {
+  text-align: right;
+}
+.html .container article img,
+body .container article img {
   height: 2em;
 }
-.html .container .bio article .alchelogo,
-body .container .bio article .alchelogo {
+.html .container article .alchelogo,
+body .container article .alchelogo {
   height: 3.5em;
 }
-.html .container .bio article .alchelogo:hover,
-body .container .bio article .alchelogo:hover {
+.html .container article .alchelogo:hover,
+body .container article .alchelogo:hover {
   opacity: 0.2;
 }
-.html .container .bio article .switch,
-body .container .bio article .switch {
-  align-self: first baseline;
+.html .container article .switch,
+body .container article .switch {
+  align-self: baseline;
   margin-bottom: -2em;
   animation: pulseGrayscale 2s infinite alternate;
   height: 2em;
 }
-.html .container .bio article .switch:hover,
-body .container .bio article .switch:hover {
+.html .container article .switch:hover,
+body .container article .switch:hover {
   cursor: pointer;
 }
-.html .container .bio article header,
-body .container .bio article header {
+.html .container article header,
+body .container article header {
   font-weight: bolder;
   height: -moz-fit-content;
   height: fit-content;
 }
-.html .container .bio article p,
-body .container .bio article p {
+.html .container article p,
+body .container article p {
   font-weight: normal;
   text-align: left;
   color: #e3e3e3;
 }
-.html .container .bio article p br,
-body .container .bio article p br {
+.html .container article p.center,
+body .container article p.center {
+  text-align: center;
+}
+.html .container article p br,
+body .container article p br {
   display: block;
   margin-bottom: 0.6em;
 }
-.html .container .bio article p video,
-body .container .bio article p video {
+.html .container article p video,
+body .container article p video {
   height: 29em;
   border-radius: 1em;
   margin-right: 20px;
@@ -212,48 +224,55 @@ body .container .bio article p video {
   float: left;
 }
 @media (max-width: 767px) {
-  .html .container .bio article p video,
-  body .container .bio article p video {
+  .html .container article p video,
+  body .container article p video {
     height: 13em;
     margin-bottom: 0px;
   }
 }
-.html .container .bio article p img,
-body .container .bio article p img {
+.html .container article p img,
+body .container article p img {
   height: 5em;
 }
-.html .container .bio article h1,
-body .container .bio article h1 {
+.html .container article h1,
+body .container article h1 {
   color: #ccff00;
   font-size: 1.6em;
   mix-blend-mode: screen;
   text-shadow: 3px 3px 6px rgba(128, 0, 0, 0.43);
 }
-.html .container .bio article h2,
-body .container .bio article h2 {
+@media (max-width: 767px) {
+  .html .container article h1,
+  body .container article h1 {
+    font-size: 1.1em;
+  }
+}
+.html .container article h2,
+body .container article h2 {
   color: #e97ab0;
   font-size: 1.2em;
   mix-blend-mode: screen;
+  text-shadow: 3px 3px 6px black;
 }
-.html .container .bio article h3,
-body .container .bio article h3 {
+.html .container article h3,
+body .container article h3 {
   align-self: flex-start;
   text-align: left;
 }
-.html .container .bio article h3.ciri,
-body .container .bio article h3.ciri {
+.html .container article h3.ciri,
+body .container article h3.ciri {
   color: #ccff00;
 }
-.html .container .bio article h3.zelda,
-body .container .bio article h3.zelda {
+.html .container article h3.zelda,
+body .container article h3.zelda {
   color: #e97ab0;
 }
-.html .container .bio article a,
-body .container .bio article a {
+.html .container article a,
+body .container article a {
   color: #ccff00;
 }
-.html .container .mini-gallery img,
-body .container .mini-gallery img {
+.html .mini-gallery img,
+body .mini-gallery img {
   height: 8em;
   border-radius: 1em;
   border: 2px dotted #e97ab0;
