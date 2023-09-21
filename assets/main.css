@@ -235,6 +235,10 @@ body .container article p video {
 body .container article p img {
   height: 9em;
 }
+.html .container article p a img,
+body .container article p a img {
+  height: 5em;
+}
 .html .container article h1,
 body .container article h1 {
   color: #ccff00;

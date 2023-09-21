@@ -95,6 +95,7 @@ body {
         color: $ornament-color;
         cursor: not-allowed;
       }
+     
     }
 
     .divider {
@@ -244,6 +245,11 @@ body {
 
         img {
           height: 9em;
+        }
+        a {
+          img {
+            height: 5em;
+          }
         }
       }
 
