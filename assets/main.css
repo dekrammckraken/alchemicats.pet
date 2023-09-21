@@ -151,6 +151,7 @@ body .container article {
   padding: 25px;
   width: 80%;
   text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.295);
+  box-shadow: 2px 2px 40px rgba(49, 17, 40, 0.17);
 }
 .html .container article .info,
 body .container article .info {
@@ -172,10 +173,11 @@ body .container article .info .item.right {
 .html .container article img,
 body .container article img {
   height: 2em;
+  margin: 0.5em;
 }
 .html .container article .alchelogo,
 body .container article .alchelogo {
-  height: 3.5em;
+  height: 4em;
 }
 .html .container article .alchelogo:hover,
 body .container article .alchelogo:hover {
@@ -218,10 +220,9 @@ body .container article p video {
   height: 29em;
   border-radius: 1em;
   margin-right: 20px;
-  margin-bottom: 20px;
   margin-top: 10px;
-  border: 2px dotted #dbe4e7;
   float: left;
+  box-shadow: 2px 2px 40px rgba(49, 17, 40, 0.37);
 }
 @media (max-width: 767px) {
   .html .container article p video,
@@ -232,7 +233,7 @@ body .container article p video {
 }
 .html .container article p img,
 body .container article p img {
-  height: 5em;
+  height: 9em;
 }
 .html .container article h1,
 body .container article h1 {
@@ -270,25 +271,4 @@ body .container article h3.zelda {
 .html .container article a,
 body .container article a {
   color: #ccff00;
-}
-.html .mini-gallery img,
-body .mini-gallery img {
-  height: 8em;
-  border-radius: 1em;
-  border: 2px dotted #e97ab0;
-}
-
-.grayscale-filter {
-  filter: grayscale(100%);
-}
-
-@keyframes pulseGrayscale {
-  0% {
-    transform: scale(1);
-    filter: grayscale(0%);
-  }
-  100% {
-    transform: scale(1.1);
-    filter: grayscale(100%);
-  }
 }/*# sourceMappingURL=main.css.map */
