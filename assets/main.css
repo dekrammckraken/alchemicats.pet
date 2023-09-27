@@ -153,22 +153,20 @@ body .container article {
   text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.295);
   box-shadow: 2px 2px 40px rgba(49, 17, 40, 0.17);
 }
+.html .container article div span,
+body .container article div span {
+  font-weight: bold;
+}
+.html .container article div img,
+body .container article div img {
+  padding: 0;
+  margin: 0;
+  float: right;
+  margin-left: 1em;
+}
 .html .container article .info,
 body .container article .info {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-.html .container article .info .item,
-body .container article .info .item {
-  flex: 1;
-  padding: 10px;
-  text-align: left;
-  border-bottom: 1px dotted #e97ab0;
-}
-.html .container article .info .item.right,
-body .container article .info .item.right {
-  text-align: right;
+  height: 4em;
 }
 .html .container article img,
 body .container article img {
