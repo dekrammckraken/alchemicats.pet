@@ -215,7 +215,7 @@ body .container article p br {
 }
 .html .container article p video,
 body .container article p video {
-  height: 29em;
+  width: 10em;
   border-radius: 1em;
   margin-right: 20px;
   margin-top: 10px;
@@ -225,7 +225,7 @@ body .container article p video {
 @media (max-width: 767px) {
   .html .container article p video,
   body .container article p video {
-    height: 13em;
+    width: 6em;
     margin-bottom: 0px;
   }
 }
@@ -240,22 +240,28 @@ body .container article p a img {
 .html .container article h1,
 body .container article h1 {
   color: #ccff00;
-  font-size: 1.6em;
+  font-size: 1.3em;
   mix-blend-mode: screen;
-  text-shadow: 3px 3px 6px rgba(128, 0, 0, 0.43);
+  text-shadow: 0px 0px 36px #ccff00;
 }
 @media (max-width: 767px) {
   .html .container article h1,
   body .container article h1 {
-    font-size: 1.1em;
+    font-size: 1.3em;
   }
 }
 .html .container article h2,
 body .container article h2 {
   color: #e97ab0;
-  font-size: 1.2em;
-  mix-blend-mode: screen;
-  text-shadow: 3px 3px 6px black;
+  font-size: 1em;
+  mix-blend-mode: plus-lighter;
+  text-shadow: 0px 0px 36px #ce9595;
+}
+@media (max-width: 767px) {
+  .html .container article h2,
+  body .container article h2 {
+    font-size: 1.1em;
+  }
 }
 .html .container article h3,
 body .container article h3 {
