@@ -5,10 +5,15 @@
 $(document).ready(function () {
 
     const messages = [
-        '"A cat is a puzzle for which there is no solution." - Walter Scott',
-        '"A cat is a feline equation." - Louis J. Camuti',
-        '"Civilization began when someone brought home a cat and insisted on living with it." - E. L. Agassiz',
-        '"The cat is a lesson in delicacy." - Jules Champfleury'
+        "A cat is a mysterious book written in a secret language. - Walter Chandoha",
+        "In the world of cats, everything revolves around them. - Marion C. Garretty",
+        "A cat is not just a pet but a companion who fills you with affection. - Theophile Gautier",
+        "The beauty of a cat lies in its ability to love unconditionally. - Alexandra Kleeman",
+        "Cats choose us; we don't choose them. - Kirsten Alexander",
+        "A cat teaches you that time spent playing is never wasted time. - S. Cheshire",
+        "Cats are magical creatures: they fill every home they enter with warmth and love. - Susan Easterly",
+        "A cat is a friend who will never judge you and will always be there for you. - Unknown",
+        "In the company of a cat, even the grayest days become brighter. - Unknown"
       ];
 
   const startDate = "2021-04-12";

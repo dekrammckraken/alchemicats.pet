@@ -153,6 +153,14 @@ body .container article {
   text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.295);
   box-shadow: 2px 2px 40px rgba(49, 17, 40, 0.17);
 }
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
 .html .container article div span,
 body .container article div span {
   font-weight: bold;
@@ -253,7 +261,7 @@ body .container article h1 {
 .html .container article h2,
 body .container article h2 {
   color: #e97ab0;
-  font-size: 1em;
+  font-size: 1.3em;
   mix-blend-mode: plus-lighter;
   text-shadow: 0px 0px 36px #ce9595;
 }
