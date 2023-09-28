@@ -51,7 +51,7 @@ body .container {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin: auto;
+  margin-top: 10px;
   color: white;
 }
 @media (min-width: 767px) {
@@ -144,33 +144,18 @@ body .container article {
   letter-spacing: 0.1em;
   line-height: 2em;
   text-align: center;
-  padding: 8px;
-  margin: 8px;
+  margin: 6px;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 1em;
-  padding: 25px;
+  padding: 20px;
   width: 80%;
   text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.295);
   box-shadow: 2px 2px 40px rgba(49, 17, 40, 0.17);
-}
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
+  margin: 5px;
 }
 .html .container article div span,
 body .container article div span {
   font-weight: bold;
-}
-.html .container article div img,
-body .container article div img {
-  padding: 0;
-  margin: 0;
-  float: right;
-  margin-left: 0.4em;
 }
 .html .container article .info,
 body .container article .info {
@@ -178,7 +163,7 @@ body .container article .info {
 }
 .html .container article img,
 body .container article img {
-  height: 2em;
+  height: 2.4em;
   margin: 0.5em;
 }
 .html .container article .alchelogo,
