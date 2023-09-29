@@ -71,13 +71,14 @@ body {
   }
 
   .container {
+    
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin-top:10px;
+    margin-top: 10px;
     color: $white;
-
+    margin: auto;
     @media (min-width: 767px) {
       width: 40%;
     }
@@ -170,12 +171,18 @@ body {
       width: 80%;
       text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.295);
       box-shadow: 2px 2px 40px rgba(49, 17, 40, 0.17);
-      margin:5px;
+      margin: 1em 1em 1em 1em;
+     
+      nav {
+        margin-top:2em;
+        a {
+          margin:0.2em;
+        }
+      }
       div {
         span {
           font-weight: bold;
         }
-       
       }
       .info {
         height: 4em;
@@ -187,7 +194,6 @@ body {
 
       .alchelogo {
         height: 4em;
-
         &:hover {
           opacity: 0.2;
         }
@@ -212,7 +218,6 @@ body {
       p {
         font-weight: normal;
         text-align: left;
-        color: $article-fore-color;
 
         &.center {
           text-align: center;
@@ -223,8 +228,8 @@ body {
         }
 
         video {
-          width:10em;
-        
+          width: 10em;
+
           border-radius: 1em;
           margin-right: 20px;
           margin-top: 10px;
@@ -232,7 +237,7 @@ body {
           float: left;
           box-shadow: 2px 2px 40px rgba(49, 17, 40, 0.37);
           @media (max-width: 767px) {
-            width:6em;
+            width: 6em;
             margin-bottom: 0px;
           }
         }
@@ -252,6 +257,10 @@ body {
         font-size: 1.3em;
         mix-blend-mode: screen;
         text-shadow: 0px 0px 36px $green;
+        letter-spacing: 0.0em;
+        background-color: #e97ab017;
+        border-radius: 0.5em;
+        padding: 10px;
         @media (max-width: 767px) {
           font-size: 1.3em;
         }
@@ -260,6 +269,7 @@ body {
       h2 {
         color: $pink;
         font-size: 1.3em;
+        letter-spacing: 0.0em;
         @media (max-width: 767px) {
           font-size: 1.1em;
         }
@@ -282,10 +292,13 @@ body {
 
       a {
         color: $green;
+        background-color: #e97ab017;
+        border-radius: 0.5em;
+        text-shadow: 0px 0px 36px $green;
+        padding: 10px;
+        text-transform: none;
+        text-decoration: none;
       }
     }
   }
- 
 }
-
-

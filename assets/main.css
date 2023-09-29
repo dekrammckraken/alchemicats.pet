@@ -53,6 +53,7 @@ body .container {
   text-align: center;
   margin-top: 10px;
   color: white;
+  margin: auto;
 }
 @media (min-width: 767px) {
   .html .container,
@@ -151,7 +152,15 @@ body .container article {
   width: 80%;
   text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.295);
   box-shadow: 2px 2px 40px rgba(49, 17, 40, 0.17);
-  margin: 5px;
+  margin: 1em 1em 1em 1em;
+}
+.html .container article nav,
+body .container article nav {
+  margin-top: 2em;
+}
+.html .container article nav a,
+body .container article nav a {
+  margin: 0.2em;
 }
 .html .container article div span,
 body .container article div span {
@@ -195,7 +204,6 @@ body .container article header {
 body .container article p {
   font-weight: normal;
   text-align: left;
-  color: #e3e3e3;
 }
 .html .container article p.center,
 body .container article p.center {
@@ -236,6 +244,10 @@ body .container article h1 {
   font-size: 1.3em;
   mix-blend-mode: screen;
   text-shadow: 0px 0px 36px #ccff00;
+  letter-spacing: 0em;
+  background-color: rgba(233, 122, 176, 0.0901960784);
+  border-radius: 0.5em;
+  padding: 10px;
 }
 @media (max-width: 767px) {
   .html .container article h1,
@@ -247,6 +259,7 @@ body .container article h1 {
 body .container article h2 {
   color: #e97ab0;
   font-size: 1.3em;
+  letter-spacing: 0em;
   mix-blend-mode: plus-lighter;
   text-shadow: 0px 0px 36px #ce9595;
 }
@@ -272,4 +285,10 @@ body .container article h3.zelda {
 .html .container article a,
 body .container article a {
   color: #ccff00;
+  background-color: rgba(233, 122, 176, 0.0901960784);
+  border-radius: 0.5em;
+  text-shadow: 0px 0px 36px #ccff00;
+  padding: 10px;
+  text-transform: none;
+  text-decoration: none;
 }/*# sourceMappingURL=main.css.map */
