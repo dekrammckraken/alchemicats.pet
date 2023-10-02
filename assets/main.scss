@@ -58,7 +58,10 @@ body {
 
     img {
       text-align: center;
-      height: 4em;
+      text-align: center;
+      height: 7em;
+      margin-bottom: 2em;
+      
     }
 
     p {
@@ -177,6 +180,10 @@ body {
         margin-top:2em;
         a {
           margin:0.2em;
+          img {
+            height: 2.7em;
+          }
+          
         }
       }
       div {
@@ -218,7 +225,7 @@ body {
       p {
         font-weight: normal;
         text-align: left;
-
+        letter-spacing: 0.2em;
         &.center {
           text-align: center;
         }
@@ -291,13 +298,7 @@ body {
       }
 
       a {
-        color: $green;
-        background-color: #e97ab017;
-        border-radius: 0.5em;
-        text-shadow: 0px 0px 36px $green;
         padding: 10px;
-        text-transform: none;
-        text-decoration: none;
       }
     }
   }

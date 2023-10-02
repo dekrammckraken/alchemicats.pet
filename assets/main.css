@@ -35,7 +35,9 @@ body footer {
 .html footer img,
 body footer img {
   text-align: center;
-  height: 4em;
+  text-align: center;
+  height: 7em;
+  margin-bottom: 2em;
 }
 .html footer p,
 body footer p {
@@ -162,6 +164,10 @@ body .container article nav {
 body .container article nav a {
   margin: 0.2em;
 }
+.html .container article nav a img,
+body .container article nav a img {
+  height: 2.7em;
+}
 .html .container article div span,
 body .container article div span {
   font-weight: bold;
@@ -204,6 +210,7 @@ body .container article header {
 body .container article p {
   font-weight: normal;
   text-align: left;
+  letter-spacing: 0.2em;
 }
 .html .container article p.center,
 body .container article p.center {
@@ -284,11 +291,5 @@ body .container article h3.zelda {
 }
 .html .container article a,
 body .container article a {
-  color: #ccff00;
-  background-color: rgba(233, 122, 176, 0.0901960784);
-  border-radius: 0.5em;
-  text-shadow: 0px 0px 36px #ccff00;
   padding: 10px;
-  text-transform: none;
-  text-decoration: none;
 }/*# sourceMappingURL=main.css.map */
