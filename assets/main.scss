@@ -245,7 +245,7 @@ body {
         }
 
         video {
-          width: 12em;
+          width: 10em;
 
           border-radius: 1em;
           margin-right: 20px;
@@ -254,7 +254,7 @@ body {
           float: left;
           box-shadow: 2px 2px 40px rgba(49, 17, 40, 0.37);
           @media (max-width: 767px) {
-            width: 10em;
+            width: 8em;
             margin-bottom: 0px;
           }
         }
@@ -279,7 +279,7 @@ body {
         border-radius: 0.5em;
         padding: 10px;
         @media (max-width: 767px) {
-          font-size: 1.3em;
+          font-size: 1.7em;
         }
       }
 

@@ -231,7 +231,7 @@ body .container article p br {
 }
 .html .container article p video,
 body .container article p video {
-  width: 12em;
+  width: 10em;
   border-radius: 1em;
   margin-right: 20px;
   margin-top: 10px;
@@ -241,7 +241,7 @@ body .container article p video {
 @media (max-width: 767px) {
   .html .container article p video,
   body .container article p video {
-    width: 10em;
+    width: 8em;
     margin-bottom: 0px;
   }
 }
@@ -267,7 +267,7 @@ body .container article h1 {
 @media (max-width: 767px) {
   .html .container article h1,
   body .container article h1 {
-    font-size: 1.3em;
+    font-size: 1.7em;
   }
 }
 .html .container article h2,
