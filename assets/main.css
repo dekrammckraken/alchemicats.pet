@@ -166,7 +166,7 @@ body .container article nav a {
 }
 .html .container article nav a img,
 body .container article nav a img {
-  height: 2.7em;
+  height: 3.7em;
 }
 .html .container article div span,
 body .container article div span {
@@ -223,7 +223,7 @@ body .container article p br {
 }
 .html .container article p video,
 body .container article p video {
-  width: 10em;
+  width: 12em;
   border-radius: 1em;
   margin-right: 20px;
   margin-top: 10px;
@@ -233,7 +233,7 @@ body .container article p video {
 @media (max-width: 767px) {
   .html .container article p video,
   body .container article p video {
-    width: 6em;
+    width: 10em;
     margin-bottom: 0px;
   }
 }
@@ -243,7 +243,7 @@ body .container article p img {
 }
 .html .container article p a img,
 body .container article p a img {
-  height: 5em;
+  height: 6em;
 }
 .html .container article h1,
 body .container article h1 {
