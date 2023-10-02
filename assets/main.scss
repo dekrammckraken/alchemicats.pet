@@ -183,8 +183,15 @@ body {
   
         a {
           margin:0.2em;
+         
           img {
-            height: 3.7em;
+            
+            @media (max-width: 767px) {
+              height: 2.8em;
+            }
+            @media (min-width: 767px) {
+              height: 4.0em;
+            }
           }
           
         }

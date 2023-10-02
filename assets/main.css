@@ -164,9 +164,17 @@ body .container article nav {
 body .container article nav a {
   margin: 0.2em;
 }
-.html .container article nav a img,
-body .container article nav a img {
-  height: 3.7em;
+@media (max-width: 767px) {
+  .html .container article nav a img,
+  body .container article nav a img {
+    height: 2.8em;
+  }
+}
+@media (min-width: 767px) {
+  .html .container article nav a img,
+  body .container article nav a img {
+    height: 4em;
+  }
 }
 .html .container article div span,
 body .container article div span {
