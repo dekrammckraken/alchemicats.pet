@@ -144,7 +144,6 @@ body .container article {
   align-content: center;
   align-items: center;
   flex-direction: column;
-  letter-spacing: 0.1em;
   line-height: 2em;
   text-align: center;
   margin: 6px;
@@ -218,7 +217,7 @@ body .container article header {
 body .container article p {
   font-weight: normal;
   text-align: left;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.1em;
 }
 .html .container article p.center,
 body .container article p.center {
@@ -259,7 +258,6 @@ body .container article h1 {
   font-size: 1.3em;
   mix-blend-mode: screen;
   text-shadow: 0px 0px 36px #ccff00;
-  letter-spacing: 0em;
   background-color: rgba(233, 122, 176, 0.0901960784);
   border-radius: 0.5em;
   padding: 10px;
@@ -274,7 +272,6 @@ body .container article h1 {
 body .container article h2 {
   color: #e97ab0;
   font-size: 1.3em;
-  letter-spacing: 0em;
   mix-blend-mode: plus-lighter;
   text-shadow: 0px 0px 36px #ce9595;
 }

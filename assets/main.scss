@@ -164,7 +164,6 @@ body {
       align-content: center;
       align-items: center;
       flex-direction: column;
-      letter-spacing: 0.1em;
       line-height: 2em;
       text-align: center;
       margin: 6px;
@@ -235,7 +234,7 @@ body {
       p {
         font-weight: normal;
         text-align: left;
-        letter-spacing: 0.2em;
+        letter-spacing: 0.1em;
         &.center {
           text-align: center;
         }
@@ -274,7 +273,7 @@ body {
         font-size: 1.3em;
         mix-blend-mode: screen;
         text-shadow: 0px 0px 36px $green;
-        letter-spacing: 0.0em;
+       
         background-color: #e97ab017;
         border-radius: 0.5em;
         padding: 10px;
@@ -286,7 +285,7 @@ body {
       h2 {
         color: $pink;
         font-size: 1.3em;
-        letter-spacing: 0.0em;
+        
         @media (max-width: 767px) {
           font-size: 1.1em;
         }
