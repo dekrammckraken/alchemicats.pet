@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   font-family: "Roboto Bold";
   src: url("fonts/Roboto-Bold.ttf");
@@ -8,44 +9,6 @@
 .html,
 body {
   background-image: linear-gradient(210deg, hsl(313, 34%, 48%) 3%, hsl(312, 31%, 45%) 5%, hsl(310, 28%, 41%) 7%, hsl(307, 25%, 38%) 10%, hsl(301, 21%, 35%) 14%, hsl(293, 18%, 32%) 19%, hsl(279, 16%, 30%) 26%, hsl(257, 13%, 27%) 36%, hsl(223, 15%, 24%) 47%, hsl(194, 5%, 25%) 58%, hsl(94, 7%, 28%) 68%, hsl(80, 15%, 30%) 75%, hsl(76, 23%, 31%) 81%, hsl(75, 30%, 33%) 86%);
-}
-.html header,
-body header {
-  height: 1.2em;
-  padding: 0.5em;
-  text-align: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  background-origin: content-box;
-  display: flex;
-  justify-content: center;
-}
-.html footer,
-body footer {
-  letter-spacing: 0.1em;
-  line-height: 2em;
-  font-size: 0.8em;
-  color: #dbe4e7;
-  border-radius: 1em;
-  padding: 25px;
-  width: 80%;
-  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.295);
-}
-.html footer img,
-body footer img {
-  text-align: center;
-  text-align: center;
-  height: 7em;
-  margin-bottom: 2em;
-}
-.html footer p,
-body footer p {
-  text-align: justify;
-}
-.html footer a,
-body footer a {
-  color: #ccff00;
 }
 .html .container,
 body .container {
@@ -68,6 +31,36 @@ body .container {
   body .container {
     width: 100%;
   }
+}
+.html .container header,
+body .container header {
+  margin-top: 2em;
+  display: flex;
+  flex-direction: column;
+  transition: height 0.3s;
+  padding: 2em;
+}
+.html .container header h1,
+body .container header h1 {
+  font-size: 1.2em;
+  color: #ccff00;
+}
+.html .container header h2,
+body .container header h2 {
+  font-size: 0.9em;
+  color: #e3b1c9;
+}
+.html .container header .alchelogo,
+body .container header .alchelogo {
+  height: 4em;
+}
+.html .container nav,
+body .container nav {
+  filter: saturate(50%);
+}
+.html .container nav img,
+body .container nav img {
+  height: 3em;
 }
 .html .container a,
 body .container a {
@@ -94,23 +87,35 @@ body .container .divider {
   justify-content: center;
   width: 200px;
 }
-.html .container .title,
-body .container .title {
+.html .container article,
+body .container article {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  flex-direction: column;
+  line-height: 2em;
   text-align: center;
-  padding: 10px;
+  margin: 6px;
+  background: linear-gradient(to right bottom, rgba(245, 240, 180, 0.2), rgba(200, 90, 252, 0.1));
+  border-radius: 1em;
+  padding: 20px;
+  width: 80%;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.295);
+  box-shadow: 2px 2px 40px rgba(49, 17, 40, 0.17);
+  margin: 1em 1em 1em 1em;
 }
-.html .container .ciriandzelda,
-body .container .ciriandzelda {
-  height: 40px;
-  width: 100px;
-  background-image: url("images/ciri-and-zelda-watermark.svg");
-  background-size: 100px;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.html .container .ciriandzelda:hover,
-body .container .ciriandzelda:hover {
-  opacity: 0.2;
+.html .container article::after,
+body .container article::after {
+  content: ""; /* Contenuto vuoto per il pseudo-elemento */
+  background-image: url(images/divider.svg); /* Specifica l'URL dell'immagine di sfondo */
+  background-size: 300px;
+  opacity: 0.3; /* Imposta l'opacità desiderata (0.5 indica il 50% di opacità) */
+  position: fixed;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Posiziona il pseudo-elemento dietro l'elemento principale */
+  filter: blur(40px);
 }
 .html .container .portrait img,
 body .container .portrait img {
@@ -138,98 +143,23 @@ body .container .portrait h3 {
     font-size: 0.9em;
   }
 }
-.html .container article,
-body .container article {
-  display: flex;
-  align-content: center;
-  align-items: center;
-  flex-direction: column;
-  line-height: 2em;
-  text-align: center;
-  margin: 6px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 1em;
-  padding: 20px;
-  width: 80%;
-  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.295);
-  box-shadow: 2px 2px 40px rgba(49, 17, 40, 0.17);
-  margin: 1em 1em 1em 1em;
-}
-.html .container article nav,
-body .container article nav {
-  margin-top: 2em;
-}
-.html .container article nav a,
-body .container article nav a {
-  margin: 0.2em;
-}
-@media (max-width: 767px) {
-  .html .container article nav a img,
-  body .container article nav a img {
-    height: 2.8em;
-  }
-}
-@media (min-width: 767px) {
-  .html .container article nav a img,
-  body .container article nav a img {
-    height: 4em;
-  }
-}
-.html .container article div span,
-body .container article div span {
-  font-weight: bold;
-}
-.html .container article .info,
-body .container article .info {
-  height: 4em;
-}
-.html .container article img,
-body .container article img {
-  height: 2.4em;
-  margin: 0.5em;
-}
-.html .container article .alchelogo,
-body .container article .alchelogo {
-  height: 4em;
-}
-.html .container article .alchelogo:hover,
-body .container article .alchelogo:hover {
-  opacity: 0.2;
-}
-.html .container article .switch,
-body .container article .switch {
-  align-self: baseline;
-  margin-bottom: -2em;
-  animation: pulseGrayscale 2s infinite alternate;
-  height: 2em;
-}
-.html .container article .switch:hover,
-body .container article .switch:hover {
-  cursor: pointer;
-}
-.html .container article header,
-body .container article header {
-  font-weight: bolder;
-  height: -moz-fit-content;
-  height: fit-content;
-}
-.html .container article p,
-body .container article p {
+.html .container p,
+body .container p {
   font-weight: normal;
   text-align: left;
   letter-spacing: 0.1em;
 }
-.html .container article p.center,
-body .container article p.center {
+.html .container p.center,
+body .container p.center {
   text-align: center;
 }
-.html .container article p br,
-body .container article p br {
+.html .container p br,
+body .container p br {
   display: block;
   margin-bottom: 0.6em;
 }
-.html .container article p video,
-body .container article p video {
+.html .container p video,
+body .container p video {
   width: 10em;
   border-radius: 1em;
   margin-right: 20px;
@@ -238,63 +168,43 @@ body .container article p video {
   box-shadow: 2px 2px 40px rgba(49, 17, 40, 0.37);
 }
 @media (max-width: 767px) {
-  .html .container article p video,
-  body .container article p video {
+  .html .container p video,
+  body .container p video {
     width: 8em;
     margin-bottom: 0px;
   }
 }
-.html .container article p img,
-body .container article p img {
+.html .container p img,
+body .container p img {
   height: 9em;
 }
-.html .container article p a img,
-body .container article p a img {
+.html .container p a img,
+body .container p a img {
   height: 6em;
 }
-.html .container article h1,
-body .container article h1 {
+.html footer,
+body footer {
+  letter-spacing: 0.1em;
+  line-height: 2em;
+  font-size: 0.8em;
+  color: #dbe4e7;
+  border-radius: 1em;
+  padding: 25px;
+  width: 80%;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.295);
+}
+.html footer img,
+body footer img {
+  text-align: center;
+  text-align: center;
+  height: 7em;
+  margin-bottom: 2em;
+}
+.html footer p,
+body footer p {
+  text-align: justify;
+}
+.html footer a,
+body footer a {
   color: #ccff00;
-  font-size: 1.3em;
-  mix-blend-mode: screen;
-  text-shadow: 0px 0px 36px #ccff00;
-  background-color: rgba(233, 122, 176, 0.0901960784);
-  border-radius: 0.5em;
-  padding: 10px;
-}
-@media (max-width: 767px) {
-  .html .container article h1,
-  body .container article h1 {
-    font-size: 1.7em;
-  }
-}
-.html .container article h2,
-body .container article h2 {
-  color: #e97ab0;
-  font-size: 1.3em;
-  mix-blend-mode: plus-lighter;
-  text-shadow: 0px 0px 36px #ce9595;
-}
-@media (max-width: 767px) {
-  .html .container article h2,
-  body .container article h2 {
-    font-size: 1.1em;
-  }
-}
-.html .container article h3,
-body .container article h3 {
-  align-self: flex-start;
-  text-align: left;
-}
-.html .container article h3.ciri,
-body .container article h3.ciri {
-  color: #ccff00;
-}
-.html .container article h3.zelda,
-body .container article h3.zelda {
-  color: #e97ab0;
-}
-.html .container article a,
-body .container article a {
-  padding: 10px;
 }/*# sourceMappingURL=main.css.map */

@@ -1,3 +1,4 @@
+$softPink: #e3b1c9;
 $pink: #e97ab0;
 $darkPink: #d056b0;
 $green: #ccff00;
@@ -34,47 +35,7 @@ body {
     hsl(75deg 30% 33%) 86%
   );
 
-  header {
-    height: 1.2em;
-    padding: 0.5em;
-    text-align: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    background-origin: content-box;
-    display: flex;
-    justify-content: center;
-  }
-
-  footer {
-    letter-spacing: 0.1em;
-    line-height: 2em;
-    font-size: 0.8em;
-    color: $footer-fore-color;
-    border-radius: 1em;
-    padding: 25px;
-    width: 80%;
-    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.295);
-
-    img {
-      text-align: center;
-      text-align: center;
-      height: 7em;
-      margin-bottom: 2em;
-      
-    }
-
-    p {
-      text-align: justify;
-    }
-
-    a {
-      color: $green;
-    }
-  }
-
   .container {
-    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -88,6 +49,33 @@ body {
 
     @media (max-width: 767px) {
       width: 100%;
+    }
+
+    header {
+      margin-top: 2em;
+      display: flex;
+      flex-direction: column;
+      transition: height 0.3s;
+      padding: 2em;
+
+      h1 {
+        font-size: 1.2em;
+        color: $green;
+      }
+
+      h2 {
+        font-size: 0.9em;
+        color: $softPink;
+      }
+      .alchelogo {
+        height: 4em;
+      }
+    }
+    nav {
+      filter: saturate(50%);
+      img {
+        height: 3em;
+      }
     }
 
     a {
@@ -115,24 +103,41 @@ body {
       width: 200px;
     }
 
-    .title {
-      text-align: center;
-      padding: 10px;
-    }
-
-    .ciriandzelda {
-      height: 40px;
-      width: 100px;
-      background-image: url("images/ciri-and-zelda-watermark.svg");
-      background-size: 100px;
-      background-repeat: no-repeat;
-      background-position: center;
-
-      &:hover {
-        opacity: 0.2;
+    article {
+      &::after {
+        content: ""; /* Contenuto vuoto per il pseudo-elemento */
+        background-image: url(images/divider.svg); /* Specifica l'URL dell'immagine di sfondo */
+        background-size: 300px;
+        opacity: 0.3; /* Imposta l'opacità desiderata (0.5 indica il 50% di opacità) */
+        position: fixed;
+        background-position: center center;
+        width: 100%;
+        height: 100%;
+        z-index: -1; /* Posiziona il pseudo-elemento dietro l'elemento principale */
+        filter: blur(40px);
       }
-    }
 
+      display: flex;
+      align-content: center;
+      align-items: center;
+      flex-direction: column;
+      line-height: 2em;
+      text-align: center;
+      margin: 6px;
+
+      background: linear-gradient(
+        to right bottom,
+        rgba(245, 240, 180, 0.2),
+        rgba(200, 90, 252, 0.1)
+      );
+
+      border-radius: 1em;
+      padding: 20px;
+      width: 80%;
+      text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.295);
+      box-shadow: 2px 2px 40px rgba(49, 17, 40, 0.17);
+      margin: 1em 1em 1em 1em;
+    }
     .portrait {
       img {
         border-radius: 90px;
@@ -140,11 +145,9 @@ body {
         box-shadow: 0px 5px 5px rgb(44, 43, 43);
         float: left;
         margin: 1em;
-
         &.ciri {
           border: 2px dotted $green;
         }
-
         &.zelda {
           border: 2px dotted $pink;
         }
@@ -158,157 +161,65 @@ body {
         }
       }
     }
+    p {
+      font-weight: normal;
+      text-align: left;
+      letter-spacing: 0.1em;
+      &.center {
+        text-align: center;
+      }
+      br {
+        display: block;
+        margin-bottom: 0.6em;
+      }
 
-    article {
-      display: flex;
-      align-content: center;
-      align-items: center;
-      flex-direction: column;
-      line-height: 2em;
-      text-align: center;
-      margin: 6px;
-      background-color: rgba(255, 255, 255, 0.1);
-      border-radius: 1em;
-      padding: 20px;
-      width: 80%;
-      text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.295);
-      box-shadow: 2px 2px 40px rgba(49, 17, 40, 0.17);
-      margin: 1em 1em 1em 1em;
-     
-      nav {
-        margin-top:2em;
-        
-      
-  
-        a {
-          margin:0.2em;
-         
-          img {
-            
-            @media (max-width: 767px) {
-              height: 2.8em;
-            }
-            @media (min-width: 767px) {
-              height: 4.0em;
-            }
-          }
-          
+      video {
+        width: 10em;
+        border-radius: 1em;
+        margin-right: 20px;
+        margin-top: 10px;
+        float: left;
+        box-shadow: 2px 2px 40px rgba(49, 17, 40, 0.37);
+        @media (max-width: 767px) {
+          width: 8em;
+          margin-bottom: 0px;
         }
       }
-      div {
-        span {
-          font-weight: bold;
-        }
-      }
-      .info {
-        height: 4em;
-      }
+
       img {
-        height: 2.4em;
-        margin: 0.5em;
+        height: 9em;
       }
-
-      .alchelogo {
-        height: 4em;
-        &:hover {
-          opacity: 0.2;
-        }
-      }
-
-      .switch {
-        align-self: baseline;
-        margin-bottom: -2em;
-        animation: pulseGrayscale 2s infinite alternate;
-        height: 2em;
-      }
-
-      .switch:hover {
-        cursor: pointer;
-      }
-
-      header {
-        font-weight: bolder;
-        height: fit-content;
-      }
-
-      p {
-        font-weight: normal;
-        text-align: left;
-        letter-spacing: 0.1em;
-        &.center {
-          text-align: center;
-        }
-        br {
-          display: block;
-          margin-bottom: 0.6em;
-        }
-
-        video {
-          width: 10em;
-
-          border-radius: 1em;
-          margin-right: 20px;
-          margin-top: 10px;
-
-          float: left;
-          box-shadow: 2px 2px 40px rgba(49, 17, 40, 0.37);
-          @media (max-width: 767px) {
-            width: 8em;
-            margin-bottom: 0px;
-          }
-        }
-
-        img {
-          height: 9em;
-        }
-        a {
-          img {
-            height: 6em;
-          }
-        }
-      }
-
-      h1 {
-        color: $green;
-        font-size: 1.3em;
-        mix-blend-mode: screen;
-        text-shadow: 0px 0px 36px $green;
-       
-        background-color: #e97ab017;
-        border-radius: 0.5em;
-        padding: 10px;
-        @media (max-width: 767px) {
-          font-size: 1.7em;
-        }
-      }
-
-      h2 {
-        color: $pink;
-        font-size: 1.3em;
-        
-        @media (max-width: 767px) {
-          font-size: 1.1em;
-        }
-        mix-blend-mode: plus-lighter;
-        text-shadow: 0px 0px 36px #ce9595;
-      }
-
-      h3 {
-        align-self: flex-start;
-        text-align: left;
-
-        &.ciri {
-          color: $green;
-        }
-
-        &.zelda {
-          color: $pink;
-        }
-      }
-
       a {
-        padding: 10px;
+        img {
+          height: 6em;
+        }
       }
+    }
+  }
+
+  footer {
+    letter-spacing: 0.1em;
+    line-height: 2em;
+    font-size: 0.8em;
+    color: $footer-fore-color;
+    border-radius: 1em;
+    padding: 25px;
+    width: 80%;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.295);
+
+    img {
+      text-align: center;
+      text-align: center;
+      height: 7em;
+      margin-bottom: 2em;
+    }
+
+    p {
+      text-align: justify;
+    }
+
+    a {
+      color: $green;
     }
   }
 }

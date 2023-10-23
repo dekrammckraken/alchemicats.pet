@@ -1,20 +1,15 @@
-
-
-
-
 $(document).ready(function () {
-
-    const messages = [
-        "A cat is a mysterious book written in a secret language. - Walter Chandoha",
-        "In the world of cats, everything revolves around them. - Marion C. Garretty",
-        "A cat is not just a pet but a companion who fills you with affection. - Theophile Gautier",
-        "The beauty of a cat lies in its ability to love unconditionally. - Alexandra Kleeman",
-        "Cats choose us; we don't choose them. - Kirsten Alexander",
-        "A cat teaches you that time spent playing is never wasted time. - S. Cheshire",
-        "Cats are magical creatures: they fill every home they enter with warmth and love. - Susan Easterly",
-        "A cat is a friend who will never judge you and will always be there for you. - Unknown",
-        "In the company of a cat, even the grayest days become brighter. - Unknown"
-      ];
+  const messages = [
+    "A cat is a mysterious book written in a secret language. - Walter Chandoha",
+    "In the world of cats, everything revolves around them. - Marion C. Garretty",
+    "A cat is not just a pet but a companion who fills you with affection. - Theophile Gautier",
+    "The beauty of a cat lies in its ability to love unconditionally. - Alexandra Kleeman",
+    "Cats choose us; we don't choose them. - Kirsten Alexander",
+    "A cat teaches you that time spent playing is never wasted time. - S. Cheshire",
+    "Cats are magical creatures: they fill every home they enter with warmth and love. - Susan Easterly",
+    "A cat is a friend who will never judge you and will always be there for you. - Unknown",
+    "In the company of a cat, even the grayest days become brighter. - Unknown",
+  ];
 
   const startDate = "2021-04-12";
   const elapsedDuration = calculateElapsedTime(startDate);
@@ -22,11 +17,10 @@ $(document).ready(function () {
   const targetMonth = 4; // Aprile
   const timeUntilTarget = calculateTimeUntilDate(targetDay, targetMonth);
 
-  $("#timeToBirthday").text(timeUntilTarget);
-  $("#timeElapsed").text(elapsedDuration);
+  $("#birthdayCount").text(elapsedDuration + " years old, " + timeUntilTarget + " days 'til next birthday. April 5th");
+  
 
-
-  motd();
+  
 
   function calculateElapsedTime(startDate) {
     const initialDate = new Date(startDate);
@@ -80,10 +74,8 @@ $(document).ready(function () {
     $("html").toggleClass("grayscale-filter");
   });
 
-
-
-    function motd() {
-        let idx = Math.floor(Math.random() * messages.length)
-        $("#motd").text(messages[idx]);
-    }
+  function motd() {
+    let idx = Math.floor(Math.random() * messages.length);
+    $("#motd").text(messages[idx]);
+  }
 });
