@@ -105,15 +105,15 @@ body {
 
     article {
       &::after {
-        content: ""; /* Contenuto vuoto per il pseudo-elemento */
-        background-image: url(images/divider.svg); /* Specifica l'URL dell'immagine di sfondo */
+        content: ""; 
+        background-image: url(images/divider.svg);
         background-size: 300px;
-        opacity: 0.3; /* Imposta l'opacità desiderata (0.5 indica il 50% di opacità) */
+        opacity: 0.3;
         position: fixed;
         background-position: center center;
         width: 100%;
         height: 100%;
-        z-index: -1; /* Posiziona il pseudo-elemento dietro l'elemento principale */
+        z-index: -1;
         filter: blur(40px);
       }
 
@@ -123,7 +123,7 @@ body {
       flex-direction: column;
       line-height: 2em;
       text-align: center;
-      margin: 6px;
+      margin: 1em;
 
       background: linear-gradient(
         to right bottom,
@@ -137,6 +137,11 @@ body {
       text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.295);
       box-shadow: 2px 2px 40px rgba(49, 17, 40, 0.17);
       margin: 1em 1em 1em 1em;
+    }
+    h3 {
+      font-size: 1.2em;
+      text-align: left;
+      margin: 0.6em;
     }
     .portrait {
       img {
@@ -153,13 +158,6 @@ body {
         }
       }
 
-      h3 {
-        text-align: left;
-
-        @media (max-width: 767px) {
-          font-size: 0.9em;
-        }
-      }
     }
     p {
       font-weight: normal;
@@ -182,7 +180,7 @@ body {
         box-shadow: 2px 2px 40px rgba(49, 17, 40, 0.37);
         @media (max-width: 767px) {
           width: 8em;
-          margin-bottom: 0px;
+          margin-bottom: 0;
         }
       }
 
