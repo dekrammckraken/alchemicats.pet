@@ -1,4 +1,3 @@
-@charset "UTF-8";
 * {
   font-family: "Roboto Bold";
   src: url("fonts/Roboto-Bold.ttf");
@@ -106,15 +105,15 @@ body .container article {
 }
 .html .container article::after,
 body .container article::after {
-  content: ""; /* Contenuto vuoto per il pseudo-elemento */
-  background-image: url(images/divider.svg); /* Specifica l'URL dell'immagine di sfondo */
+  content: "";
+  background-image: url(images/divider.svg);
   background-size: 300px;
-  opacity: 0.3; /* Imposta l'opacità desiderata (0.5 indica il 50% di opacità) */
+  opacity: 0.3;
   position: fixed;
   background-position: center center;
   width: 100%;
   height: 100%;
-  z-index: -1; /* Posiziona il pseudo-elemento dietro l'elemento principale */
+  z-index: -1;
   filter: blur(40px);
 }
 .html .container h3,
