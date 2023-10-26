@@ -1,81 +1,112 @@
-$(document).ready(function () {
-  const messages = [
-    "A cat is a mysterious book written in a secret language. - Walter Chandoha",
-    "In the world of cats, everything revolves around them. - Marion C. Garretty",
-    "A cat is not just a pet but a companion who fills you with affection. - Theophile Gautier",
-    "The beauty of a cat lies in its ability to love unconditionally. - Alexandra Kleeman",
-    "Cats choose us; we don't choose them. - Kirsten Alexander",
-    "A cat teaches you that time spent playing is never wasted time. - S. Cheshire",
-    "Cats are magical creatures: they fill every home they enter with warmth and love. - Susan Easterly",
-    "A cat is a friend who will never judge you and will always be there for you. - Unknown",
-    "In the company of a cat, even the grayest days become brighter. - Unknown",
-  ];
+const startDate = "2021-04-12";
+const elapsedDuration = calculateElapsedTime(startDate);
+const targetDay = 12;
+const targetMonth = 4; // Aprile
+const timeUntilTarget = calculateTimeUntilDate(targetDay, targetMonth);
 
-  const startDate = "2021-04-12";
-  const elapsedDuration = calculateElapsedTime(startDate);
-  const targetDay = 12;
-  const targetMonth = 4; // Aprile
-  const timeUntilTarget = calculateTimeUntilDate(targetDay, targetMonth);
+function calculateElapsedTime(startDate) {
+  const initialDate = new Date(startDate);
+  const currentDate = new Date();
+  const timeDifferenceInMilliseconds = currentDate - initialDate;
+  const millisecondsInADay = 1000 * 60 * 60 * 24;
+  const daysElapsed = Math.floor(
+    timeDifferenceInMilliseconds / millisecondsInADay
+  );
+  const yearsElapsed = Math.floor(daysElapsed / 365);
+  const remainingDays = daysElapsed % 365;
+  return `${yearsElapsed}`;
+}
 
-  $("#birthdayCount").text(elapsedDuration + " years old, " + timeUntilTarget + " days 'til next birthday. April 5th");
-  
+function calculateTimeUntilDate(targetDay, targetMonth) {
+  const currentYear = new Date().getFullYear();
+  const targetDate = new Date(currentYear, targetMonth - 1, targetDay);
+  const currentDate = new Date();
 
-  
-
-  function calculateElapsedTime(startDate) {
-    const initialDate = new Date(startDate);
-    const currentDate = new Date();
-    const timeDifferenceInMilliseconds = currentDate - initialDate;
-    const millisecondsInADay = 1000 * 60 * 60 * 24;
-    const daysElapsed = Math.floor(
-      timeDifferenceInMilliseconds / millisecondsInADay
-    );
-    const yearsElapsed = Math.floor(daysElapsed / 365);
-    const remainingDays = daysElapsed % 365;
-    return `${yearsElapsed}`;
+  if (targetDate < currentDate) {
+    targetDate.setFullYear(currentYear + 1);
   }
 
-  function calculateTimeUntilDate(targetDay, targetMonth) {
-    const currentYear = new Date().getFullYear();
-    const targetDate = new Date(currentYear, targetMonth - 1, targetDay);
-    const currentDate = new Date();
+  const timeDifferenceInMilliseconds = targetDate - currentDate;
+  const millisecondsInASecond = 1000;
+  const millisecondsInAMinute = millisecondsInASecond * 60;
+  const millisecondsInAnHour = millisecondsInAMinute * 60;
+  const millisecondsInADay = millisecondsInAnHour * 24;
+  const daysUntil = Math.floor(
+    timeDifferenceInMilliseconds / millisecondsInADay
+  );
+  const hoursUntil = Math.floor(
+    (timeDifferenceInMilliseconds % millisecondsInADay) / millisecondsInAnHour
+  );
+  const minutesUntil = Math.floor(
+    (timeDifferenceInMilliseconds % millisecondsInAnHour) /
+      millisecondsInAMinute
+  );
+  const secondsUntil = Math.floor(
+    (timeDifferenceInMilliseconds % millisecondsInAMinute) /
+      millisecondsInASecond
+  );
 
-    if (targetDate < currentDate) {
-      targetDate.setFullYear(currentYear + 1);
-    }
+  const formattedSeconds =
+    secondsUntil < 10 ? `0${secondsUntil}` : secondsUntil;
 
-    const timeDifferenceInMilliseconds = targetDate - currentDate;
-    const millisecondsInASecond = 1000;
-    const millisecondsInAMinute = millisecondsInASecond * 60;
-    const millisecondsInAnHour = millisecondsInAMinute * 60;
-    const millisecondsInADay = millisecondsInAnHour * 24;
-    const daysUntil = Math.floor(
-      timeDifferenceInMilliseconds / millisecondsInADay
-    );
-    const hoursUntil = Math.floor(
-      (timeDifferenceInMilliseconds % millisecondsInADay) / millisecondsInAnHour
-    );
-    const minutesUntil = Math.floor(
-      (timeDifferenceInMilliseconds % millisecondsInAnHour) /
-        millisecondsInAMinute
-    );
-    const secondsUntil = Math.floor(
-      (timeDifferenceInMilliseconds % millisecondsInAMinute) /
-        millisecondsInASecond
-    );
+  return `${daysUntil}`;
+}
 
-    const formattedSeconds =
-      secondsUntil < 10 ? `0${secondsUntil}` : secondsUntil;
+const messages = [
+  "Soon, we will be adding a photo gallery of the best photos collected from our social media.",
+  "They are " +
+    elapsedDuration +
+    " years old, and " +
+    timeUntilTarget +
+    " days old, and their birthday is on April 15th.",
+  "Zelda is also called 'Orsetto'', did you know that?",
+  "Ciri is also called 'Topolina', did you know that?",
+  "Ciri and Zelda are sisters, but with completely different personalities",
+];
 
-    return `${daysUntil}`;
+let stopped = false;
+let motIdx = 0;
+let motdInterval;
+
+function showMotd() {
+  let msg = messages[motIdx];
+  $("#motd").text(msg);
+}
+
+function motd(msg) {
+  motdInterval = setInterval(nextMotd, 5000);
+}
+
+function prevMotd() {
+
+  if (motIdx > 0) {
+    motIdx--;
   }
+  showMotd();
+}
 
-  $(".switch").on("click", function () {
-    $("html").toggleClass("grayscale-filter");
-  });
-
-  function motd() {
-    let idx = Math.floor(Math.random() * messages.length);
-    $("#motd").text(messages[idx]);
+function nextMotd() {
+  if (motIdx < messages.length - 1) {
+    motIdx++;
   }
+  showMotd();
+}
+
+/*
+function toggleMotd() {
+  if (stopped) {
+    motd();
+    stopped = false;
+  } else {
+    clearInterval(motdInterval);
+    stopped = true;
+  }
+}
+*/
+//motd();
+
+$(document).ready( function() {
+  showMotd();
 });
+
+

@@ -94,7 +94,7 @@
         </h2>
       </header>
 
-      <nav>
+      <nav id="socialMedia">
         <a href="https://www.instagram.com/dekrammckraken/" title="Instagram"
           ><img src="assets/images/instagram.svg" alt="Instagram social link"
         /></a>
@@ -107,9 +107,33 @@
           ><img src="assets/images/facebook.svg" alt="Facebook social link"
         /></a>
       </nav>
-      <article>
-        <span id="birthdayCount"></span>
+      <article class="motd">
+        <strong>Did You Know...</strong>
         <span id="motd"></span>
+        <nav>
+          <!--<a href="javascript:prevMotd();">Prev</a> | <a href="javascript:toggleMotd();">Toggle</a> | <a href="javascript:nextMotd();">Next</a>-->
+
+          <button onclick="javascript:prevMotd();" class="arrow left">
+            <svg width="2em" height="2em" viewBox="0 0 50 80" xml:space="preserve">
+              <polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="
+            45.63,75.8 0.375,38.087 45.63,0.375 "/>
+            </svg>  
+          </button>
+
+          <!--
+          <button onclick="javascript:toggleMotd();" class="arrow left">
+            <svg width="2em" height="2em" viewBox="0 0 50 80" xml:space="preserve">
+              <path class="path-vert" fill="none" stroke-width="1" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" d="M10 5 V75 M40 5 V75"/>
+            </svg>  
+          </button>
+          -->
+          <button onclick="javascript:nextMotd();" class="arrow right">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2em" height="2em" viewBox="0 0 50 80">
+              <polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="
+            0.375,0.375 45.63,38.087 0.375,75.8 "/>
+            </svg>
+          </button>
+        </nav>
       </article>
       <article id="history">
         <h3>
@@ -213,12 +237,9 @@
         />
         <p>
           If you want to support our two felines, you can do so by simply
-          following us on our social media
-          <a
-            href="https://www.instagram.com/dekrammckraken/"
-            title="Instagram social page"
-            >Instagram</a
-          >.<br />
+          following us on our social media by following these <a href="#socialMedia">social media</a>
+          or the classical <a href="mailto:campfire@alchemicats.pet">Email</a>.
+          <br />
           The source code for all the projects related to Alchemicats will be up
           on our GitHub page. (Coming soon)
         </p>

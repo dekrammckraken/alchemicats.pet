@@ -61,6 +61,30 @@ body .container nav {
 body .container nav img {
   height: 3em;
 }
+.html .container .motd,
+body .container .motd {
+  border-left: 1em solid rgba(213, 255, 44, 0.32);
+  background-color: rgba(213, 255, 44, 0.15);
+}
+.html .container .motd span,
+body .container .motd span {
+  min-height: 6em;
+}
+.html .container .motd nav button,
+body .container .motd nav button {
+  background-color: transparent;
+  border: none;
+  padding: 2em;
+  border-radius: 3em;
+}
+.html .container .motd nav button:hover,
+body .container .motd nav button:hover {
+  background-color: rgba(213, 255, 44, 0.32);
+}
+.html .container .motd nav button:active,
+body .container .motd nav button:active {
+  background-color: rgba(213, 255, 44, 0.32);
+}
 .html .container a,
 body .container a {
   text-decoration: underline;
@@ -102,6 +126,7 @@ body .container article {
   text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.295);
   box-shadow: 2px 2px 40px rgba(49, 17, 40, 0.17);
   margin: 1em 1em 1em 1em;
+  border-left: 1em solid rgba(230, 23, 175, 0.04);
 }
 .html .container article::after,
 body .container article::after {
