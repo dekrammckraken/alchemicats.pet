@@ -81,28 +81,7 @@ body {
         height: 3em;
       }
     }
-    .motd {
-      
-      border-left: 1em solid $darkGreenA;
-      background-color: rgba(213, 255, 44, 0.15);
-      span {
-        min-height: 6em;
-      }
-      nav {
-        button {
-          background-color: transparent;
-          border:none;
-          padding:2em;
-          border-radius: 3em;
-          &:hover {
-            background-color: $darkGreenA;
-          }
-          &:active {
-            background-color: $darkGreenA;
-          }
-        }
-      }
-    }
+    
     a {
       text-decoration: underline;
       text-decoration-style: dotted;
@@ -164,6 +143,28 @@ body {
       margin: 1em 1em 1em 1em;
 
       border-left: 1em solid $darkPinkA;
+
+      
+        border-left: 1em solid $darkGreenA;
+        background-color: rgba(213, 255, 44, 0.15);
+        span {
+          min-height: 6em;
+        }
+        nav {
+          button {
+            background-color: transparent;
+            border:none;
+            padding:2em;
+            border-radius: 3em;
+            &:hover {
+              background-color: $darkGreenA;
+            }
+            &:active {
+              background-color: $darkGreenA;
+            }
+          }
+        }
+    
     }
     h3 {
       font-size: 1.2em;
