@@ -60,7 +60,8 @@ body {
       flex-direction: column;
       transition: height 0.3s;
       padding: 2em;
-
+      margin:2em;
+      line-height: 2em;
       h1 {
         font-size: 1.2em;
         color: $green;
@@ -76,9 +77,9 @@ body {
       }
     }
     nav {
-      filter: saturate(50%);
+      
       img {
-        height: 3em;
+        height: 4em;
       }
     }
     
@@ -151,11 +152,11 @@ body {
           min-height: 6em;
         }
         nav {
-          button {
+          img {
             background-color: transparent;
-            border:none;
-            padding:2em;
-            border-radius: 3em;
+            padding:1em;
+            display: inline-block;
+            border-radius: 1em;
             &:hover {
               background-color: $darkGreenA;
             }

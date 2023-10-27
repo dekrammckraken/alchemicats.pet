@@ -38,6 +38,8 @@ body .container header {
   flex-direction: column;
   transition: height 0.3s;
   padding: 2em;
+  margin: 2em;
+  line-height: 2em;
 }
 .html .container header h1,
 body .container header h1 {
@@ -54,13 +56,9 @@ body .container header h2 {
 body .container header .alchelogo {
   height: 4em;
 }
-.html .container nav,
-body .container nav {
-  filter: saturate(50%);
-}
 .html .container nav img,
 body .container nav img {
-  height: 3em;
+  height: 4em;
 }
 .html .container a,
 body .container a {
@@ -124,19 +122,19 @@ body .container article::after {
 body .container article span {
   min-height: 6em;
 }
-.html .container article nav button,
-body .container article nav button {
+.html .container article nav img,
+body .container article nav img {
   background-color: transparent;
-  border: none;
-  padding: 2em;
-  border-radius: 3em;
+  padding: 1em;
+  display: inline-block;
+  border-radius: 1em;
 }
-.html .container article nav button:hover,
-body .container article nav button:hover {
+.html .container article nav img:hover,
+body .container article nav img:hover {
   background-color: rgba(213, 255, 44, 0.32);
 }
-.html .container article nav button:active,
-body .container article nav button:active {
+.html .container article nav img:active,
+body .container article nav img:active {
   background-color: rgba(213, 255, 44, 0.32);
 }
 .html .container h3,
