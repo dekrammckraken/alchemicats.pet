@@ -93,18 +93,16 @@ function nextMotd() {
   showMotd();
 }
 
-/*
-function toggleMotd() {
-  if (stopped) {
-    motd();
-    stopped = false;
-  } else {
-    clearInterval(motdInterval);
-    stopped = true;
-  }
+
+function randMotd() {
+  let newMotIdx = Math.floor(Math.random() * messages.length -1);
+
+  while(newMotIdx == motIdx)
+    randMotd();
+  
+  motIdx = newMotIdx;
+  showMotd();
 }
-*/
-//motd();
 
 $(document).ready( function() {
   showMotd();

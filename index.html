@@ -111,22 +111,16 @@
         <strong>Did You Know...</strong>
         <span id="motd"></span>
         <nav>
-          <button onclick="javascript:prevMotd();" class="arrow left">
-            <svg width="2em" height="2em" viewBox="0 0 50 80" xml:space="preserve">
-              <polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="
-            45.63,75.8 0.375,38.087 45.63,0.375 "/>
-            </svg>  
+          <button onclick="javascript:prevMotd();">
+            <img src="assets/images/left.svg" />
           </button>
-
-          
-
-          <button onclick="javascript:nextMotd();" class="arrow right">
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2em" height="2em" viewBox="0 0 50 80">
-              <polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="
-            0.375,0.375 45.63,38.087 0.375,75.8 "/>
-            </svg>
+          <button onclick="javascript:randMotd();"">
+            <img src="assets/images/shuffle.svg" />
           </button>
-
+          <button onclick="javascript:nextMotd();"">
+            <img src="assets/images/right.svg" />
+          </button>
+         
         </nav>
       </article>
       <article id="history">
@@ -231,8 +225,9 @@
         />
         <p>
           If you want to support our two felines, you can do so by simply
-          following us on our social media by following these <a href="#socialMedia">social media</a>
-          or the classical <a href="mailto:campfire@alchemicats.pet">Email</a>.
+          following us on our social media by following these
+          <a href="#socialMedia">social media</a> or the classical
+          <a href="mailto:campfire@alchemicats.pet">Email</a>.
           <br />
           The source code for all the projects related to Alchemicats will be up
           on our GitHub page. (Coming soon)

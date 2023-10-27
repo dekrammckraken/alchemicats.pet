@@ -1,4 +1,4 @@
-$softPink: #e3b1c9;
+$softPink: #cec6ca;
 $pink: #e97ab0;
 $darkPink: #d056b0;
 $green: #ccff00;
@@ -67,8 +67,9 @@ body {
       }
 
       h2 {
-        font-size: 0.9em;
+        font-size: 1em;
         color: $softPink;
+        letter-spacing: 0.3em;
       }
       .alchelogo {
         height: 4em;

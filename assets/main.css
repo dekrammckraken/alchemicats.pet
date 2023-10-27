@@ -46,8 +46,9 @@ body .container header h1 {
 }
 .html .container header h2,
 body .container header h2 {
-  font-size: 0.9em;
-  color: #e3b1c9;
+  font-size: 1em;
+  color: #cec6ca;
+  letter-spacing: 0.3em;
 }
 .html .container header .alchelogo,
 body .container header .alchelogo {
