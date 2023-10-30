@@ -50,11 +50,14 @@ body .container header h1 {
 body .container header h2 {
   font-size: 1em;
   color: #cec6ca;
-  letter-spacing: 0.3em;
 }
 .html .container header .alchelogo,
 body .container header .alchelogo {
-  height: 7em;
+  height: 4em;
+}
+.html .container nav,
+body .container nav {
+  filter: saturate(50%);
 }
 .html .container nav img,
 body .container nav img {

@@ -70,14 +70,14 @@ body {
       h2 {
         font-size: 1em;
         color: $softPink;
-        letter-spacing: 0.3em;
+        
       }
       .alchelogo {
-        height: 7em;
+        height: 4em;
       }
     }
     nav {
-      
+      filter: saturate(50%);
       img {
         height: 4em;
       }
