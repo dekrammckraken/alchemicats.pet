@@ -60,7 +60,7 @@ body {
       flex-direction: column;
       transition: height 0.3s;
       padding: 2em;
-      margin:2em;
+      
       line-height: 2em;
       h1 {
         font-size: 1.2em;
@@ -73,7 +73,8 @@ body {
         
       }
       .alchelogo {
-        height: 4em;
+        height: 6em;
+        margin:1em;
       }
     }
     nav {

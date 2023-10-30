@@ -38,7 +38,6 @@ body .container header {
   flex-direction: column;
   transition: height 0.3s;
   padding: 2em;
-  margin: 2em;
   line-height: 2em;
 }
 .html .container header h1,
@@ -53,7 +52,8 @@ body .container header h2 {
 }
 .html .container header .alchelogo,
 body .container header .alchelogo {
-  height: 4em;
+  height: 6em;
+  margin: 1em;
 }
 .html .container nav,
 body .container nav {
