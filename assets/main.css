@@ -52,8 +52,8 @@ body .container header h2 {
 }
 .html .container header .alchelogo,
 body .container header .alchelogo {
-  height: 6em;
-  margin: 1em;
+  height: 10vh;
+  margin: 0em;
 }
 .html .container nav,
 body .container nav {

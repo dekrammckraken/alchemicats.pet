@@ -62,7 +62,7 @@ const messages = [
   "Zelda is also called 'Orsetto'', did you know that?",
   "Ciri is also called 'Topolina', did you know that?",
   "Ciri and Zelda are sisters, but with completely different personalities",
-  "Every 3/4 days, we post a new photo on Instagram, Reels, on the other hand, are posted when there's a fun idea or a special event."
+  "Every 1/2 weeks, we post a new photo on Instagram, Reels, on the other hand, are posted when there's a fun idea or a special event."
 ];
 
 let stopped = false;
