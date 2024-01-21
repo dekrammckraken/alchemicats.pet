@@ -20,23 +20,21 @@ $ornament-color: #785e79;
 
 .html,
 body {
-  background-image: linear-gradient(
-    210deg,
-    hsl(313deg 34% 48%) 3%,
-    hsl(312deg 31% 45%) 5%,
-    hsl(310deg 28% 41%) 7%,
-    hsl(307deg 25% 38%) 10%,
-    hsl(301deg 21% 35%) 14%,
-    hsl(293deg 18% 32%) 19%,
-    hsl(279deg 16% 30%) 26%,
-    hsl(257deg 13% 27%) 36%,
-    hsl(223deg 15% 24%) 47%,
-    hsl(194deg 5% 25%) 58%,
-    hsl(94deg 7% 28%) 68%,
-    hsl(80deg 15% 30%) 75%,
-    hsl(76deg 23% 31%) 81%,
-    hsl(75deg 30% 33%) 86%
-  );
+  background-image: linear-gradient(210deg,
+      hsl(313deg 34% 48%) 3%,
+      hsl(312deg 31% 45%) 5%,
+      hsl(310deg 28% 41%) 7%,
+      hsl(307deg 25% 38%) 10%,
+      hsl(301deg 21% 35%) 14%,
+      hsl(293deg 18% 32%) 19%,
+      hsl(279deg 16% 30%) 26%,
+      hsl(257deg 13% 27%) 36%,
+      hsl(223deg 15% 24%) 47%,
+      hsl(194deg 5% 25%) 58%,
+      hsl(94deg 7% 28%) 68%,
+      hsl(80deg 15% 30%) 75%,
+      hsl(76deg 23% 31%) 81%,
+      hsl(75deg 30% 33%) 86%);
 
   .container {
     display: flex;
@@ -46,6 +44,7 @@ body {
     margin-top: 10px;
     color: $white;
     margin: auto;
+
     @media (min-width: 767px) {
       width: 40%;
     }
@@ -60,8 +59,9 @@ body {
       flex-direction: column;
       transition: height 0.3s;
       padding: 2em;
-      
+
       line-height: 2em;
+
       h1 {
         font-size: 1.2em;
         color: $green;
@@ -70,20 +70,31 @@ body {
       h2 {
         font-size: 1em;
         color: $softPink;
-        
+
       }
+
       .alchelogo {
         height: 10vh;
-        margin:0em;
+        margin: 0em;
       }
     }
+
     nav {
       filter: saturate(50%);
-      img {
-        height: 4em;
+
+      @media (max-width: 767px) {
+        img {
+          height: 4em;
+        }
+      }
+
+      @media (min-width: 767px) {
+        img {
+          height: 4em;
+        }
       }
     }
-    
+
     a {
       text-decoration: underline;
       text-decoration-style: dotted;
@@ -111,7 +122,7 @@ body {
 
     article {
       &::after {
-        content: ""; 
+        content: "";
         background-image: url(images/divider.svg);
         background-size: 300px;
         opacity: 0.3;
@@ -131,11 +142,9 @@ body {
       text-align: center;
       margin: 1em;
 
-      background: linear-gradient(
-        to right bottom,
+      background: linear-gradient(to right bottom,
         rgba(245, 240, 180, 0.2),
-        rgba(200, 90, 252, 0.1)
-      );
+        rgba(200, 90, 252, 0.1));
 
       border-radius: 1em;
       padding: 20px;
@@ -143,36 +152,58 @@ body {
       text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.295);
       box-shadow: 2px 2px 40px rgba(49, 17, 40, 0.17);
       margin: 1em 1em 1em 1em;
-
       border-left: 1em solid $darkPinkA;
+      border-left: 1em solid $darkGreenA;
+      background-color: rgba(213, 255, 44, 0.15);
 
-      
-        border-left: 1em solid $darkGreenA;
-        background-color: rgba(213, 255, 44, 0.15);
-        span {
-          min-height: 6em;
-        }
-        nav {
-          img {
-            background-color: transparent;
-            padding:1em;
-            display: inline-block;
-            border-radius: 1em;
-            &:hover {
-              background-color: $darkGreenA;
-            }
-            &:active {
-              background-color: $darkGreenA;
-            }
+      span {
+        min-height: 6em;
+      }
+
+      nav {
+        img {
+          background-color: transparent;
+          padding: 1em;
+          display: inline-block;
+          border-radius: 1em;
+
+          &:hover {
+            background-color: $darkGreenA;
+          }
+
+          &:active {
+            background-color: $darkGreenA;
           }
         }
-    
+      }
+
+      &.gallery {
+        background-color: #785e79;
+
+        div {
+          
+          width: 90%;
+          .thumb {
+            margin: 0;
+            padding: 0;
+            box-shadow: 2px 2px 40px rgba(49, 17, 40, 0.37);
+            width: 90%;
+            border-radius: 40px;
+          }
+
+          .cannot {
+            animation: flashRed 0.4s ease-out;
+          }
+        }
+      }
     }
+
     h3 {
       font-size: 1.2em;
       text-align: left;
       margin: 0.6em;
     }
+
     .portrait {
       img {
         border-radius: 90px;
@@ -180,22 +211,27 @@ body {
         box-shadow: 0px 5px 5px rgb(44, 43, 43);
         float: left;
         margin: 1em;
+
         &.ciri {
           border: 2px dotted $green;
         }
+
         &.zelda {
           border: 2px dotted $pink;
         }
       }
 
     }
+
     p {
       font-weight: normal;
       text-align: left;
       letter-spacing: 0.1em;
+
       &.center {
         text-align: center;
       }
+
       br {
         display: block;
         margin-bottom: 0.6em;
@@ -208,6 +244,7 @@ body {
         margin-top: 10px;
         float: left;
         box-shadow: 2px 2px 40px rgba(49, 17, 40, 0.37);
+
         @media (max-width: 767px) {
           width: 8em;
           margin-bottom: 0;
@@ -217,6 +254,7 @@ body {
       img {
         height: 9em;
       }
+
       a {
         img {
           height: 6em;
@@ -249,5 +287,17 @@ body {
     a {
       color: $green;
     }
+  }
+}
+
+@keyframes flashRed {
+
+  0%,
+  100% {
+    filter: brightness(100%);
+  }
+
+  50% {
+    filter: brightness(50%);
   }
 }

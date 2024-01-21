@@ -59,9 +59,17 @@ body .container header .alchelogo {
 body .container nav {
   filter: saturate(50%);
 }
-.html .container nav img,
-body .container nav img {
-  height: 4em;
+@media (max-width: 767px) {
+  .html .container nav img,
+  body .container nav img {
+    height: 4em;
+  }
+}
+@media (min-width: 767px) {
+  .html .container nav img,
+  body .container nav img {
+    height: 4em;
+  }
 }
 .html .container a,
 body .container a {
@@ -139,6 +147,26 @@ body .container article nav img:hover {
 .html .container article nav img:active,
 body .container article nav img:active {
   background-color: rgba(213, 255, 44, 0.32);
+}
+.html .container article.gallery,
+body .container article.gallery {
+  background-color: #785e79;
+}
+.html .container article.gallery div,
+body .container article.gallery div {
+  width: 90%;
+}
+.html .container article.gallery div .thumb,
+body .container article.gallery div .thumb {
+  margin: 0;
+  padding: 0;
+  box-shadow: 2px 2px 40px rgba(49, 17, 40, 0.37);
+  width: 90%;
+  border-radius: 40px;
+}
+.html .container article.gallery div .cannot,
+body .container article.gallery div .cannot {
+  animation: flashRed 0.4s ease-out;
 }
 .html .container h3,
 body .container h3 {
@@ -226,4 +254,13 @@ body footer p {
 .html footer a,
 body footer a {
   color: #ccff00;
+}
+
+@keyframes flashRed {
+  0%, 100% {
+    filter: brightness(100%);
+  }
+  50% {
+    filter: brightness(50%);
+  }
 }/*# sourceMappingURL=main.css.map */

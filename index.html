@@ -22,6 +22,7 @@
   <title>Dekram McKraken and Alchemicats - when hues join</title>
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
   <script async type="text/javascript" src="assets/main.js"></script>
+  <script async type="text/javascript" src="assets/gallery.js"></script>
   <link rel="canonical" href="https://www.alchemicats.pet" />
   <link rel="stylesheet" type="text/css" href="assets/main.css" />
   <link rel="stylesheet" href="assets/animate.min.css" />
@@ -45,7 +46,6 @@
 
       <img src="assets/images/alchemicats-text.svg" class="alchelogo animate__animated animate__jackInTheBox"
         alt="Alchemicats, when hues join..." />
-
       <h2>
         Exploring our enchanted creatures through magical spells and colors.
       </h2>
@@ -61,6 +61,22 @@
       <a href="https://www.facebook.com/profile.php?id=100091541723224" title="Facebook"><img
           src="assets/images/facebook.svg" alt="Facebook social link" /></a>
     </nav>
+    <article class="gallery">
+      <strong>Fashion's catalog</strong>
+      <nav>
+        <a href="javascript:gal.prev();">
+          <img src="assets/images/left.svg" alt="Previus tip" />
+        </a>
+
+        <a href="javascript:gal.next();">
+          <img src=" assets/images/right.svg" alt="Next tip" />
+        </a>
+      </nav>
+      <div>
+        <img class="thumb" src="/public/gallery/1.png">
+      </div>
+
+    </article>
     <article class="motd">
       <strong>Did You Know...</strong>
       <span id="motd"></span>
