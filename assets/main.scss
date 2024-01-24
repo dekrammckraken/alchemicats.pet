@@ -79,22 +79,6 @@ body {
       }
     }
 
-    nav {
-      filter: saturate(50%);
-
-      @media (max-width: 767px) {
-        img {
-          height: 4em;
-        }
-      }
-
-      @media (min-width: 767px) {
-        img {
-          height: 4em;
-        }
-      }
-    }
-
     a {
       text-decoration: underline;
       text-decoration-style: dotted;
@@ -163,17 +147,7 @@ body {
       nav {
         img {
           background-color: transparent;
-          padding: 1em;
-          display: inline-block;
-          border-radius: 1em;
-
-          &:hover {
-            background-color: $darkGreenA;
-          }
-
-          &:active {
-            background-color: $darkGreenA;
-          }
+          width: 20%;     
         }
       }
 
@@ -181,16 +155,13 @@ body {
         background-color: #785e79;
 
         div {
-          
-          width: 90%;
+          width: 100%;
           .thumb {
             margin: 0;
             padding: 0;
-            box-shadow: 2px 2px 40px rgba(49, 17, 40, 0.37);
             width: 90%;
-            border-radius: 40px;
+            border-radius: 10px;
           }
-
           .cannot {
             animation: flashRed 0.4s ease-out;
           }
