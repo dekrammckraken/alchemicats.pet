@@ -58,7 +58,7 @@ body {
       display: flex;
       flex-direction: column;
       transition: height 0.3s;
-      padding: 2em;
+
 
       line-height: 2em;
 
@@ -147,25 +147,23 @@ body {
       nav {
         img {
           background-color: transparent;
-          width: 20%;     
+          width: 20%;
         }
       }
 
       &.gallery {
-        background-color: #785e79;
+        background-color: black;
+        background: black;
 
-        div {
+        .thumb {
           width: 100%;
-          .thumb {
-            margin: 0;
-            padding: 0;
-            width: 90%;
-            border-radius: 10px;
-          }
-          .cannot {
-            animation: flashRed 0.4s ease-out;
-          }
+          border-radius: 10px;
         }
+
+        .cannot {
+          animation: flashRed 0.4s ease-out;
+        }
+
       }
     }
 

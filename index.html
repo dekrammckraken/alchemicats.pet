@@ -21,8 +21,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dekram McKraken and Alchemicats - when hues join</title>
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
-  <script async type="text/javascript" src="assets/main.js"></script>
-  <script async type="text/javascript" src="assets/gallery.js"></script>
+  <script  type="text/javascript" src="assets/three.min.js"></script>
+  <script  type="text/javascript" src="assets/main.js"></script>
+  <script  type="text/javascript" src="assets/gallery.js"></script>
+  <script  type="text/javascript" src="assets/tv.js"></script>
   <link rel="canonical" href="https://www.alchemicats.pet" />
   <link rel="stylesheet" type="text/css" href="assets/main.css" />
   <link rel="stylesheet" href="assets/animate.min.css" />
@@ -39,6 +41,7 @@
 </head>
 
 <body>
+ 
   <section class="container">
     <header>
       <img src="assets/images/alchemicats.svg" class="alchelogo animate__animated animate__jackInTheBox"
@@ -53,21 +56,10 @@
 
   
     <article class="gallery">
-      <div>
-        <canvas class="thumb" src="/public/gallery/1.png"></canvas> 
-      </div>
-      <span class="caption">...</span>
-
-      <nav id="socialMedia">
-        <a href="https://www.instagram.com/dekrammckraken/" title="Instagram"><img src="assets/images/instagram.svg"
-            alt="Instagram social link" /></a>
-        <a href="https://www.threads.net/@dekrammckraken" title="Threads"><img src="assets/images/threads.svg"
-            alt="Threads social link" /></a>
-        <a href="https://www.tiktok.com/@dekrammckraken" title="TikTok"><img src="assets/images/tiktok.svg"
-            alt="TikTok social link" /></a>
-        <a href="https://www.facebook.com/profile.php?id=100091541723224" title="Facebook"><img
-            src="assets/images/facebook.svg" alt="Facebook social link" /></a>
-      </nav>
+     
+        <canvas id="tv" class="thumb" src="" width="320" height="320"></canvas> 
+     
+     
     </article>
 
     <article id="history">
@@ -172,6 +164,7 @@
       </p>
     </footer>
   </section>
+
 </body>
 
 </html>

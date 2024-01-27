@@ -37,7 +37,6 @@ body .container header {
   display: flex;
   flex-direction: column;
   transition: height 0.3s;
-  padding: 2em;
   line-height: 2em;
 }
 .html .container header h1,
@@ -124,21 +123,16 @@ body .container article nav img {
 }
 .html .container article.gallery,
 body .container article.gallery {
-  background-color: #785e79;
+  background-color: black;
+  background: black;
 }
-.html .container article.gallery div,
-body .container article.gallery div {
+.html .container article.gallery .thumb,
+body .container article.gallery .thumb {
   width: 100%;
-}
-.html .container article.gallery div .thumb,
-body .container article.gallery div .thumb {
-  margin: 0;
-  padding: 0;
-  width: 90%;
   border-radius: 10px;
 }
-.html .container article.gallery div .cannot,
-body .container article.gallery div .cannot {
+.html .container article.gallery .cannot,
+body .container article.gallery .cannot {
   animation: flashRed 0.4s ease-out;
 }
 .html .container h3,
