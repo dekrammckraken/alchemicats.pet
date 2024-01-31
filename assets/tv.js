@@ -7,25 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return star;
     }
   
-    function createText3D(text, scene) {
-        var dynamicTexture = new BABYLON.DynamicTexture("textTexture", 256, scene, true);
-        dynamicTexture.drawText(text, null, null, "bold 16px Arial", "white", "transparent", true);
-    
-        var textMaterial = new BABYLON.StandardMaterial("textMaterial", scene);
-        textMaterial.diffuseTexture = dynamicTexture;
-    
-        // Imposta la larghezza del piano in base alla lunghezza del testo
-        var textWidth = dynamicTexture.getContext().measureText(text).width;
-        var textPlane = BABYLON.MeshBuilder.CreatePlane("textPlane", { width: textWidth / 30, height: 2 }, scene);
-        
-        // Posiziona il piano in basso
-        textPlane.position = new BABYLON.Vector3(0, -5, 0);
-    
-        textPlane.material = textMaterial;
-    
-        return textPlane;
-    }
-  
+      
     var createScene = function () {
         var scene = new BABYLON.Scene(engine);
         scene.clearColor = new BABYLON.Color4(0, 0, 0, 1);
@@ -47,15 +29,13 @@ document.addEventListener("DOMContentLoaded", function () {
             } else {
                 material.emissiveColor = new BABYLON.Color3.FromHexString("#d97bc0");
             }
-            material.disableLighting = true;
+            //material.disableLighting = true;
             star.material = material;
   
             stars.push(star);
         }
   
-        // Aggiungi testo 3D alla scena
-        var text3D = createText3D("Welcome to alcemicats", scene);
-        
+            
   
         var camera = new BABYLON.FreeCamera("camera1", new BABYLON.Vector3(0, 5, -20), scene);
         camera.setTarget(BABYLON.Vector3.Zero());
@@ -66,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 // Muovi le stelle verso la telecamera
                 stars[i].position.z += 0.6;
             }
-            text3D.position.z+=0.1;
+            
         });
   
         return scene;
