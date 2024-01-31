@@ -21,10 +21,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dekram McKraken and Alchemicats - when hues join</title>
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
-  <script  type="text/javascript" src="assets/three.min.js"></script>
-  <script  type="text/javascript" src="assets/main.js"></script>
-  <script  type="text/javascript" src="assets/gallery.js"></script>
-  <script  type="text/javascript" src="assets/tv.js"></script>
+  <script type="text/javascript" src="assets/babylon.js"></script>
+  <script type="text/javascript" src="assets/babylon.gui.min.js"></script>
+  <script type="text/javascript" src="assets/main.js"></script>
+  <script type="text/javascript" src="assets/gallery.js"></script>
+  <script type="text/javascript" src="assets/tv.js"></script>
   <link rel="canonical" href="https://www.alchemicats.pet" />
   <link rel="stylesheet" type="text/css" href="assets/main.css" />
   <link rel="stylesheet" href="assets/animate.min.css" />
@@ -41,7 +42,7 @@
 </head>
 
 <body>
- 
+
   <section class="container">
     <header>
       <img src="assets/images/alchemicats.svg" class="alchelogo animate__animated animate__jackInTheBox"
@@ -54,12 +55,10 @@
       </h2>
     </header>
 
-  
+
     <article class="gallery">
-     
-        <canvas id="tv" class="thumb" src="" width="320" height="320"></canvas> 
-     
-     
+      <canvas id="tv" class="thumb" src="" width="320" height="320">
+      </canvas>
     </article>
 
     <article id="history">
