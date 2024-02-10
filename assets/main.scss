@@ -107,8 +107,6 @@ body {
     article {
       &::after {
         content: "";
-        background-image: url(images/divider.svg);
-        background-size: 300px;
         opacity: 0.3;
         position: fixed;
         background-position: center center;
@@ -137,7 +135,6 @@ body {
       box-shadow: 2px 2px 40px rgba(49, 17, 40, 0.17);
       margin: 1em 1em 1em 1em;
       border-left: 1em solid $darkPinkA;
-      border-left: 1em solid $darkGreenA;
       background-color: rgba(213, 255, 44, 0.15);
 
       span {

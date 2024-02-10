@@ -96,14 +96,11 @@ body .container article {
   box-shadow: 2px 2px 40px rgba(49, 17, 40, 0.17);
   margin: 1em 1em 1em 1em;
   border-left: 1em solid rgba(230, 23, 175, 0.04);
-  border-left: 1em solid rgba(213, 255, 44, 0.32);
   background-color: rgba(213, 255, 44, 0.15);
 }
 .html .container article::after,
 body .container article::after {
   content: "";
-  background-image: url(images/divider.svg);
-  background-size: 300px;
   opacity: 0.3;
   position: fixed;
   background-position: center center;
