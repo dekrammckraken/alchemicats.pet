@@ -72,11 +72,13 @@ body {
         color: $softPink;
 
       }
-
-      .alchelogo {
-        height: 10vh;
-        margin: 0em;
+      .logo {
+        height: 6em;
       }
+      .logo_text {
+        height: 5em;
+      }
+     
     }
 
     a {
@@ -136,7 +138,10 @@ body {
       margin: 1em 1em 1em 1em;
       border-left: 1em solid $darkPinkA;
       background-color: rgba(213, 255, 44, 0.15);
-
+      &.no-color {
+        background-color: transparent;
+      }
+      
       span {
         min-height: 6em;
       }
@@ -146,21 +151,6 @@ body {
           background-color: transparent;
           width: 20%;
         }
-      }
-
-      &.gallery {
-        background-color: black;
-        background: black;
-
-        .thumb {
-          width: 100%;
-          border-radius: 10px;
-        }
-
-        .cannot {
-          animation: flashRed 0.4s ease-out;
-        }
-
       }
     }
 

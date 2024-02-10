@@ -49,10 +49,13 @@ body .container header h2 {
   font-size: 1em;
   color: #cec6ca;
 }
-.html .container header .alchelogo,
-body .container header .alchelogo {
-  height: 10vh;
-  margin: 0em;
+.html .container header .logo,
+body .container header .logo {
+  height: 6em;
+}
+.html .container header .logo_text,
+body .container header .logo_text {
+  height: 5em;
 }
 .html .container a,
 body .container a {
@@ -109,6 +112,10 @@ body .container article::after {
   z-index: -1;
   filter: blur(40px);
 }
+.html .container article.no-color,
+body .container article.no-color {
+  background-color: transparent;
+}
 .html .container article span,
 body .container article span {
   min-height: 6em;
@@ -117,20 +124,6 @@ body .container article span {
 body .container article nav img {
   background-color: transparent;
   width: 20%;
-}
-.html .container article.gallery,
-body .container article.gallery {
-  background-color: black;
-  background: black;
-}
-.html .container article.gallery .thumb,
-body .container article.gallery .thumb {
-  width: 100%;
-  border-radius: 10px;
-}
-.html .container article.gallery .cannot,
-body .container article.gallery .cannot {
-  animation: flashRed 0.4s ease-out;
 }
 .html .container h3,
 body .container h3 {

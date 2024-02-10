@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", async function () {
   const canvas = document.getElementById('tv');
   const ctx = canvas.getContext('2d');
-  
+
 
   async function init() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-    const res  = await createResource();
+    const res = await createResource();
     res.stars = createStars();
     return res;
   }
@@ -17,25 +17,38 @@ document.addEventListener("DOMContentLoaded", async function () {
     ctx.fillText(text, point.x, point.y);
   }
 
-  function drawLogo(img, yOff) {
-    const viewportWidth = window.innerWidth;
-    const viewportHeight = window.innerHeight;
-    const originalWidth = img.width;
-    const originalHeight = img.height;
-    const scaleFactor = Math.min(viewportWidth / (originalWidth * 2), viewportHeight / (originalHeight * 2));
-    const newWidth = originalWidth * scaleFactor;
-    const newHeight = originalHeight * scaleFactor;
-    const x = (viewportWidth - newWidth) / 2;
-    const y = (viewportHeight - newHeight) / 2 + yOff;
+  function centeredRescale(w, h) {
+    let factor = Math.min(innerWidth / (w * 2), innerHeight / (h * 2));
+    const nw = w * factor;
+    const nh = h * factor;
+    return {
+      w: nw,
+      h: nh,
+      x: (innerWidth - nw) / 2,
+      y: (innerHeight -nh) / 2
+    };
+  }
+  function drawLogo(scene) {
 
-    ctx.globalAlpha = 0.5;
-    ctx.drawImage(img, x, y, newWidth, newHeight);
+    let logo_scaled = centeredRescale(scene.logo.width, scene.logo.height);
+    let logo_text_scaled = centeredRescale(scene.logo_text.width, scene.logo_text.height);
+    ctx.globalAlpha = 0.7;
+    ctx.drawImage(scene.logo, 
+      logo_scaled.x, 
+      logo_scaled.y -120, 
+      logo_scaled.w, 
+      logo_scaled.h);
+    ctx.drawImage(scene.logo_text,
+       logo_text_scaled.x, 
+       (logo_scaled.y + logo_scaled.h)-120 , 
+       logo_text_scaled.w, 
+       logo_text_scaled.h);
     ctx.globalAlpha = 1;
   }
 
   function createText() {
     return {
-      welcome: "Space with marshmallows"
+      welcome: "Coming soon..."
     };
   }
 
@@ -77,14 +90,17 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   function render(scene) {
     drawStars(scene.stars);
+    /*
     if (scene.textResources) {
       
       const textWidth = ctx.measureText(scene.textResources.welcome).width;
       drawText(scene.textResources.welcome, 
         { x: canvas.width / 2 - textWidth / 2, 
         y: canvas.height -200}, 40 * (window.innerHeight / 1000));
-    }
-    drawLogo(scene.logo, 0);
+    }*/
+
+    drawLogo(scene, 0);
+
   }
 
   async function createResource() {
@@ -115,7 +131,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   function createStars() {
     const stars = [];
-    for (let i = 0; i < 400; i++) {
+    for (let i = 0; i < 200; i++) {
       stars.push({
         x: getRandomNumber(0, canvas.width),
         y: getRandomNumber(0, canvas.height),
