@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       const textWidth = ctx.measureText(scene.textResources.welcome).width;
       drawText(scene.textResources.welcome, 
         { x: canvas.width / 2 - textWidth / 2, 
-        y: canvas.height / 2 + 300}, 60);
+        y: canvas.height -200}, 40 * (window.innerHeight / 1000));
     }
     drawLogo(scene.logo, 0);
   }
