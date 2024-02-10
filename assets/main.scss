@@ -72,13 +72,15 @@ body {
         color: $softPink;
 
       }
+
       .logo {
         height: 7em;
       }
+
       .logo_text {
         height: 5em;
       }
-     
+
     }
 
     a {
@@ -138,19 +140,44 @@ body {
       margin: 1em 1em 1em 1em;
       border-left: 1em solid $darkPinkA;
       background-color: rgba(213, 255, 44, 0.15);
+
       &.no-color {
         background-color: transparent;
       }
-      
+
       span {
         min-height: 6em;
       }
 
+      nav[data-page="swiper"] {
+        width: 100%;
+        text-align: right;
+       
+      }
       nav {
+        
+        
         img {
           background-color: transparent;
           width: 20%;
         }
+
+        a[data-page] {
+          height: 25px;
+          width: 25px;
+          border-radius: 50px;
+          background-color: whitesmoke;
+          opacity: 0.5;
+          display: inline-block;
+          vertical-align: middle;
+          &.active {
+            background-color: $green;
+            height: 30px;
+            width: 30px;
+            opacity: 1;
+          }
+        }
+
       }
     }
 
@@ -244,6 +271,15 @@ body {
       color: $green;
     }
   }
+}
+
+.swipeable {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.hidden {
+  display: none;
+ 
 }
 
 @keyframes flashRed {

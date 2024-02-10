@@ -120,10 +120,32 @@ body .container article.no-color {
 body .container article span {
   min-height: 6em;
 }
+.html .container article nav[data-page=swiper],
+body .container article nav[data-page=swiper] {
+  width: 100%;
+  text-align: right;
+}
 .html .container article nav img,
 body .container article nav img {
   background-color: transparent;
   width: 20%;
+}
+.html .container article nav a[data-page],
+body .container article nav a[data-page] {
+  height: 25px;
+  width: 25px;
+  border-radius: 50px;
+  background-color: whitesmoke;
+  opacity: 0.5;
+  display: inline-block;
+  vertical-align: middle;
+}
+.html .container article nav a[data-page].active,
+body .container article nav a[data-page].active {
+  background-color: #ccff00;
+  height: 30px;
+  width: 30px;
+  opacity: 1;
 }
 .html .container h3,
 body .container h3 {
@@ -211,6 +233,14 @@ body footer p {
 .html footer a,
 body footer a {
   color: #ccff00;
+}
+
+.swipeable {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.hidden {
+  display: none;
 }
 
 @keyframes flashRed {
