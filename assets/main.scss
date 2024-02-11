@@ -141,6 +141,8 @@ body {
       border-left: 1em solid $darkPinkA;
       background-color: rgba(213, 255, 44, 0.15);
 
+
+
       &.no-color {
         background-color: transparent;
       }
@@ -152,31 +154,35 @@ body {
       nav[data-page="swiper"] {
         width: 100%;
         text-align: right;
-       
+
       }
+
       nav {
-        
-        
         img {
           background-color: transparent;
           width: 20%;
         }
-
+        img:hover {
+          filter:invert(1);
+        }
         a[data-page] {
           height: 25px;
           width: 25px;
           border-radius: 50px;
           background-color: whitesmoke;
-          opacity: 0.5;
+          opacity: 0.2;
           display: inline-block;
           vertical-align: middle;
+          filter:blur(2px);
           &.active {
             background-color: $green;
             height: 30px;
             width: 30px;
             opacity: 1;
+            filter:blur(0.6px);
           }
         }
+       
 
       }
     }
@@ -187,60 +193,74 @@ body {
       margin: 0.6em;
     }
 
-    .portrait {
-      img {
-        border-radius: 90px;
-        height: 9em;
-        box-shadow: 0px 5px 5px rgb(44, 43, 43);
-        float: left;
-        margin: 1em;
-
-        &.ciri {
-          border: 2px dotted $green;
-        }
-
-        &.zelda {
-          border: 2px dotted $pink;
-        }
-      }
-
-    }
-
-    p {
-      font-weight: normal;
-      text-align: left;
-      letter-spacing: 0.1em;
-
-      &.center {
-        text-align: center;
-      }
-
-      br {
-        display: block;
-        margin-bottom: 0.6em;
-      }
-
-      video {
-        width: 10em;
-        border-radius: 1em;
-        margin-right: 20px;
-        margin-top: 10px;
-        float: left;
-        box-shadow: 2px 2px 40px rgba(49, 17, 40, 0.37);
-
-        @media (max-width: 767px) {
-          width: 8em;
-          margin-bottom: 0;
-        }
-      }
-
-      img {
-        height: 9em;
-      }
-
-      a {
+    section {
+      min-height: 600px;
+      &.portrait {
         img {
-          height: 6em;
+          border-radius: 90px;
+          height: 9em;
+          box-shadow: 0px 5px 5px rgb(44, 43, 43);
+          float: left;
+          margin: 1em;
+
+          &.ciri {
+            border: 2px dotted $green;
+          }
+
+          &.zelda {
+            border: 2px dotted $pink;
+          }
+        }
+
+      }
+
+      p {
+        font-weight: normal;
+        text-align: left;
+        letter-spacing: 0.1em;
+
+        &.center {
+          text-align: center;
+        }
+
+        br {
+          display: block;
+          margin-bottom: 0.6em;
+        }
+
+        video {
+          width: 10em;
+          border-radius: 1em;
+          margin-right: 20px;
+          margin-top: 10px;
+          float: left;
+          box-shadow: 2px 2px 40px rgba(49, 17, 40, 0.37);
+
+          @media (max-width: 767px) {
+            width: 8em;
+            margin-bottom: 0;
+          }
+        }
+
+        img {
+          width: 20em;
+          
+          border-radius: 1em;
+          margin-right: 20px;
+          margin-top: 10px;
+          float: left;
+          box-shadow: 2px 2px 40px rgba(49, 17, 40, 0.37);
+
+          @media (max-width: 767px) {
+            width: 8em;
+            margin-bottom: 0;
+          }
+        }
+
+        a {
+          img {
+            height: 6em;
+          }
         }
       }
     }
@@ -279,7 +299,7 @@ body {
 
 .hidden {
   display: none;
- 
+
 }
 
 @keyframes flashRed {

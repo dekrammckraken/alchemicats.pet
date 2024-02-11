@@ -130,15 +130,20 @@ body .container article nav img {
   background-color: transparent;
   width: 20%;
 }
+.html .container article nav img:hover,
+body .container article nav img:hover {
+  filter: invert(1);
+}
 .html .container article nav a[data-page],
 body .container article nav a[data-page] {
   height: 25px;
   width: 25px;
   border-radius: 50px;
   background-color: whitesmoke;
-  opacity: 0.5;
+  opacity: 0.2;
   display: inline-block;
   vertical-align: middle;
+  filter: blur(2px);
 }
 .html .container article nav a[data-page].active,
 body .container article nav a[data-page].active {
@@ -146,6 +151,7 @@ body .container article nav a[data-page].active {
   height: 30px;
   width: 30px;
   opacity: 1;
+  filter: blur(0.6px);
 }
 .html .container h3,
 body .container h3 {
@@ -153,39 +159,43 @@ body .container h3 {
   text-align: left;
   margin: 0.6em;
 }
-.html .container .portrait img,
-body .container .portrait img {
+.html .container section,
+body .container section {
+  min-height: 600px;
+}
+.html .container section.portrait img,
+body .container section.portrait img {
   border-radius: 90px;
   height: 9em;
   box-shadow: 0px 5px 5px rgb(44, 43, 43);
   float: left;
   margin: 1em;
 }
-.html .container .portrait img.ciri,
-body .container .portrait img.ciri {
+.html .container section.portrait img.ciri,
+body .container section.portrait img.ciri {
   border: 2px dotted #ccff00;
 }
-.html .container .portrait img.zelda,
-body .container .portrait img.zelda {
+.html .container section.portrait img.zelda,
+body .container section.portrait img.zelda {
   border: 2px dotted #e97ab0;
 }
-.html .container p,
-body .container p {
+.html .container section p,
+body .container section p {
   font-weight: normal;
   text-align: left;
   letter-spacing: 0.1em;
 }
-.html .container p.center,
-body .container p.center {
+.html .container section p.center,
+body .container section p.center {
   text-align: center;
 }
-.html .container p br,
-body .container p br {
+.html .container section p br,
+body .container section p br {
   display: block;
   margin-bottom: 0.6em;
 }
-.html .container p video,
-body .container p video {
+.html .container section p video,
+body .container section p video {
   width: 10em;
   border-radius: 1em;
   margin-right: 20px;
@@ -194,18 +204,30 @@ body .container p video {
   box-shadow: 2px 2px 40px rgba(49, 17, 40, 0.37);
 }
 @media (max-width: 767px) {
-  .html .container p video,
-  body .container p video {
+  .html .container section p video,
+  body .container section p video {
     width: 8em;
     margin-bottom: 0;
   }
 }
-.html .container p img,
-body .container p img {
-  height: 9em;
+.html .container section p img,
+body .container section p img {
+  width: 20em;
+  border-radius: 1em;
+  margin-right: 20px;
+  margin-top: 10px;
+  float: left;
+  box-shadow: 2px 2px 40px rgba(49, 17, 40, 0.37);
 }
-.html .container p a img,
-body .container p a img {
+@media (max-width: 767px) {
+  .html .container section p img,
+  body .container section p img {
+    width: 8em;
+    margin-bottom: 0;
+  }
+}
+.html .container section p a img,
+body .container section p a img {
   height: 6em;
 }
 .html footer,
