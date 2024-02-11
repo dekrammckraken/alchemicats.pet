@@ -222,7 +222,7 @@ body .container section p img {
 @media (max-width: 767px) {
   .html .container section p img,
   body .container section p img {
-    width: 8em;
+    width: 12em;
     margin-bottom: 0;
   }
 }
