@@ -119,7 +119,14 @@ body {
         z-index: -1;
         filter: blur(40px);
       }
-
+      &.right {
+        border-right:'';
+        border-left: 1em solid $darkGreenA;
+      }
+      &.left {
+        border-left:'';
+        border-right: 1em solid $darkGreenA;
+      }
       display: flex;
       align-content: center;
       align-items: center;
@@ -139,6 +146,7 @@ body {
       box-shadow: 2px 2px 40px rgba(49, 17, 40, 0.17);
       margin: 1em 1em 1em 1em;
       border-left: 1em solid $darkPinkA;
+      border-right: 1em solid $darkPinkA;
       background-color: rgba(213, 255, 44, 0.15);
 
 
@@ -153,8 +161,6 @@ body {
 
       nav[data-page="swiper"] {
         width: 100%;
-        text-align: right;
-
       }
 
       nav {
@@ -166,20 +172,20 @@ body {
           filter:invert(1);
         }
         a[data-page] {
-          height: 25px;
-          width: 25px;
+          height: 5px;
+          width: 5px;
           border-radius: 50px;
           background-color: whitesmoke;
           opacity: 0.2;
           display: inline-block;
           vertical-align: middle;
-          filter:blur(2px);
+    
           &.active {
             background-color: $green;
-            height: 30px;
-            width: 30px;
+            height: 5px;
+            width: 5px;
             opacity: 1;
-            filter:blur(0.6px);
+            
           }
         }
        
@@ -195,6 +201,7 @@ body {
 
     section {
       min-height: 600px;
+     
       &.portrait {
         img {
           border-radius: 90px;
@@ -218,7 +225,8 @@ body {
         font-weight: normal;
         text-align: left;
         letter-spacing: 0.1em;
-
+        pointer-events: none;
+        
         &.center {
           text-align: center;
         }
@@ -294,7 +302,14 @@ body {
 }
 
 .swipeable {
-  transition: opacity 0.3s ease-in-out;
+  
+  &.left {
+   
+  }
+  &.right {
+
+   
+  }
 }
 
 .hidden {

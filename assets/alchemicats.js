@@ -1,25 +1,76 @@
 class Alchemicats {
   constructor() {
     this.pages = [];
-    this.touchStartX = 0; 
+    this.touchStartX = 0;
     this.touchEndX = 0;
 
-    document.querySelectorAll(".swipeable").forEach((swiper) => {
-      swiper.addEventListener("touchstart", async (evt) => {
+    document.querySelectorAll(".swipeable").forEach((pane) => {
+      
+      pane.addEventListener("mouseleave", async (evt) => {
+        const clickX = evt.clientX - pane.getBoundingClientRect().left;
+        const paneWidth = pane.offsetWidth;
+        const paneCenterX = paneWidth / 2;
+
+        var article = pane.closest("article");
+
+        article.classList.remove("right");
+        article.classList.remove("left");
+     
+      });
+
+      pane.addEventListener("mousemove", async (evt) => {
+        const clickX = evt.clientX - pane.getBoundingClientRect().left;
+        const paneWidth = pane.offsetWidth;
+        const paneCenterX = paneWidth / 2;
+
+        var article = pane.closest("article");
+
+        article.classList.remove("right");
+        article.classList.remove("left");
+        if (clickX > paneCenterX) {
+          
+          article.classList.add("left");
+        } else {
+          
+          article.classList.add("right");
+        }
+      });
+
+      pane.addEventListener("touchstart", async (evt) => {
         this.touchStartX = evt.touches[0].clientX;
       });
-      swiper.addEventListener("touchend", async (evt) => {
-        this.touchEndX = evt.changedTouches[0].clientX
-        const SWIPE_THRESHOLD = 150; // soglia per riconoscere uno swipe
+
+      pane.addEventListener("click", (evt) => {
+        const clickX = evt.clientX - pane.getBoundingClientRect().left;
+        const paneWidth = pane.offsetWidth;
+        const paneCenterX = paneWidth / 2;
         var swipeable = evt.target.closest(".swipeable");
         var index = parseInt(swipeable.dataset.pageIndex);
+        if (clickX > paneCenterX) {
+          index++;
+        } else {
+          index--;
+        }
+
+        this.swipe(
+          swipeable.dataset.page,
+          index,
+          swipeable.dataset.pageDescription
+        );
+      });
+
+      pane.addEventListener("touchend", async (evt) => {
+        this.touchEndX = evt.changedTouches[0].clientX;
+        const SWIPE_THRESHOLD = 50; // soglia per riconoscere uno swipe
+        var swipeable = evt.target.closest(".swipeable");
+        var index = parseInt(swipeable.dataset.pageIndex);
+
         if (this.touchEndX < this.touchStartX - SWIPE_THRESHOLD) {
           index++;
         } else {
           index--;
         }
 
-       
         this.swipe(
           swipeable.dataset.page,
           index,
@@ -39,6 +90,7 @@ class Alchemicats {
           let page = {
             name: section.dataset.page,
             index: 1,
+            max: parseInt(section.dataset.pageMax),
             description: section.dataset.pageDescription,
           };
           this.pages.push(page);
@@ -53,14 +105,13 @@ class Alchemicats {
     const page = await response.text();
     return page;
   };
-  swipe = async (name, index, description) => {
+  swipe = async (name, index) => {
     var currentPage = this.pages.find((page) => {
       return page.name == name;
     });
 
-    if (index == 0)
-        return;
-  
+    if (index == 0 || index > currentPage.max) return;
+
     if (currentPage) {
       currentPage.index = index;
     }
