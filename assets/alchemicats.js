@@ -3,6 +3,7 @@ class Alchemicats {
     this.pages = [];
     this.touchStartX = 0;
     this.touchEndX = 0;
+    this.touchStartY = 0;
   }
 
   ui = () => {
@@ -50,22 +51,33 @@ class Alchemicats {
 
       pane.addEventListener("touchstart", async (evt) => {
         this.touchStartX = evt.touches[0].clientX;
-      });
+        this.touchStartY = evt.touches[0].clientY;
 
+        evt.target.classList.add("swiping");
+      });
+      document.addEventListener("touchmove", async (evt) => {
+        
+        let currentY = evt.touches[0].clientY;
+
+        if (currentY > this.touchStartY)
+          evt.preventDefault();
+          
+     });
       pane.addEventListener("touchend", async (evt) => {
+        evt.target.classList.remove("swiping");
         this.touchEndX = evt.changedTouches[0].clientX;
-        const SWIPE_THRESHOLD = 150; // soglia per riconoscere uno swipe
+        const SWIPE_THRESHOLD = 60; // soglia per riconoscere uno swipe
         var swipeable = evt.target.closest(".swipeable");
         var index = parseInt(swipeable.dataset.pageIndex);
 
         var swipelen = this.touchEndX - this.touchStartX;
         
         if (swipelen > 0 && Math.abs(swipelen) > SWIPE_THRESHOLD) {
-          index++;
+          index--;
           console.log("swipe detected right");
         } else if (Math.abs(swipelen) > SWIPE_THRESHOLD) {
           console.log("swipe detected left");
-          index--;
+          index++;
         }
 
         this.swipe(
@@ -151,14 +163,12 @@ class Alchemicats {
   };
   restore = async () => {
     this.pages = JSON.parse(sessionStorage.getItem("_cache"));
-
     this.pages.forEach((element) => {
       this.swipe(element.name, parseInt(element.index), element.description);
     });
   };
 }
 
-//Document ready
 document.addEventListener("DOMContentLoaded", async () => {
   const alchemicats = new Alchemicats();
   await alchemicats.init();

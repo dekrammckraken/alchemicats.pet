@@ -266,6 +266,10 @@ body footer a {
   color: #ccff00;
 }
 
+.swipeable.swiping {
+  opacity: 0.5;
+}
+
 .hidden {
   display: none;
 }

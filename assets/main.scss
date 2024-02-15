@@ -303,13 +303,10 @@ body {
 
 .swipeable {
   
-  &.left {
-   
-  }
-  &.right {
+    &.swiping {
+      opacity: 0.5;
+    }
 
-   
-  }
 }
 
 .hidden {
