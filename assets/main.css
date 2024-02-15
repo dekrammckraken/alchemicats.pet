@@ -127,10 +127,6 @@ body .container article.left {
 body .container article.no-color {
   background-color: transparent;
 }
-.html .container article span,
-body .container article span {
-  min-height: 6em;
-}
 .html .container article nav[data-page=swiper],
 body .container article nav[data-page=swiper] {
   width: 100%;
@@ -144,18 +140,17 @@ body .container article nav img {
 body .container article nav img:hover {
   filter: invert(1);
 }
-.html .container article nav a[data-page],
-body .container article nav a[data-page] {
+.html .container article nav span[data-page],
+body .container article nav span[data-page] {
   height: 5px;
   width: 5px;
   border-radius: 50px;
   background-color: whitesmoke;
   opacity: 0.2;
   display: inline-block;
-  vertical-align: middle;
 }
-.html .container article nav a[data-page].active,
-body .container article nav a[data-page].active {
+.html .container article nav span[data-page].active,
+body .container article nav span[data-page].active {
   background-color: #ccff00;
   height: 5px;
   width: 5px;

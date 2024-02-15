@@ -134,12 +134,12 @@ class Alchemicats {
           section.classList.remove("hidden");
         }
 
-        document.querySelectorAll(`a[data-page="${name}"]`).forEach((nav) => {
+        document.querySelectorAll(`span[data-page="${name}"]`).forEach((nav) => {
           nav.classList.remove("active");
         });
         document
           .querySelectorAll(
-            `a[data-page="${name}"][data-page-index="${index}"]`
+            `span[data-page="${name}"][data-page-index="${index}"]`
           )
           .forEach((nav) => {
             nav.classList.add("active");

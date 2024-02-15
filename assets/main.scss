@@ -155,9 +155,6 @@ body {
         background-color: transparent;
       }
 
-      span {
-        min-height: 6em;
-      }
 
       nav[data-page="swiper"] {
         width: 100%;
@@ -171,14 +168,14 @@ body {
         img:hover {
           filter:invert(1);
         }
-        a[data-page] {
+        span[data-page] {
           height: 5px;
           width: 5px;
           border-radius: 50px;
           background-color: whitesmoke;
           opacity: 0.2;
           display: inline-block;
-          vertical-align: middle;
+          
     
           &.active {
             background-color: $green;
