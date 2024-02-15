@@ -162,10 +162,6 @@ body .container h3 {
   text-align: left;
   margin: 0.6em;
 }
-.html .container section,
-body .container section {
-  min-height: 600px;
-}
 .html .container section.portrait img,
 body .container section.portrait img {
   border-radius: 90px;
