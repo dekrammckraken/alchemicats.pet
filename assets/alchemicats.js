@@ -56,13 +56,10 @@ class Alchemicats {
         evt.target.classList.add("swiping");
       });
       document.addEventListener("touchmove", async (evt) => {
-        
         let currentY = evt.touches[0].clientY;
 
-        if (currentY > this.touchStartY)
-          evt.preventDefault();
-          
-     });
+        if (currentY > this.touchStartY) evt.preventDefault();
+      });
       pane.addEventListener("touchend", async (evt) => {
         evt.target.classList.remove("swiping");
         this.touchEndX = evt.changedTouches[0].clientX;
@@ -71,7 +68,7 @@ class Alchemicats {
         var index = parseInt(swipeable.dataset.pageIndex);
 
         var swipelen = this.touchEndX - this.touchStartX;
-        
+
         if (swipelen > 0 && Math.abs(swipelen) > SWIPE_THRESHOLD) {
           index--;
           console.log("swipe detected right");
@@ -134,9 +131,11 @@ class Alchemicats {
           section.classList.remove("hidden");
         }
 
-        document.querySelectorAll(`span[data-page="${name}"]`).forEach((nav) => {
-          nav.classList.remove("active");
-        });
+        document
+          .querySelectorAll(`span[data-page="${name}"]`)
+          .forEach((nav) => {
+            nav.classList.remove("active");
+          });
         document
           .querySelectorAll(
             `span[data-page="${name}"][data-page-index="${index}"]`
