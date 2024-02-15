@@ -3,19 +3,14 @@ class Alchemicats {
     this.pages = [];
     this.touchStartX = 0;
     this.touchEndX = 0;
+  }
 
+  ui = () => {
     document.querySelectorAll(".swipeable").forEach((pane) => {
-      
       pane.addEventListener("mouseleave", async (evt) => {
-        const clickX = evt.clientX - pane.getBoundingClientRect().left;
-        const paneWidth = pane.offsetWidth;
-        const paneCenterX = paneWidth / 2;
-
         var article = pane.closest("article");
-
         article.classList.remove("right");
         article.classList.remove("left");
-     
       });
 
       pane.addEventListener("mousemove", async (evt) => {
@@ -28,16 +23,10 @@ class Alchemicats {
         article.classList.remove("right");
         article.classList.remove("left");
         if (clickX > paneCenterX) {
-          
           article.classList.add("left");
         } else {
-          
           article.classList.add("right");
         }
-      });
-
-      pane.addEventListener("touchstart", async (evt) => {
-        this.touchStartX = evt.touches[0].clientX;
       });
 
       pane.addEventListener("click", (evt) => {
@@ -59,15 +48,23 @@ class Alchemicats {
         );
       });
 
+      pane.addEventListener("touchstart", async (evt) => {
+        this.touchStartX = evt.touches[0].clientX;
+      });
+
       pane.addEventListener("touchend", async (evt) => {
         this.touchEndX = evt.changedTouches[0].clientX;
-        const SWIPE_THRESHOLD = 50; // soglia per riconoscere uno swipe
+        const SWIPE_THRESHOLD = 150; // soglia per riconoscere uno swipe
         var swipeable = evt.target.closest(".swipeable");
         var index = parseInt(swipeable.dataset.pageIndex);
 
-        if (this.touchEndX < this.touchStartX - SWIPE_THRESHOLD) {
+        var swipelen = this.touchEndX - this.touchStartX;
+        
+        if (swipelen > 0 && Math.abs(swipelen) > SWIPE_THRESHOLD) {
           index++;
-        } else {
+          console.log("swipe detected right");
+        } else if (Math.abs(swipelen) > SWIPE_THRESHOLD) {
+          console.log("swipe detected left");
           index--;
         }
 
@@ -78,7 +75,7 @@ class Alchemicats {
         );
       });
     });
-  }
+  };
   defaultOrCachePages = async () => {
     let cache = sessionStorage.getItem("_cache");
 
@@ -115,6 +112,7 @@ class Alchemicats {
     if (currentPage) {
       currentPage.index = index;
     }
+    console.log(currentPage.index);
     document
       .querySelectorAll(`section[data-page=${name}]`)
       .forEach(async (section) => {
@@ -146,6 +144,7 @@ class Alchemicats {
     this.find("#socialMedia").innerHTML = await this.get("socialMedia");
     this.pages = await this.defaultOrCachePages();
     await this.restore();
+    this.ui();
   };
   find = (search) => {
     return document.querySelector(search);
