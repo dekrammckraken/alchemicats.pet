@@ -249,7 +249,6 @@ body {
 
         img {
           width: 20em;
-          
           border-radius: 1em;
           margin-right: 20px;
           margin-top: 10px;
@@ -257,7 +256,7 @@ body {
           box-shadow: 2px 2px 40px rgba(49, 17, 40, 0.37);
 
           @media (max-width: 767px) {
-            width: 12em;
+            width: 9em;
             margin-bottom: 0;
           }
         }

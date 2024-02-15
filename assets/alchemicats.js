@@ -143,9 +143,9 @@ class Alchemicats {
           .forEach((nav) => {
             nav.classList.add("active");
           });
-        /*document.querySelector(
-          `#${name} h2`
-        ).innerHTML = `${description} (${index})`;*/
+        document.querySelector(
+          `article[data-page="${name}"] > h2`
+        ).innerHTML = `${currentPage.description}`;
       });
 
     sessionStorage.setItem("_cache", JSON.stringify(this.pages));
