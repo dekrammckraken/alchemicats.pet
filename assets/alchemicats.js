@@ -63,7 +63,7 @@ class Alchemicats {
       pane.addEventListener("touchend", async (evt) => {
         evt.target.classList.remove("swiping");
         this.touchEndX = evt.changedTouches[0].clientX;
-        const SWIPE_THRESHOLD = 60; // soglia per riconoscere uno swipe
+        const SWIPE_THRESHOLD = 60; 
         var swipeable = evt.target.closest(".swipeable");
         var index = parseInt(swipeable.dataset.pageIndex);
 
@@ -71,9 +71,7 @@ class Alchemicats {
 
         if (swipelen > 0 && Math.abs(swipelen) > SWIPE_THRESHOLD) {
           index--;
-          console.log("swipe detected right");
         } else if (Math.abs(swipelen) > SWIPE_THRESHOLD) {
-          console.log("swipe detected left");
           index++;
         }
 
@@ -121,7 +119,7 @@ class Alchemicats {
     if (currentPage) {
       currentPage.index = index;
     }
-    console.log(currentPage.index);
+    
     document
       .querySelectorAll(`section[data-page=${name}]`)
       .forEach(async (section) => {

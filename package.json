@@ -10,5 +10,19 @@
   },
   "scripts": {
     "build": "webpack"
-  }
+  },
+  "name": "alchemicats.pet",
+  "description": "Home of the Ciri and Zelda",
+  "version": "1.0.0",
+  "main": "webpack.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dekrammckraken/alchemicats.pet.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dekrammckraken/alchemicats.pet/issues"
+  },
+  "homepage": "https://github.com/dekrammckraken/alchemicats.pet#readme"
 }

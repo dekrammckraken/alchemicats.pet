@@ -119,14 +119,17 @@ body {
         z-index: -1;
         filter: blur(40px);
       }
+
       &.right {
-        border-right:'';
+        border-right: '';
         border-left: 1em solid $darkGreenA;
       }
+
       &.left {
-        border-left:'';
+        border-left: '';
         border-right: 1em solid $darkGreenA;
       }
+
       display: flex;
       align-content: center;
       align-items: center;
@@ -165,9 +168,11 @@ body {
           background-color: transparent;
           width: 20%;
         }
+
         img:hover {
-          filter:invert(1);
+          filter: invert(1);
         }
+
         span[data-page] {
           height: 5px;
           width: 5px;
@@ -175,17 +180,17 @@ body {
           background-color: whitesmoke;
           opacity: 0.2;
           display: inline-block;
-          
-    
+
+
           &.active {
             background-color: $green;
             height: 5px;
             width: 5px;
             opacity: 1;
-            
+
           }
         }
-       
+
 
       }
     }
@@ -197,8 +202,8 @@ body {
     }
 
     section {
-     
-     
+
+
       &.portrait {
         img {
           border-radius: 90px;
@@ -223,7 +228,7 @@ body {
         text-align: left;
         letter-spacing: 0.1em;
         pointer-events: none;
-        
+
         &.center {
           text-align: center;
         }
@@ -298,10 +303,10 @@ body {
 }
 
 .swipeable {
-  
-    &.swiping {
-      opacity: 0.5;
-    }
+
+  &.swiping {
+    opacity: 0.5;
+  }
 
 }
 
