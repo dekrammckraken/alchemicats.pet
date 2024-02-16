@@ -39,23 +39,14 @@ body .container header {
   transition: height 0.3s;
   line-height: 2em;
 }
-.html .container header h1,
-body .container header h1 {
-  font-size: 1.2em;
-  color: #ccff00;
-}
-.html .container header h2,
-body .container header h2 {
-  font-size: 1em;
-  color: #cec6ca;
-}
 .html .container header .logo,
 body .container header .logo {
-  height: 7em;
+  height: 6em;
 }
 .html .container header .logo_text,
 body .container header .logo_text {
-  height: 5em;
+  height: 4em;
+  margin-top: -1em;
 }
 .html .container a,
 body .container a {
@@ -122,6 +113,10 @@ body .container article.right {
 body .container article.left {
   border-left: "";
   border-right: 1em solid rgba(213, 255, 44, 0.32);
+}
+.html .container article h2,
+body .container article h2 {
+  color: #ccff00;
 }
 .html .container article.no-color,
 body .container article.no-color {

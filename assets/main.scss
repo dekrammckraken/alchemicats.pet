@@ -62,23 +62,17 @@ body {
 
       line-height: 2em;
 
-      h1 {
-        font-size: 1.2em;
-        color: $green;
-      }
+     
 
-      h2 {
-        font-size: 1em;
-        color: $softPink;
-
-      }
+    
 
       .logo {
-        height: 7em;
+        height: 6em;
       }
 
       .logo_text {
-        height: 5em;
+        height: 4em;
+        margin-top: -1em;
       }
 
     }
@@ -153,7 +147,9 @@ body {
       background-color: rgba(213, 255, 44, 0.15);
 
 
-
+      h2 {
+        color:$green;
+      }
       &.no-color {
         background-color: transparent;
       }
