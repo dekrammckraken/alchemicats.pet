@@ -163,10 +163,11 @@ body {
         img {
           background-color: transparent;
           width: 20%;
+          opacity: 0.4;
         }
 
         img:hover {
-          filter: invert(1);
+          opacity: 1;
         }
 
         span[data-page] {

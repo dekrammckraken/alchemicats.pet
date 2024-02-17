@@ -130,10 +130,11 @@ body .container article nav[data-page=swiper] {
 body .container article nav img {
   background-color: transparent;
   width: 20%;
+  opacity: 0.4;
 }
 .html .container article nav img:hover,
 body .container article nav img:hover {
-  filter: invert(1);
+  opacity: 1;
 }
 .html .container article nav span[data-page],
 body .container article nav span[data-page] {
