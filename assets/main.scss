@@ -123,6 +123,7 @@ body {
         border-left: '';
         border-right: 1em solid $darkGreenA;
       }
+
       user-select: none;
       display: flex;
       align-content: center;
@@ -184,11 +185,8 @@ body {
             height: 5px;
             width: 5px;
             opacity: 1;
-
           }
         }
-
-
       }
     }
 
@@ -199,8 +197,6 @@ body {
     }
 
     section {
-
-
       &.portrait {
         img {
           border-radius: 90px;
@@ -310,16 +306,4 @@ body {
 .hidden {
   display: none;
 
-}
-
-@keyframes flashRed {
-
-  0%,
-  100% {
-    filter: brightness(100%);
-  }
-
-  50% {
-    filter: brightness(50%);
-  }
 }

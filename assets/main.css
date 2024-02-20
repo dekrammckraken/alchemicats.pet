@@ -262,13 +262,4 @@ body footer a {
 
 .hidden {
   display: none;
-}
-
-@keyframes flashRed {
-  0%, 100% {
-    filter: brightness(100%);
-  }
-  50% {
-    filter: brightness(50%);
-  }
 }/*# sourceMappingURL=main.css.map */
