@@ -1,4 +1,4 @@
-class Alchemicats {
+class Alchemy {
   constructor() {
     this.pages = [];
     this.touchStartX = 0;
@@ -167,6 +167,6 @@ class Alchemicats {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
-  const alchemicats = new Alchemicats();
-  await alchemicats.init();
+  const alchemy = new Alchemy();
+  await alchemy.init();
 });

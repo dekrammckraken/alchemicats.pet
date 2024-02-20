@@ -75,6 +75,9 @@ body .container .divider {
 }
 .html .container article,
 body .container article {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   display: flex;
   align-content: center;
   align-items: center;
