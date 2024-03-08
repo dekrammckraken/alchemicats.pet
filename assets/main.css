@@ -48,17 +48,6 @@ body .container header .logo_text {
   height: 4em;
   margin-top: -1em;
 }
-.html .container a,
-body .container a {
-  text-decoration: underline;
-  text-decoration-style: dotted;
-}
-.html .container a.disabled,
-body .container a.disabled {
-  text-decoration: line-through;
-  color: #785e79;
-  cursor: not-allowed;
-}
 .html .container .divider,
 body .container .divider {
   height: 2.2em;
@@ -139,6 +128,10 @@ body .container article nav img {
 body .container article nav img:hover {
   opacity: 1;
 }
+.html .container article nav img:active,
+body .container article nav img:active {
+  opacity: 1;
+}
 .html .container article nav span[data-page],
 body .container article nav span[data-page] {
   height: 5px;
@@ -177,10 +170,26 @@ body .container section.portrait img.ciri {
 body .container section.portrait img.zelda {
   border: 2px dotted #e97ab0;
 }
+.html .container section.gallery figure,
+body .container section.gallery figure {
+  display: inline-block;
+}
+.html .container section.gallery figure img,
+body .container section.gallery figure img {
+  height: 16em;
+  border-radius: 1em;
+  margin-right: 20px;
+  margin-top: 10px;
+  box-shadow: 2px 2px 40px rgba(49, 17, 40, 0.37);
+}
+.html .container section.gallery figure caption,
+body .container section.gallery figure caption {
+  display: block;
+}
 .html .container section p,
 body .container section p {
   font-weight: normal;
-  text-align: left;
+  text-align: justify;
   letter-spacing: 0.1em;
   pointer-events: none;
 }
@@ -211,7 +220,7 @@ body .container section p video {
 }
 .html .container section p img,
 body .container section p img {
-  width: 20em;
+  width: 30%;
   border-radius: 1em;
   margin-right: 20px;
   margin-top: 10px;
@@ -249,7 +258,7 @@ body footer img {
 }
 .html footer p,
 body footer p {
-  text-align: justify;
+  text-align: left;
 }
 .html footer a,
 body footer a {

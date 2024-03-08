@@ -62,9 +62,9 @@ body {
 
       line-height: 2em;
 
-     
 
-    
+
+
 
       .logo {
         height: 6em;
@@ -75,17 +75,6 @@ body {
         margin-top: -1em;
       }
 
-    }
-
-    a {
-      text-decoration: underline;
-      text-decoration-style: dotted;
-
-      &.disabled {
-        text-decoration: line-through;
-        color: $ornament-color;
-        cursor: not-allowed;
-      }
     }
 
     .divider {
@@ -149,8 +138,9 @@ body {
 
 
       h2 {
-        color:$green;
+        color: $green;
       }
+
       &.no-color {
         background-color: transparent;
       }
@@ -168,6 +158,10 @@ body {
         }
 
         img:hover {
+          opacity: 1;
+        }
+
+        img:active {
           opacity: 1;
         }
 
@@ -213,12 +207,29 @@ body {
             border: 2px dotted $pink;
           }
         }
+      }
 
+      &.gallery {
+        figure {
+          display: inline-block;
+
+          img {
+            height: 16em;
+            border-radius: 1em;
+            margin-right: 20px;
+            margin-top: 10px;
+            box-shadow: 2px 2px 40px rgba(49, 17, 40, 0.37);
+          }
+
+          caption {
+            display: block;
+          }
+        }
       }
 
       p {
         font-weight: normal;
-        text-align: left;
+        text-align: justify;
         letter-spacing: 0.1em;
         pointer-events: none;
 
@@ -246,7 +257,7 @@ body {
         }
 
         img {
-          width: 20em;
+          width: 30%;
           border-radius: 1em;
           margin-right: 20px;
           margin-top: 10px;
@@ -286,7 +297,7 @@ body {
     }
 
     p {
-      text-align: justify;
+      text-align: left;
     }
 
     a {
