@@ -186,6 +186,13 @@ body .container section.gallery figure img {
 body .container section.gallery figure caption {
   display: block;
 }
+.html .container section p::first-letter,
+body .container section p::first-letter {
+  font-size: 1.3em;
+  font-weight: bold;
+  font-style: italic;
+  letter-spacing: 0.2em;
+}
 .html .container section p,
 body .container section p {
   font-weight: normal;

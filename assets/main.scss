@@ -227,6 +227,13 @@ body {
         }
       }
 
+      p::first-letter {
+        font-size: 1.3em;
+        font-weight: bold;
+        font-style: italic;
+        letter-spacing: 0.2em;
+      }
+
       p {
         font-weight: normal;
         text-align: justify;
