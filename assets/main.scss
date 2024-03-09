@@ -113,6 +113,9 @@ body {
         border-right: 1em solid $darkGreenA;
       }
 
+      strong {
+        border-bottom: 2px dotted $darkPink;
+      }
       user-select: none;
       display: flex;
       align-content: center;
@@ -209,9 +212,12 @@ body {
         }
       }
 
-      &.gallery {
-        figure {
-          display: inline-block;
+      .gallery {
+          display: flex;
+          flex-direction: column;
+          figcaption {
+            font-weight: bold;
+          }
 
           img {
             height: 16em;
@@ -220,11 +226,6 @@ body {
             margin-top: 10px;
             box-shadow: 2px 2px 40px rgba(49, 17, 40, 0.37);
           }
-
-          caption {
-            display: block;
-          }
-        }
       }
 
       p::first-letter {

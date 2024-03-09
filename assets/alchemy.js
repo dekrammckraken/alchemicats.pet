@@ -84,8 +84,9 @@ class Alchemy {
     });
   };
   defaultOrCachePages = async () => {
-    let cache = sessionStorage.getItem("_cache");
-
+    
+    //let cache = sessionStorage.getItem("_cache");
+    let cache = null;
     if (cache == null) {
       this.pages = [];
       document
@@ -154,10 +155,8 @@ class Alchemy {
   init = async () => {
     this.find("main header").innerHTML = await this.get("header");
     this.find("#socialMedia").innerHTML = await this.get("socialMedia");
-    let days = Math.floor((new Date('2022-04-05') - new Date()) / (1000 * 60 * 60 * 24));
-
+    
     this.placeHolder("_birthday", `5 April ${new Date().getFullYear()} ` );
-    this.placeHolder("_birthday_days_remains", Math.abs(days));
     this.pages = await this.defaultOrCachePages();
     await this.restore();
     this.ui();

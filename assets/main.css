@@ -106,6 +106,10 @@ body .container article.left {
   border-left: "";
   border-right: 1em solid rgba(213, 255, 44, 0.32);
 }
+.html .container article strong,
+body .container article strong {
+  border-bottom: 2px dotted #d056b0;
+}
 .html .container article h2,
 body .container article h2 {
   color: #ccff00;
@@ -170,21 +174,22 @@ body .container section.portrait img.ciri {
 body .container section.portrait img.zelda {
   border: 2px dotted #e97ab0;
 }
-.html .container section.gallery figure,
-body .container section.gallery figure {
-  display: inline-block;
+.html .container section .gallery,
+body .container section .gallery {
+  display: flex;
+  flex-direction: column;
 }
-.html .container section.gallery figure img,
-body .container section.gallery figure img {
+.html .container section .gallery figcaption,
+body .container section .gallery figcaption {
+  font-weight: bold;
+}
+.html .container section .gallery img,
+body .container section .gallery img {
   height: 16em;
   border-radius: 1em;
   margin-right: 20px;
   margin-top: 10px;
   box-shadow: 2px 2px 40px rgba(49, 17, 40, 0.37);
-}
-.html .container section.gallery figure caption,
-body .container section.gallery figure caption {
-  display: block;
 }
 .html .container section p::first-letter,
 body .container section p::first-letter {
