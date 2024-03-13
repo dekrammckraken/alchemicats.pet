@@ -109,12 +109,13 @@ body .container article.no-color {
 }
 .html .container article.breaking-news,
 body .container article.breaking-news {
+  margin-top: -1em;
   background: none;
   border: none;
   border-bottom: 1em solid #d056b0;
   font-weight: bold;
   color: white;
-  height: 4em;
+  height: 2em;
   animation-name: color;
   animation-duration: 5s;
   animation-iteration-count: infinite;

@@ -6,14 +6,11 @@ class Alchemy {
     this.touchStartY = 0;
     this.breakingNews = [
       {
-        news: "We are working hard to make this site the home of Ciri and Zelda!",
+        news: `Look at our meme-rable contents in our socials!`,
       },
-      { news: "Upcoming feature will be available in time, stay tuned!" },
-      {
-        news: "You can support us by following our social, check out the social bar!",
+      { 
+        news: `Days 'til the next birthday: ${this.bday().m} months and ${this.bday().d} days.`
       },
-      { news: "Don't forget to visit us often!" },
-      { news: "Don't forget to visit us often!" },
     ];
     this.__lastBreakingNewsIndex = 0;
   }
@@ -121,8 +118,8 @@ class Alchemy {
     const page = await response.text();
     return page;
   };
-  placeHolder = async (name, val) => {
-    document.getElementById(name).innerText = val;
+  placeHolder = async (name, val, str) => {
+    return str.replace(name, val);
   };
   swipe = async (name, index) => {
     var currentPage = this.pages.find((page) => {
@@ -172,23 +169,22 @@ class Alchemy {
     this.startBreakingNews();
   };
   bday = () => {
-    let bday = new Date(2021,4,5);
-    let d1 = new Date();
     let d2 = new Date(new Date().getFullYear(), 3, 5);
-    let d = parseInt((d1 - d2) / (1000 * 60 * 60 * 24), 10);
-    let y = d2.getFullYear() - bday.getFullYear();
-    return {d:d, y:y};
+    let d3 = new Date();
+    let days = Math.round((d2 - d3) / (1000 * 60 * 60 * 24));
+    return {d:days % 30, m: Math.floor(days / 30)};
   };
   find = (search) => {
     return document.querySelector(search);
   };
   startBreakingNews = async () => {
-    setInterval(() => {
+    
+    setInterval(async () => {
       let news = document.getElementById("__breakingNews");
-      news.innerText = this.getBreakingNews();
+      news.innerText = await this.getBreakingNews();
     }, 5000);
   };
-  getBreakingNews = () => {
+  getBreakingNews = async () => {
     let currentIndex = Math.floor(Math.random() * this.breakingNews.length);
     while (this.__lastBreakingNewsIndex == currentIndex) {
       currentIndex = Math.floor(Math.random() * this.breakingNews.length);

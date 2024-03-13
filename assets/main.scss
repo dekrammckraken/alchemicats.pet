@@ -133,12 +133,13 @@ body {
         background-color: transparent;
       }
       &.breaking-news {
+        margin-top:-1em;
         background: none;
         border: none;
         border-bottom: 1em solid $darkPink;
         font-weight: bold;
         color: white;
-        height: 4em;
+        height: 2em;
         animation-name: color;
         animation-duration: 5s;
         animation-iteration-count: infinite;
