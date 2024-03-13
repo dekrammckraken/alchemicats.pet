@@ -20,21 +20,23 @@ $ornament-color: #785e79;
 
 .html,
 body {
-  background-image: linear-gradient(210deg,
-      hsl(313deg 34% 48%) 3%,
-      hsl(312deg 31% 45%) 5%,
-      hsl(310deg 28% 41%) 7%,
-      hsl(307deg 25% 38%) 10%,
-      hsl(301deg 21% 35%) 14%,
-      hsl(293deg 18% 32%) 19%,
-      hsl(279deg 16% 30%) 26%,
-      hsl(257deg 13% 27%) 36%,
-      hsl(223deg 15% 24%) 47%,
-      hsl(194deg 5% 25%) 58%,
-      hsl(94deg 7% 28%) 68%,
-      hsl(80deg 15% 30%) 75%,
-      hsl(76deg 23% 31%) 81%,
-      hsl(75deg 30% 33%) 86%);
+  background-image: linear-gradient(
+    210deg,
+    hsl(313deg 34% 48%) 3%,
+    hsl(312deg 31% 45%) 5%,
+    hsl(310deg 28% 41%) 7%,
+    hsl(307deg 25% 38%) 10%,
+    hsl(301deg 21% 35%) 14%,
+    hsl(293deg 18% 32%) 19%,
+    hsl(279deg 16% 30%) 26%,
+    hsl(257deg 13% 27%) 36%,
+    hsl(223deg 15% 24%) 47%,
+    hsl(194deg 5% 25%) 58%,
+    hsl(94deg 7% 28%) 68%,
+    hsl(80deg 15% 30%) 75%,
+    hsl(76deg 23% 31%) 81%,
+    hsl(75deg 30% 33%) 86%
+  );
 
   .container {
     display: flex;
@@ -58,13 +60,7 @@ body {
       display: flex;
       flex-direction: column;
       transition: height 0.3s;
-
-
       line-height: 2em;
-
-
-
-
 
       .logo {
         height: 6em;
@@ -74,7 +70,6 @@ body {
         height: 4em;
         margin-top: -1em;
       }
-
     }
 
     .divider {
@@ -92,24 +87,13 @@ body {
     }
 
     article {
-      &::after {
-        content: "";
-        opacity: 0.3;
-        position: fixed;
-        background-position: center center;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-        filter: blur(40px);
-      }
-
       &.right {
-        border-right: '';
+        border-right: "";
         border-left: 1em solid $darkGreenA;
       }
 
       &.left {
-        border-left: '';
+        border-left: "";
         border-right: 1em solid $darkGreenA;
       }
 
@@ -125,9 +109,11 @@ body {
       text-align: center;
       margin: 1em;
 
-      background: linear-gradient(to right bottom,
+      background: linear-gradient(
+        to right bottom,
         rgba(245, 240, 180, 0.2),
-        rgba(200, 90, 252, 0.1));
+        rgba(200, 90, 252, 0.1)
+      );
 
       border-radius: 1em;
       padding: 20px;
@@ -139,7 +125,6 @@ body {
       border-right: 1em solid $darkPinkA;
       background-color: rgba(213, 255, 44, 0.15);
 
-
       h2 {
         color: $green;
       }
@@ -147,13 +132,26 @@ body {
       &.no-color {
         background-color: transparent;
       }
-
+      &.breaking-news {
+        background: none;
+        border: none;
+        border-bottom: 1em solid $darkPink;
+        font-weight: bold;
+        color: white;
+        height: 4em;
+        animation-name: color;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+      }
 
       nav[data-page="swiper"] {
         width: 100%;
       }
 
       nav {
+        a {
+          text-decoration: none;
+        }
         img {
           background-color: transparent;
           width: 20%;
@@ -175,7 +173,6 @@ body {
           background-color: whitesmoke;
           opacity: 0.2;
           display: inline-block;
-
 
           &.active {
             background-color: $green;
@@ -213,19 +210,19 @@ body {
       }
 
       .gallery {
-          display: flex;
-          flex-direction: column;
-          figcaption {
-            font-weight: bold;
-          }
+        display: flex;
+        flex-direction: column;
+        figcaption {
+          font-weight: bold;
+        }
 
-          img {
-            height: 16em;
-            border-radius: 1em;
-            margin-right: 20px;
-            margin-top: 10px;
-            box-shadow: 2px 2px 40px rgba(49, 17, 40, 0.37);
-          }
+        img {
+          height: 16em;
+          border-radius: 1em;
+          margin-right: 20px;
+          margin-top: 10px;
+          box-shadow: 2px 2px 40px rgba(49, 17, 40, 0.37);
+        }
       }
 
       p::first-letter {
@@ -315,14 +312,37 @@ body {
 }
 
 .swipeable {
-
   &.swiping {
     opacity: 0.5;
   }
-
 }
 
 .hidden {
   display: none;
+}
 
+.animate_duration-05 {
+  --animate-duration: 0.5s;
+}
+.animate_duration-07 {
+  --animate-duration: 0.7s;
+}
+.animate_duration-09 {
+  --animate-duration: 0.9s;
+}
+.animate_duration-11 {
+  --animate-duration: 1.1s;
+}
+.animate_duration-5 {
+  --animate-duration: 5s;
+}
+
+@keyframes color {
+  0% {
+  }
+  50% {
+    border-bottom: 1em solid $darkGreen;
+  }
+  100% {
+  }
 }

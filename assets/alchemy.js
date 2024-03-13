@@ -4,6 +4,18 @@ class Alchemy {
     this.touchStartX = 0;
     this.touchEndX = 0;
     this.touchStartY = 0;
+    this.breakingNews = [
+      {
+        news: "We are working hard to make this site the home of Ciri and Zelda!",
+      },
+      { news: "Upcoming feature will be available in time, stay tuned!" },
+      {
+        news: "You can support us by following our social, check out the social bar!",
+      },
+      { news: "Don't forget to visit us often!" },
+      { news: "Don't forget to visit us often!" },
+    ];
+    this.__lastBreakingNewsIndex = 0;
   }
 
   ui = () => {
@@ -63,7 +75,7 @@ class Alchemy {
       pane.addEventListener("touchend", async (evt) => {
         evt.target.classList.remove("swiping");
         this.touchEndX = evt.changedTouches[0].clientX;
-        const SWIPE_THRESHOLD = 60; 
+        const SWIPE_THRESHOLD = 60;
         var swipeable = evt.target.closest(".swipeable");
         var index = parseInt(swipeable.dataset.pageIndex);
 
@@ -84,7 +96,6 @@ class Alchemy {
     });
   };
   defaultOrCachePages = async () => {
-    
     //let cache = sessionStorage.getItem("_cache");
     let cache = null;
     if (cache == null) {
@@ -110,7 +121,7 @@ class Alchemy {
     const page = await response.text();
     return page;
   };
-  placeHolder = async(name, val) => {
+  placeHolder = async (name, val) => {
     document.getElementById(name).innerText = val;
   };
   swipe = async (name, index) => {
@@ -123,7 +134,7 @@ class Alchemy {
     if (currentPage) {
       currentPage.index = index;
     }
-    
+
     document
       .querySelectorAll(`section[data-page=${name}]`)
       .forEach(async (section) => {
@@ -155,14 +166,36 @@ class Alchemy {
   init = async () => {
     this.find("main header").innerHTML = await this.get("header");
     this.find("#socialMedia").innerHTML = await this.get("socialMedia");
-    
-    this.placeHolder("_birthday", `5 April ${new Date().getFullYear()} ` );
     this.pages = await this.defaultOrCachePages();
     await this.restore();
     this.ui();
+    this.startBreakingNews();
+  };
+  bday = () => {
+    let bday = new Date(2021,4,5);
+    let d1 = new Date();
+    let d2 = new Date(new Date().getFullYear(), 3, 5);
+    let d = parseInt((d1 - d2) / (1000 * 60 * 60 * 24), 10);
+    let y = d2.getFullYear() - bday.getFullYear();
+    return {d:d, y:y};
   };
   find = (search) => {
     return document.querySelector(search);
+  };
+  startBreakingNews = async () => {
+    setInterval(() => {
+      let news = document.getElementById("__breakingNews");
+      news.innerText = this.getBreakingNews();
+    }, 5000);
+  };
+  getBreakingNews = () => {
+    let currentIndex = Math.floor(Math.random() * this.breakingNews.length);
+    while (this.__lastBreakingNewsIndex == currentIndex) {
+      currentIndex = Math.floor(Math.random() * this.breakingNews.length);
+    }
+
+    this.__lastBreakingNewsIndex = currentIndex;
+    return this.breakingNews[currentIndex].news;
   };
   restore = async () => {
     this.pages = JSON.parse(sessionStorage.getItem("_cache"));
