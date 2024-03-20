@@ -303,8 +303,7 @@ body footer a {
   animation-duration: 0.5s;
   animation-iteration-count: 1;
   animation-timing-function: ease-out;
-  animation-direction: reverse;
-  animation-name: page-flip;
+  animation-name: page-flip-reverse;
 }
 
 .page-flip-reverse {
@@ -316,7 +315,12 @@ body footer a {
 
 @keyframes page-flip {
   100% {
-    transform: scale(1) rotateY(360deg);
+    transform: rotateY(180deg) skewY(0deg);
+  }
+}
+@keyframes page-flip-reverse {
+  100% {
+    transform: rotateY(-180deg) skewY(0deg);
   }
 }
 @keyframes pulse {
