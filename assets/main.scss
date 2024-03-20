@@ -331,13 +331,13 @@ body {
 }
 
 .page-flip {
-  animation-duration: 0.5s;
+  animation-duration: 0.6s;
   animation-iteration-count: 1;
   animation-timing-function: ease-out;
   animation-name: flip;
 }
 .page-flip-reverse {
-  animation-duration: 0.5s;
+  animation-duration: 0.6s;
   animation-iteration-count: 1;
   animation-timing-function: ease-out;
   animation-direction: reverse;
@@ -345,9 +345,11 @@ body {
 }
 @keyframes flip {
   0% {
+    transform: rotateY(-180deg);
+  }
+  50% {
     transform: rotateY(0deg);
   }
- 
   100% {
     transform: rotateY(-180deg);
   }

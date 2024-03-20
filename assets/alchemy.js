@@ -47,19 +47,14 @@ class Alchemy {
         var swipeable = evt.target.closest(".swipeable");
 
         var index = parseInt(swipeable.dataset.pageIndex);
-        if (clickX > paneCenterX) {
-          index++;
-          swipeable.closest("article").classList.add("page-flip");
-        } else {
-          swipeable.closest("article").classList.add("page-flip-reverse");
-          index--;
-        }
+        var next = clickX > paneCenterX;
 
         
         this.swipe(
           swipeable.dataset.page,
           index,
-          swipeable.dataset.pageDescription
+          swipeable.dataset.pageDescription,
+          next
         );
       });
 
@@ -127,18 +122,29 @@ class Alchemy {
   placeHolder = async (name, val, str) => {
     return str.replace(name, val);
   };
-  swipe = async (name, index) => {
+  swipe = async (name, index, description, next) => {
+
     var currentPage = this.pages.find((page) => {
       return page.name == name;
     });
 
-
-    if (index == 0 || index > currentPage.max) return;
-
-
     let pane = document.querySelectorAll(
       `article[data-page="${name}"]`
     )[0];
+
+    
+      if (next) {
+        index++;
+
+        if (index > currentPage.max) return;
+
+        pane.classList.add("page-flip");
+      } else {
+        index--;
+        if (index <= 0) return;
+        pane.classList.add("page-flip-reverse");
+       
+      }
 
     pane.addEventListener("animationend", (evt)=> {
         evt.target.classList.remove("page-flip");
@@ -213,7 +219,7 @@ class Alchemy {
   restore = async () => {
     this.pages = JSON.parse(sessionStorage.getItem("_cache"));
     this.pages.forEach((element) => {
-      this.swipe(element.name, parseInt(element.index), element.description);
+      this.swipe(element.name, parseInt(element.index), element.description, true);
     });
   };
 }
