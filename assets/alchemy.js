@@ -17,6 +17,7 @@ class Alchemy {
 
   ui = () => {
     document.querySelectorAll(".swipeable").forEach((pane) => {
+      
       pane.addEventListener("mouseleave", async (evt) => {
         var article = pane.closest("article");
         article.classList.remove("right");
@@ -77,17 +78,23 @@ class Alchemy {
         var index = parseInt(swipeable.dataset.pageIndex);
 
         var swipelen = this.touchEndX - this.touchStartX;
+        let next = true;
 
+
+        if (swipelen == 0) return;
+        
         if (swipelen > 0 && Math.abs(swipelen) > SWIPE_THRESHOLD) {
-          index--;
+          next = false;
         } else if (Math.abs(swipelen) > SWIPE_THRESHOLD) {
-          index++;
+          next = true;
         }
+      
 
         this.swipe(
           swipeable.dataset.page,
           index,
-          swipeable.dataset.pageDescription
+          swipeable.dataset.pageDescription,
+          next
         );
       });
     });

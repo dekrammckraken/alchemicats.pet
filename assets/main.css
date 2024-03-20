@@ -303,6 +303,7 @@ body footer a {
   animation-duration: 0.6s;
   animation-iteration-count: 1;
   animation-timing-function: ease-out;
+  animation-direction: reverse;
   animation-name: flip;
 }
 
@@ -310,7 +311,6 @@ body footer a {
   animation-duration: 0.6s;
   animation-iteration-count: 1;
   animation-timing-function: ease-out;
-  animation-direction: reverse;
   animation-name: flip;
 }
 

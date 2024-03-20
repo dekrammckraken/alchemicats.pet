@@ -334,13 +334,14 @@ body {
   animation-duration: 0.6s;
   animation-iteration-count: 1;
   animation-timing-function: ease-out;
+  animation-direction: reverse;
   animation-name: flip;
 }
 .page-flip-reverse {
   animation-duration: 0.6s;
   animation-iteration-count: 1;
   animation-timing-function: ease-out;
-  animation-direction: reverse;
+ 
   animation-name: flip;
 }
 @keyframes flip {
