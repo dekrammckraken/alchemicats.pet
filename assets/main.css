@@ -115,7 +115,7 @@ body .container article.breaking-news {
   border-bottom: 1em solid #d056b0;
   font-weight: bold;
   color: white;
-  height: 2em;
+  height: 1em;
   animation-name: color;
   animation-duration: 5s;
   animation-iteration-count: infinite;
@@ -291,6 +291,45 @@ body footer a {
   display: none;
 }
 
+.trumble {
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in;
+  animation-direction: alternate-reverse;
+  animation-name: pulse;
+}
+
+.page-flip {
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-name: flip;
+}
+
+.page-flip-reverse {
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-direction: reverse;
+  animation-name: flip;
+}
+
+@keyframes flip {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(-180deg);
+  }
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.999);
+  }
+}
 .animate_duration-05 {
   --animate-duration: 0.5s;
 }

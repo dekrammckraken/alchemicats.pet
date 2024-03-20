@@ -32,6 +32,7 @@ class Alchemy {
 
         article.classList.remove("right");
         article.classList.remove("left");
+
         if (clickX > paneCenterX) {
           article.classList.add("left");
         } else {
@@ -44,13 +45,17 @@ class Alchemy {
         const paneWidth = pane.offsetWidth;
         const paneCenterX = paneWidth / 2;
         var swipeable = evt.target.closest(".swipeable");
+
         var index = parseInt(swipeable.dataset.pageIndex);
         if (clickX > paneCenterX) {
           index++;
+          swipeable.closest("article").classList.add("page-flip");
         } else {
+          swipeable.closest("article").classList.add("page-flip-reverse");
           index--;
         }
 
+        
         this.swipe(
           swipeable.dataset.page,
           index,
@@ -106,6 +111,7 @@ class Alchemy {
             max: parseInt(section.dataset.pageMax),
             description: section.dataset.pageDescription,
           };
+          this.pages.currentPage = 1;
           this.pages.push(page);
         });
     } else {
@@ -126,12 +132,22 @@ class Alchemy {
       return page.name == name;
     });
 
+
     if (index == 0 || index > currentPage.max) return;
+
+
+    let pane = document.querySelectorAll(
+      `article[data-page="${name}"]`
+    )[0];
+
+    pane.addEventListener("animationend", (evt)=> {
+        evt.target.classList.remove("page-flip");
+        evt.target.classList.remove("page-flip-reverse");
+    });
 
     if (currentPage) {
       currentPage.index = index;
     }
-
     document
       .querySelectorAll(`section[data-page=${name}]`)
       .forEach(async (section) => {
@@ -139,6 +155,7 @@ class Alchemy {
           section.classList.add("hidden");
         } else {
           section.classList.remove("hidden");
+
         }
 
         document
