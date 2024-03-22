@@ -374,27 +374,25 @@ body {
 
 @keyframes page-flip {
   0% {
-   opacity: 1;
-   transform: scale(0.9);
+    opacity: 1;
   }
   100% {
-    opacity: 0.8;
-    filter:blur(3px);
-    filter:saturate(0.7);
-    transform: scale(1);
+    filter:saturate(0.7) blur(3px);
+    transform: translateX(10px);
+    opacity: 0;
   }
 }
 
 @keyframes page-flip-reverse {
   0% {
+   
     opacity: 1;
-    transform: scale(0.9);
   }
   100% {
-    opacity: 0.8;
-    filter:blur(3px);
-    filter:saturate(0.7);
-    transform: scale(1);
+    
+    filter:saturate(0.7) blur(3px);
+    transform:translateX(-10px);
+    opacity: 0;
   }
 }
 @keyframes pulse {
