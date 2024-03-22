@@ -154,6 +154,10 @@ body {
         p {
           color:$softPink;
           margin-top:-0.5em;
+          animation-duration: 1s;
+          animation-iteration-count: 1;
+          animation-timing-function: step-end;
+          animation-name: step-in;
         }
       }
 
@@ -367,6 +371,7 @@ body {
     transform: scaleY(1);
   }
 }
+
 @keyframes page-flip {
   0% {
    opacity: 1;
@@ -379,6 +384,7 @@ body {
     transform: scale(1);
   }
 }
+
 @keyframes page-flip-reverse {
   0% {
     opacity: 1;
@@ -400,7 +406,15 @@ body {
     transform:scale(0.999);
   }
 }
-
+@keyframes step-in {
+  0% {
+    opacity: 0;
+  }
+ 
+  100% {
+    opacity: 1;
+  }
+}
 .animate_duration-05 {
   --animate-duration: 0.5s;
 }

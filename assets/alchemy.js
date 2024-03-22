@@ -8,7 +8,7 @@ class Alchemy {
       {
         news: `Look at our meme-rable contents in our socials!`,
       },
-      { 
+      {
         news: `Days 'til the next birthday: ${this.bday().m} months and ${this.bday().d} days.`
       },
     ];
@@ -17,7 +17,7 @@ class Alchemy {
 
   ui = () => {
     document.querySelectorAll(".swipeable").forEach((pane) => {
-      
+
       pane.addEventListener("mouseleave", async (evt) => {
         var article = pane.closest("article");
         article.classList.remove("right");
@@ -50,7 +50,7 @@ class Alchemy {
         var index = parseInt(swipeable.dataset.pageIndex);
         var next = clickX > paneCenterX;
 
-        
+
         this.swipe(
           swipeable.dataset.page,
           index,
@@ -82,13 +82,13 @@ class Alchemy {
 
 
         if (swipelen == 0) return;
-        
+
         if (swipelen > 0 && Math.abs(swipelen) > SWIPE_THRESHOLD) {
           next = false;
         } else if (Math.abs(swipelen) > SWIPE_THRESHOLD) {
           next = true;
         }
-      
+
 
         this.swipe(
           swipeable.dataset.page,
@@ -109,7 +109,7 @@ class Alchemy {
         .forEach(async (section) => {
           let page = {
             name: section.dataset.page,
-            index: 1,
+            index: 0,
             max: parseInt(section.dataset.pageMax),
             description: section.dataset.pageDescription,
           };
@@ -135,32 +135,29 @@ class Alchemy {
       return page.name == name;
     });
 
+    next ? index++ : index--;
+
     let pane = document.querySelectorAll(
-      `article[data-page="${name}"]`
+      `section[data-page="${name}"][data-page-index="${index}"]`
     )[0];
 
-    
-      if (next) {
-        index++;
+    if (pane === undefined) //end of pages
+      return;
 
-        if (index > currentPage.max) return;
+    if (next)
+      pane.classList.add("page-flip");
+    else
+      pane.classList.add("page-flip-reverse");
 
-        pane.classList.add("page-flip");
-      } else {
-        index--;
-        if (index <= 0) return;
-        pane.classList.add("page-flip-reverse");
-       
-      }
-
-    pane.addEventListener("animationend", (evt)=> {
-        evt.target.classList.remove("page-flip");
-        evt.target.classList.remove("page-flip-reverse");
+    pane.addEventListener("animationend", (evt) => {
+      evt.target.classList.remove("page-flip");
+      evt.target.classList.remove("page-flip-reverse");
     });
 
-    if (currentPage) {
+
+    if (currentPage)
       currentPage.index = index;
-    }
+
     document
       .querySelectorAll(`section[data-page=${name}]`)
       .forEach(async (section) => {
@@ -202,16 +199,19 @@ class Alchemy {
     let d2 = new Date(new Date().getFullYear(), 3, 5);
     let d3 = new Date();
     let days = Math.round((d2 - d3) / (1000 * 60 * 60 * 24));
-    return {d:days % 30, m: Math.floor(days / 30)};
+    return { d: days % 30, m: Math.floor(days / 30) };
   };
   find = (search) => {
     return document.querySelector(search);
   };
+  updateBreakingNews = async () => {
+    let news = document.getElementById("__breakingNews");
+    news.innerText = await this.getBreakingNews();
+  }
   startBreakingNews = async () => {
-    
+    this.updateBreakingNews();
     setInterval(async () => {
-      let news = document.getElementById("__breakingNews");
-      news.innerText = await this.getBreakingNews();
+      this.updateBreakingNews();
     }, 5000);
   };
   getBreakingNews = async () => {

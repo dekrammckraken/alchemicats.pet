@@ -125,6 +125,10 @@ body .container article.breaking-news {
 body .container article.breaking-news p {
   color: #cec6ca;
   margin-top: -0.5em;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: step-end;
+  animation-name: step-in;
 }
 .html .container article nav[data-page=swiper],
 body .container article nav[data-page=swiper] {
@@ -359,6 +363,14 @@ body footer a {
   }
   100% {
     transform: scale(0.999);
+  }
+}
+@keyframes step-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 .animate_duration-05 {
