@@ -145,9 +145,16 @@ body {
         font-weight: bold;
         color: white;
         height: 1em;
-        animation-name: color;
-        animation-duration: 5s;
-        animation-iteration-count: infinite;
+        
+        animation-duration: 1s;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-in-out;
+        animation-name: flip-down;
+        
+        p {
+          color:$softPink;
+          margin-top:-0.5em;
+        }
       }
 
       nav[data-page="swiper"] {
@@ -337,34 +344,51 @@ body {
 }
 
 .page-flip {
-  animation-duration: 0.5s;
+  animation-duration: 0.2s;
   animation-iteration-count: 1;
   animation-timing-function: ease-out;
-
   animation-name: page-flip-reverse;
 }
 .page-flip-reverse {
-  animation-duration: 0.5s;
+  animation-duration: 0.2s;
   animation-iteration-count: 1;
   animation-timing-function: ease-out;
-  
   animation-name: page-flip;
+}
+
+
+@keyframes flip-down {
+  0% {
+    transform-origin: top center;
+    transform: scaleY(0);
+  }
+  100% {
+    transform-origin: top center;
+    transform: scaleY(1);
+  }
 }
 @keyframes page-flip {
   0% {
-   
+   opacity: 1;
+   transform: scale(0.9);
   }
   100% {
-    transform:rotateY(180deg) skewY(0deg);
+    opacity: 0.8;
+    filter:blur(3px);
+    filter:saturate(0.7);
+    transform: scale(1);
   }
 }
 @keyframes page-flip-reverse {
   0% {
-    
+    opacity: 1;
+    transform: scale(0.9);
   }
   100% {
-    transform:rotateY(-180deg) skewY(0deg);
-    
+    opacity: 0.8;
+    filter:blur(3px);
+    filter:saturate(0.7);
+    transform: scale(1);
   }
 }
 @keyframes pulse {
