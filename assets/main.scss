@@ -145,7 +145,8 @@ body {
         font-weight: bold;
         color: white;
         height: 1em;
-        
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
         animation-duration: 1s;
         animation-iteration-count: 1;
         animation-timing-function: ease-in-out;
