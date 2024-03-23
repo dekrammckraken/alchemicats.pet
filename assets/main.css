@@ -110,7 +110,7 @@ body .container article.no-color {
 .html .container article.breaking-news,
 body .container article.breaking-news {
   margin-top: -1em;
-  background: none;
+  background: rgba(0, 0, 0, 0.1);
   border: none;
   border-bottom: 1em solid #d056b0;
   font-weight: bold;

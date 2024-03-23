@@ -139,7 +139,7 @@ body {
       }
       &.breaking-news {
         margin-top:-1em;
-        background: none;
+        background: rgba(0, 0, 0, 0.1);
         border: none;
         border-bottom: 1em solid $darkPink;
         font-weight: bold;
