@@ -9,7 +9,9 @@ class Alchemy {
         news: `Look at our meme-rable contents in our socials!`,
       },
       {
-        news: `Days 'til the next birthday: ${this.bday().m} months and ${this.bday().d} days.`
+        news: `Days 'til the next birthday: ${this.bday().m} months and ${
+          this.bday().d
+        } days.`,
       },
     ];
     this.__lastBreakingNewsIndex = 0;
@@ -17,12 +19,15 @@ class Alchemy {
 
   ui = () => {
     document.querySelectorAll(".swipeable").forEach((pane) => {
-
-      pane.addEventListener("mouseleave", async (evt) => {
-        var article = pane.closest("article");
-        article.classList.remove("right");
-        article.classList.remove("left");
-      });
+      pane.addEventListener(
+        "mouseleave",
+        async (evt) => {
+          var article = pane.closest("article");
+          article.classList.remove("right");
+          article.classList.remove("left");
+        },
+        { passive: true }
+      );
 
       pane.addEventListener("mousemove", async (evt) => {
         const clickX = evt.clientX - pane.getBoundingClientRect().left;
@@ -41,62 +46,75 @@ class Alchemy {
         }
       });
 
-      pane.addEventListener("click", (evt) => {
-        const clickX = evt.clientX - pane.getBoundingClientRect().left;
-        const paneWidth = pane.offsetWidth;
-        const paneCenterX = paneWidth / 2;
-        var swipeable = evt.target.closest(".swipeable");
+      pane.addEventListener(
+        "click",
+        (evt) => {
+          const clickX = evt.clientX - pane.getBoundingClientRect().left;
+          const paneWidth = pane.offsetWidth;
+          const paneCenterX = paneWidth / 2;
+          var swipeable = evt.target.closest(".swipeable");
 
-        var index = parseInt(swipeable.dataset.pageIndex);
-        var next = clickX > paneCenterX;
+          var index = parseInt(swipeable.dataset.pageIndex);
+          var next = clickX > paneCenterX;
 
+          this.swipe(
+            swipeable.dataset.page,
+            index,
+            swipeable.dataset.pageDescription,
+            next
+          );
+        },
+        { passive: true }
+      );
 
-        this.swipe(
-          swipeable.dataset.page,
-          index,
-          swipeable.dataset.pageDescription,
-          next
-        );
-      });
+      pane.addEventListener(
+        "touchstart",
+        async (evt) => {
+          this.touchStartX = evt.touches[0].clientX;
+          this.touchStartY = evt.touches[0].clientY;
 
-      pane.addEventListener("touchstart", async (evt) => {
-        this.touchStartX = evt.touches[0].clientX;
-        this.touchStartY = evt.touches[0].clientY;
+          evt.target.classList.add("swiping");
+        },
+        { passive: true }
+      );
+      document.addEventListener(
+        "touchmove",
+        async (evt) => {
+          let currentY = evt.touches[0].clientY;
 
-        evt.target.classList.add("swiping");
-      });
-      document.addEventListener("touchmove", async (evt) => {
-        let currentY = evt.touches[0].clientY;
+          if (currentY > this.touchStartY) evt.preventDefault();
+        },
+        { passive: true }
+      );
+      pane.addEventListener(
+        "touchend",
+        async (evt) => {
+          evt.target.classList.remove("swiping");
+          this.touchEndX = evt.changedTouches[0].clientX;
+          const SWIPE_THRESHOLD = 60;
+          var swipeable = evt.target.closest(".swipeable");
+          var index = parseInt(swipeable.dataset.pageIndex);
 
-        if (currentY > this.touchStartY) evt.preventDefault();
-      });
-      pane.addEventListener("touchend", async (evt) => {
-        evt.target.classList.remove("swiping");
-        this.touchEndX = evt.changedTouches[0].clientX;
-        const SWIPE_THRESHOLD = 60;
-        var swipeable = evt.target.closest(".swipeable");
-        var index = parseInt(swipeable.dataset.pageIndex);
+          var swipelen = this.touchEndX - this.touchStartX;
+          let next = true;
 
-        var swipelen = this.touchEndX - this.touchStartX;
-        let next = true;
+          if (swipelen == 0) return;
 
+          if (swipelen > 0 && Math.abs(swipelen) > SWIPE_THRESHOLD) {
+            next = false;
+          } else if (Math.abs(swipelen) > SWIPE_THRESHOLD) {
+            next = true;
+          }
 
-        if (swipelen == 0) return;
-
-        if (swipelen > 0 && Math.abs(swipelen) > SWIPE_THRESHOLD) {
-          next = false;
-        } else if (Math.abs(swipelen) > SWIPE_THRESHOLD) {
-          next = true;
-        }
-
-
-        this.swipe(
-          swipeable.dataset.page,
-          index,
-          swipeable.dataset.pageDescription,
-          next
-        );
-      });
+          this.swipe(
+            swipeable.dataset.page,
+            index,
+            swipeable.dataset.pageDescription,
+            next
+          );
+        },
+        { passive: true }
+      );
     });
   };
   defaultOrCachePages = async () => {
@@ -130,7 +148,6 @@ class Alchemy {
     return str.replace(name, val);
   };
   swipe = async (name, index, description, next) => {
-
     var currentPage = this.pages.find((page) => {
       return page.name == name;
     });
@@ -141,22 +158,23 @@ class Alchemy {
       `section[data-page="${name}"][data-page-index="${index}"]`
     )[0];
 
-    if (pane === undefined) //end of pages
+    if (pane === undefined)
+      //end of pages
       return;
 
-    if (next)
-      pane.classList.add("page-flip");
-    else
-      pane.classList.add("page-flip-reverse");
+    if (next) pane.classList.add("page-flip");
+    else pane.classList.add("page-flip-reverse");
 
-    pane.addEventListener("animationend", (evt) => {
-      evt.target.classList.remove("page-flip");
-      evt.target.classList.remove("page-flip-reverse");
-    });
+    pane.addEventListener(
+      "animationend",
+      (evt) => {
+        evt.target.classList.remove("page-flip");
+        evt.target.classList.remove("page-flip-reverse");
+      },
+      { passive: true }
+    );
 
-
-    if (currentPage)
-      currentPage.index = index;
+    if (currentPage) currentPage.index = index;
 
     document
       .querySelectorAll(`section[data-page=${name}]`)
@@ -165,7 +183,6 @@ class Alchemy {
           section.classList.add("hidden");
         } else {
           section.classList.remove("hidden");
-
         }
 
         document
@@ -207,7 +224,7 @@ class Alchemy {
   updateBreakingNews = async () => {
     let news = document.getElementById("__breakingNews");
     news.innerText = await this.getBreakingNews();
-  }
+  };
   startBreakingNews = async () => {
     this.updateBreakingNews();
     setInterval(async () => {
@@ -226,12 +243,21 @@ class Alchemy {
   restore = async () => {
     this.pages = JSON.parse(sessionStorage.getItem("_cache"));
     this.pages.forEach((element) => {
-      this.swipe(element.name, parseInt(element.index), element.description, true);
+      this.swipe(
+        element.name,
+        parseInt(element.index),
+        element.description,
+        true
+      );
     });
   };
 }
 
-document.addEventListener("DOMContentLoaded", async () => {
-  const alchemy = new Alchemy();
-  await alchemy.init();
-});
+document.addEventListener(
+  "DOMContentLoaded",
+  async () => {
+    const alchemy = new Alchemy();
+    await alchemy.init();
+  },
+  { passive: true }
+);
