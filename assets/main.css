@@ -87,12 +87,12 @@ body .container article {
 }
 .html .container article.right,
 body .container article.right {
-  border-right: "";
+  border-right: 0;
   border-left: 1em solid rgba(213, 255, 44, 0.32);
 }
 .html .container article.left,
 body .container article.left {
-  border-left: "";
+  border-left: 0;
   border-right: 1em solid rgba(213, 255, 44, 0.32);
 }
 .html .container article strong,
