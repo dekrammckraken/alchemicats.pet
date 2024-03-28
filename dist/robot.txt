@@ -1,4 +1,0 @@
-User-agent: *
-Sitemap: http://www.example.com/sitemap.xml
-Disallow:
-
