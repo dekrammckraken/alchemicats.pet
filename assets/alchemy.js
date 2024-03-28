@@ -6,12 +6,9 @@ class Alchemy {
     this.touchStartY = 0;
     this.breakingNews = [
       {
-        news: `Look at our meme-rable contents in our socials!`,
-      },
-      {
-        news: `Days 'til the next birthday: ${this.bday().m} months and ${
+        news: `Days 'til bday: "${this.bday().m}" months and "${
           this.bday().d
-        } days.`,
+        }" days.`,
       },
     ];
     this.__lastBreakingNewsIndex = 0;
@@ -227,18 +224,10 @@ class Alchemy {
   };
   startBreakingNews = async () => {
     this.updateBreakingNews();
-    setInterval(async () => {
-      this.updateBreakingNews();
-    }, 5000);
   };
   getBreakingNews = async () => {
-    let currentIndex = Math.floor(Math.random() * this.breakingNews.length);
-    while (this.__lastBreakingNewsIndex == currentIndex) {
-      currentIndex = Math.floor(Math.random() * this.breakingNews.length);
-    }
 
-    this.__lastBreakingNewsIndex = currentIndex;
-    return this.breakingNews[currentIndex].news;
+    return this.breakingNews[ this.__lastBreakingNewsIndex].news;
   };
   restore = async () => {
     this.pages = JSON.parse(sessionStorage.getItem("_cache"));
