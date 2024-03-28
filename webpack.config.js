@@ -4,9 +4,9 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackReplacePlugin = require('html-replace-webpack-plugin');
 
 module.exports = {
-  entry: './assets/alchemicats.js',
+  entry: './assets/alchemy.js',
   output: {
-    filename: 'assets/alchemicats.min.js',
+    filename: 'assets/alchemy.min.js',
     path: path.resolve(__dirname, 'dist'),
   },
   module: {
@@ -38,8 +38,8 @@ module.exports = {
       ],
     }),
     new HtmlWebpackReplacePlugin({
-      pattern: '<script type="text/javascript" src="assets/alchemicats.js"></script>',
-      replacement: '<script src="assets/alchemicats.min.js"></script>',
+      pattern: '<script type="text/javascript" src="assets/alchemy.js"></script>',
+      replacement: '<script src="assets/alchemy.min.js"></script>',
     }),
   ],
 };

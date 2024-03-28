@@ -6,9 +6,8 @@ class Alchemy {
     this.touchStartY = 0;
     this.breakingNews = [
       {
-        news: `Days 'til bday: "${this.bday().m}" months and "${
-          this.bday().d
-        }" days.`,
+        news: `Days 'til bday: "${this.bday().m}" months and "${this.bday().d
+          }" days.`,
       },
     ];
     this.__lastBreakingNewsIndex = 0;
@@ -227,7 +226,7 @@ class Alchemy {
   };
   getBreakingNews = async () => {
 
-    return this.breakingNews[ this.__lastBreakingNewsIndex].news;
+    return this.breakingNews[this.__lastBreakingNewsIndex].news;
   };
   restore = async () => {
     this.pages = JSON.parse(sessionStorage.getItem("_cache"));
