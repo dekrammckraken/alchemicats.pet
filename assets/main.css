@@ -87,12 +87,12 @@ body .container article {
 }
 .html .container article.right,
 body .container article.right {
-  border-right: 0;
+  border-right: "";
   border-left: 1em solid rgba(213, 255, 44, 0.32);
 }
 .html .container article.left,
 body .container article.left {
-  border-left: 0;
+  border-left: " ";
   border-right: 1em solid rgba(213, 255, 44, 0.32);
 }
 .html .container article strong,
@@ -176,6 +176,15 @@ body .container h3 {
   text-align: left;
   margin: 0.6em;
 }
+.html .container h4,
+body .container h4 {
+  font-size: 1em;
+  text-align: center;
+  margin: 1em;
+  width: 100%;
+  color: #343335;
+  line-height: 1.2em;
+}
 .html .container section.portrait img,
 body .container section.portrait img {
   border-radius: 90px;
@@ -192,22 +201,23 @@ body .container section.portrait img.ciri {
 body .container section.portrait img.zelda {
   border: 2px dotted #e97ab0;
 }
-.html .container section .gallery,
-body .container section .gallery {
+.html .container section figure,
+body .container section figure {
   display: flex;
   flex-direction: column;
 }
-.html .container section .gallery figcaption,
-body .container section .gallery figcaption {
+.html .container section figure figcaption,
+body .container section figure figcaption {
   font-weight: bold;
 }
-.html .container section .gallery img,
-body .container section .gallery img {
-  height: 16em;
+.html .container section figure img,
+body .container section figure img {
+  width: 100%;
   border-radius: 1em;
   margin-right: 20px;
   margin-top: 10px;
   box-shadow: 2px 2px 40px rgba(49, 17, 40, 0.37);
+  border: 2px dotted #d056b0;
 }
 .html .container section p::first-letter,
 body .container section p::first-letter {

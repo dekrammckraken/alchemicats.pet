@@ -6,7 +6,7 @@ $darkGreen: #8fb300;
 $darkGreenA: rgba(213, 255, 44, 0.32);
 $darkPinkA: rgba(230, 23, 175, 0.04);
 $white: white;
-
+$subtitle-color:#343335;
 $article-fore-color: #e3e3e3;
 $footer-fore-color: #dbe4e7;
 $ornament-color: #785e79;
@@ -87,12 +87,12 @@ body {
 
     article {
       &.right {
-        border-right: 0;
+        border-right: '';
         border-left: 1em solid $darkGreenA;
       }
 
       &.left {
-        border-left: 0;
+        border-left: ' ';
         border-right: 1em solid $darkGreenA;
       }
 
@@ -202,6 +202,15 @@ body {
       text-align: left;
       margin: 0.6em;
     }
+    h4 {
+      font-size: 1em;
+      text-align: center;
+      margin: 1em;
+      width:100%;
+      color:$subtitle-color;
+      line-height: 1.2em;
+      
+    }
 
     section {
       &.portrait {
@@ -222,20 +231,21 @@ body {
         }
       }
 
-      .gallery {
+      figure {
         display: flex;
         flex-direction: column;
-
+        
         figcaption {
           font-weight: bold;
         }
 
         img {
-          height: 16em;
+          width:100%;
           border-radius: 1em;
           margin-right: 20px;
           margin-top: 10px;
           box-shadow: 2px 2px 40px rgba(49, 17, 40, 0.37);
+          border: 2px dotted $darkPink;
         }
       }
 
