@@ -6,8 +6,7 @@ class Alchemy {
     this.touchStartY = 0;
     this.breakingNews = [
       {
-        news: `Days 'til bday: "${this.bday().m}" months and "${this.bday().d
-          }" days.`,
+        news: `Days 'til bday:"${this.bday().d}" days.`,
       },
     ];
     this.__lastBreakingNewsIndex = 0;
@@ -211,8 +210,15 @@ class Alchemy {
   bday = () => {
     let d2 = new Date(new Date().getFullYear(), 3, 5);
     let d3 = new Date();
-    let days = Math.round((d2 - d3) / (1000 * 60 * 60 * 24));
-    return { d: days % 30, m: Math.floor(days / 30) };
+    d3.setHours(0,0,0,0);
+
+    if (d3 > d2)
+      d2 = new Date(new Date().getFullYear() + 1, 3, 5);
+
+    let days = Math.round((d2 - d3) / (1000 * 60 * 60 * 24)); // Calcolo dei giorni mancanti
+    return {
+      d: days,
+    };
   };
   find = (search) => {
     return document.querySelector(search);
