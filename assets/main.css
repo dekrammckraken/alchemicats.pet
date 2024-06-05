@@ -53,7 +53,7 @@ body .container .divider {
   height: 2.2em;
   padding: 0.5em;
   text-align: center;
-  background-image: url("images/divider.svg");
+  background-image: url("images/party-gradiant.svg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -182,7 +182,6 @@ body .container h4 {
   text-align: center;
   margin: 1em;
   width: 100%;
-  color: #343335;
   line-height: 1.2em;
 }
 .html .container section.portrait img,
@@ -217,7 +216,6 @@ body .container section figure img {
   margin-right: 20px;
   margin-top: 10px;
   box-shadow: 2px 2px 40px rgba(49, 17, 40, 0.37);
-  border: 2px dotted #d056b0;
 }
 .html .container section p::first-letter,
 body .container section p::first-letter {
@@ -347,22 +345,28 @@ body footer a {
 }
 @keyframes page-flip {
   0% {
-    opacity: 1;
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
   }
   100% {
     filter: saturate(0.7) blur(3px);
-    transform: translateX(10px);
-    opacity: 0;
+    transform: translateX(20px);
+    opacity: 1;
   }
 }
 @keyframes page-flip-reverse {
   0% {
-    opacity: 1;
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
   }
   100% {
     filter: saturate(0.7) blur(3px);
-    transform: translateX(-10px);
-    opacity: 0;
+    transform: translateX(-20px);
+    opacity: 1;
   }
 }
 @keyframes pulse {
