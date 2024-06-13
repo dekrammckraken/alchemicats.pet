@@ -17,7 +17,7 @@ class Alchemy {
       pane.addEventListener(
         "mouseleave",
         async (evt) => {
-          var article = pane.closest("article");
+          let article = pane.closest("article");
           article.classList.remove("right");
           article.classList.remove("left");
         },
@@ -29,7 +29,7 @@ class Alchemy {
         const paneWidth = pane.offsetWidth;
         const paneCenterX = paneWidth / 2;
 
-        var article = pane.closest("article");
+        let article = pane.closest("article");
 
         article.classList.remove("right");
         article.classList.remove("left");
@@ -47,10 +47,10 @@ class Alchemy {
           const clickX = evt.clientX - pane.getBoundingClientRect().left;
           const paneWidth = pane.offsetWidth;
           const paneCenterX = paneWidth / 2;
-          var swipeable = evt.target.closest(".swipeable");
+          let swipeable = evt.target.closest(".swipeable");
 
-          var index = parseInt(swipeable.dataset.pageIndex);
-          var next = clickX > paneCenterX;
+          let index = parseInt(swipeable.dataset.pageIndex);
+          let next = clickX > paneCenterX;
 
           this.swipe(
             swipeable.dataset.page,
@@ -87,19 +87,17 @@ class Alchemy {
           evt.target.classList.remove("swiping");
           this.touchEndX = evt.changedTouches[0].clientX;
           const SWIPE_THRESHOLD = 60;
-          var swipeable = evt.target.closest(".swipeable");
-          var index = parseInt(swipeable.dataset.pageIndex);
+          let swipeable = evt.target.closest(".swipeable");
+          let index = parseInt(swipeable.dataset.pageIndex);
 
-          var swipelen = this.touchEndX - this.touchStartX;
+          let swipelen = this.touchEndX - this.touchStartX;
           let next = true;
 
           if (swipelen == 0) return;
 
           if (swipelen > 0 && Math.abs(swipelen) > SWIPE_THRESHOLD) {
             next = false;
-          } else if (Math.abs(swipelen) > SWIPE_THRESHOLD) {
-            next = true;
-          }
+          } 
 
           this.swipe(
             swipeable.dataset.page,
@@ -113,7 +111,6 @@ class Alchemy {
     });
   };
   defaultOrCachePages = async () => {
-    //let cache = sessionStorage.getItem("_cache");
     let cache = null;
     if (cache == null) {
       this.pages = [];
@@ -143,7 +140,7 @@ class Alchemy {
     return str.replace(name, val);
   };
   swipe = async (name, index, description, next) => {
-    var currentPage = this.pages.find((page) => {
+    let currentPage = this.pages.find((page) => {
       return page.name == name;
     });
 
