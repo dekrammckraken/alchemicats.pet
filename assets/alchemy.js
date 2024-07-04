@@ -151,7 +151,6 @@ class Alchemy {
     )[0];
 
     if (pane === undefined)
-      //end of pages
       return;
 
     if (next) pane.classList.add("page-flip");
@@ -211,7 +210,7 @@ class Alchemy {
 
     if (d3 > d2) d2 = new Date(new Date().getFullYear() + 1, 3, 5);
 
-    let days = Math.round((d2 - d3) / (1000 * 60 * 60 * 24)); // Calcolo dei giorni mancanti
+    let days = Math.round((d2 - d3) / (1000 * 60 * 60 * 24));
     return {
       d: days,
     };
