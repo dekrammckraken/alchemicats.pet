@@ -93,7 +93,7 @@ class Alchemy {
           let swipelen = this.touchEndX - this.touchStartX;
           let next = true;
 
-          if (Math.abs(swipelen) < SWIPE_THRESHOLD ) return;
+          if (Math.abs(swipelen) < SWIPE_THRESHOLD) return;
 
           if (swipelen > 0 && Math.abs(swipelen) > SWIPE_THRESHOLD) {
             next = false;
