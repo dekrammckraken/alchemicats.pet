@@ -86,18 +86,18 @@ class Alchemy {
         async (evt) => {
           evt.target.classList.remove("swiping");
           this.touchEndX = evt.changedTouches[0].clientX;
-          const SWIPE_THRESHOLD = 60;
+          const SWIPE_THRESHOLD = 70;
           let swipeable = evt.target.closest(".swipeable");
           let index = parseInt(swipeable.dataset.pageIndex);
 
           let swipelen = this.touchEndX - this.touchStartX;
           let next = true;
 
-          if (swipelen == 0) return;
+          if (Math.abs(swipelen) < SWIPE_THRESHOLD ) return;
 
           if (swipelen > 0 && Math.abs(swipelen) > SWIPE_THRESHOLD) {
             next = false;
-          } 
+          }
 
           this.swipe(
             swipeable.dataset.page,
@@ -207,10 +207,9 @@ class Alchemy {
   bday = () => {
     let d2 = new Date(new Date().getFullYear(), 3, 5);
     let d3 = new Date();
-    d3.setHours(0,0,0,0);
+    d3.setHours(0, 0, 0, 0);
 
-    if (d3 > d2)
-      d2 = new Date(new Date().getFullYear() + 1, 3, 5);
+    if (d3 > d2) d2 = new Date(new Date().getFullYear() + 1, 3, 5);
 
     let days = Math.round((d2 - d3) / (1000 * 60 * 60 * 24)); // Calcolo dei giorni mancanti
     return {
@@ -228,7 +227,6 @@ class Alchemy {
     this.updateBreakingNews();
   };
   getBreakingNews = async () => {
-
     return this.breakingNews[this.__lastBreakingNewsIndex].news;
   };
   restore = async () => {

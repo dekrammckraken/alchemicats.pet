@@ -383,32 +383,24 @@ body {
 
 @keyframes page-flip {
   0% {
-    opacity: 0;
+   
   }
-  90% {
-    opacity: 0;
-  }
+
   100% {
-    filter: saturate(0.7) blur(3px);
-    transform: translateX(20px);
-    opacity: 1;
+   
   }
 }
 
 @keyframes page-flip-reverse {
+
   0% {
+   
+  }
 
-    opacity: 0;
-  }
-  90% {
-    opacity: 0;
-  }
   100% {
-
-    filter: saturate(0.7) blur(3px);
-    transform: translateX(-20px);
-    opacity: 1;
+   
   }
+}
 }
 
 @keyframes pulse {
