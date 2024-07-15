@@ -6,10 +6,27 @@ $darkGreen: #8fb300;
 $darkGreenA: rgba(213, 255, 44, 0.32);
 $darkPinkA: rgba(230, 23, 175, 0.04);
 $white: white;
-$subtitle-color:#343335;
+$subtitle-color: #343335;
 $article-fore-color: #e3e3e3;
 $footer-fore-color: #dbe4e7;
 $ornament-color: #785e79;
+$decograd: linear-gradient(
+  210deg,
+  hsl(313deg 34% 48%) 3%,
+  hsl(312deg 31% 45%) 5%,
+  hsl(310deg 28% 41%) 7%,
+  hsl(307deg 25% 38%) 10%,
+  hsl(301deg 21% 35%) 14%,
+  hsl(293deg 18% 32%) 19%,
+  hsl(279deg 16% 30%) 26%,
+  hsl(257deg 13% 27%) 36%,
+  hsl(223deg 15% 24%) 47%,
+  hsl(194deg 5% 25%) 58%,
+  hsl(94deg 7% 28%) 68%,
+  hsl(80deg 15% 30%) 75%,
+  hsl(76deg 23% 31%) 81%,
+  hsl(75deg 30% 33%) 86%
+);
 
 * {
   font-family: "Roboto Bold";
@@ -20,21 +37,7 @@ $ornament-color: #785e79;
 
 .html,
 body {
-  background-image: linear-gradient(210deg,
-      hsl(313deg 34% 48%) 3%,
-      hsl(312deg 31% 45%) 5%,
-      hsl(310deg 28% 41%) 7%,
-      hsl(307deg 25% 38%) 10%,
-      hsl(301deg 21% 35%) 14%,
-      hsl(293deg 18% 32%) 19%,
-      hsl(279deg 16% 30%) 26%,
-      hsl(257deg 13% 27%) 36%,
-      hsl(223deg 15% 24%) 47%,
-      hsl(194deg 5% 25%) 58%,
-      hsl(94deg 7% 28%) 68%,
-      hsl(80deg 15% 30%) 75%,
-      hsl(76deg 23% 31%) 81%,
-      hsl(75deg 30% 33%) 86%);
+  background-image: $decograd;
 
   .container {
     display: flex;
@@ -47,7 +50,6 @@ body {
 
     @media (min-width: 767px) {
       width: 40%;
-
     }
 
     @media (max-width: 767px) {
@@ -86,16 +88,16 @@ body {
     }
 
     article {
-      &[data-role='article'] {
-        min-height: 800px;
+      &[data-role="article"] {
+        min-height: 400px;
       }
       &.right {
-        border-right: '';
+        border-right: "";
         border-left: 1em solid $darkGreenA;
       }
 
       &.left {
-        border-left: ' ';
+        border-left: " ";
         border-right: 1em solid $darkGreenA;
       }
 
@@ -112,20 +114,21 @@ body {
       text-align: center;
       margin: 1em;
 
-      background: linear-gradient(to right bottom,
+      background: linear-gradient(
+        to right bottom,
         rgba(245, 240, 180, 0.2),
-        rgba(200, 90, 252, 0.1));
+        rgba(200, 90, 252, 0.1)
+      );
 
       border-radius: 1em;
       padding: 20px;
       width: 80%;
       text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.295);
       box-shadow: 2px 2px 40px rgba(49, 17, 40, 0.17);
-     
+
       border-left: 1em solid $darkPinkA;
       border-right: 1em solid $darkPinkA;
       background-color: rgba(213, 255, 44, 0.15);
-      
 
       h2 {
         color: $green;
@@ -210,10 +213,9 @@ body {
       font-size: 1em;
       text-align: center;
       margin: 1em;
-      width:100%;
-     
+      width: 100%;
+
       line-height: 1.2em;
-      
     }
 
     section {
@@ -238,18 +240,17 @@ body {
       figure {
         display: flex;
         flex-direction: column;
-        
+
         figcaption {
           font-weight: bold;
         }
 
         img {
-          width:100%;
+          width: 100%;
           border-radius: 1em;
           margin-right: 20px;
           margin-top: 10px;
           box-shadow: 2px 2px 40px rgba(49, 17, 40, 0.37);
-        
         }
       }
 
@@ -259,7 +260,7 @@ body {
         font-style: italic;
         letter-spacing: 0.2em;
       }
-     
+
       p {
         font-weight: normal;
         text-align: justify;
@@ -286,7 +287,6 @@ body {
           @media (max-width: 767px) {
             width: 8em;
             margin-bottom: 0;
-
           }
         }
 
@@ -371,7 +371,6 @@ body {
   animation-name: page-flip;
 }
 
-
 @keyframes flip-down {
   0% {
     transform-origin: top center;
@@ -386,22 +385,17 @@ body {
 
 @keyframes page-flip {
   0% {
-   
   }
 
   100% {
-   
   }
 }
 
 @keyframes page-flip-reverse {
-
   0% {
-   
   }
 
   100% {
-   
   }
 }
 
@@ -445,12 +439,37 @@ body {
   --animate-duration: 5s;
 }
 
-@keyframes color {
-  0% {}
+.navigator {
+  width: 100%;
+  height: 80px;
+  align-items: center;
+  background-image: $decograd;
+  position: fixed;
+  bottom: 0;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  border-top: 1px solid black;
+  z-index: 1;
+  div {
+    background-position: center;
+    background-size: 32px;
+    background-repeat: no-repeat;
+    height: 32px;
+    
+    filter: invert(0.6);
+    &:hover {
+     filter: invert(1);
+    }
+    &.home {
+      background-image: url(ui/book.svg);
+    }
 
-  50% {
-    border-bottom: 1em solid $darkGreen;
+    &.news {
+      background-image: url(ui/blog-pencil.svg);
+    }
+
+    &.onfire {
+      background-image: url(ui/claw-marks.svg);
+    }
   }
-
-  100% {}
 }
