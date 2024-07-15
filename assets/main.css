@@ -80,10 +80,13 @@ body .container article {
   width: 80%;
   text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.295);
   box-shadow: 2px 2px 40px rgba(49, 17, 40, 0.17);
-  margin: 1em 1em 1em 1em;
   border-left: 1em solid rgba(230, 23, 175, 0.04);
   border-right: 1em solid rgba(230, 23, 175, 0.04);
   background-color: rgba(213, 255, 44, 0.15);
+}
+.html .container article[data-role=article],
+body .container article[data-role=article] {
+  min-height: 800px;
 }
 .html .container article.right,
 body .container article.right {
@@ -289,7 +292,6 @@ body footer {
 }
 .html footer img,
 body footer img {
-  text-align: center;
   text-align: center;
   height: 7em;
   margin-bottom: 2em;

@@ -86,6 +86,9 @@ body {
     }
 
     article {
+      &[data-role='article'] {
+        min-height: 800px;
+      }
       &.right {
         border-right: '';
         border-left: 1em solid $darkGreenA;
@@ -118,10 +121,11 @@ body {
       width: 80%;
       text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.295);
       box-shadow: 2px 2px 40px rgba(49, 17, 40, 0.17);
-      margin: 1em 1em 1em 1em;
+     
       border-left: 1em solid $darkPinkA;
       border-right: 1em solid $darkPinkA;
       background-color: rgba(213, 255, 44, 0.15);
+      
 
       h2 {
         color: $green;
@@ -255,7 +259,7 @@ body {
         font-style: italic;
         letter-spacing: 0.2em;
       }
-
+     
       p {
         font-weight: normal;
         text-align: justify;
@@ -320,7 +324,6 @@ body {
     text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.295);
 
     img {
-      text-align: center;
       text-align: center;
       height: 7em;
       margin-bottom: 2em;
