@@ -345,8 +345,6 @@ body footer a {
     transform: scaleY(1);
   }
 }
-@keyframes page-flip {}
-@keyframes page-flip-reverse {}
 @keyframes pulse {
   0% {
     transform: scale(1);
@@ -385,14 +383,14 @@ body footer a {
 
 .navigator {
   width: 100%;
-  height: 80px;
+  height: 70px;
   align-items: center;
   background-image: linear-gradient(210deg, hsl(313, 34%, 48%) 3%, hsl(312, 31%, 45%) 5%, hsl(310, 28%, 41%) 7%, hsl(307, 25%, 38%) 10%, hsl(301, 21%, 35%) 14%, hsl(293, 18%, 32%) 19%, hsl(279, 16%, 30%) 26%, hsl(257, 13%, 27%) 36%, hsl(223, 15%, 24%) 47%, hsl(194, 5%, 25%) 58%, hsl(94, 7%, 28%) 68%, hsl(80, 15%, 30%) 75%, hsl(76, 23%, 31%) 81%, hsl(75, 30%, 33%) 86%);
   position: fixed;
   bottom: 0;
   display: grid;
   grid-template-columns: auto auto auto;
-  border-top: 1px solid black;
+  border-top: 2px solid #785e79;
   z-index: 1;
 }
 .navigator div {
