@@ -1,5 +1,6 @@
 class Alchemy {
   constructor() {
+    this.defaultRoute = "#social";
     this.pages = [];
     this.touchStartX = 0;
     this.touchEndX = 0;
@@ -12,6 +13,145 @@ class Alchemy {
     this.__lastBreakingNewsIndex = 0;
   }
 
+
+ 
+
+  /*
+    Create pages structure navigation
+  */
+  defaultOrCachePages = async () => {
+    let cache = null;
+    if (cache == null) {
+      this.pages = [];
+      document
+        .querySelectorAll(`article[data-page]`)
+        .forEach(async (section) => {
+          let page = {
+            name: section.dataset.page,
+            index: 0,
+            max: parseInt(section.dataset.pageMax),
+            description: section.dataset.pageDescription,
+          };
+          this.pages.currentPage = 1;
+          this.pages.push(page);
+        });
+    } else {
+      this.pages = JSON.parse(cache);
+    }
+    sessionStorage.setItem("_cache", JSON.stringify(this.pages));
+  };
+  /*
+    Retrieve a html page
+  */
+  get = async (name) => {
+    let leaf = name.replace("#","_");
+
+    const response = await fetch(`leaf/${leaf}.html`);
+    
+    if (response.status == 404)
+        return "404";
+
+    const page = await response.text();
+    return page;
+  };
+    /* 
+    Change leaf (Page)
+  */
+  change = async(name) => {
+    this.find('section[data-role=container]').innerHTML =
+
+      await this.get(name ?? this.defaultRoute);
+
+      
+      this.pages = await this.defaultOrCachePages(); //Create pages
+      this.ui(); //Bind UI
+      await this.restore(); //Restore from cache
+     
+      
+    window.location.hash= name ?? this.defaultRoute;
+  };
+  placeHolder = async (name, val, str) => {
+    return str.replace(name, val);
+  };
+  /*
+    Peform a page swipe
+  */
+  swipe = async (name, index, description, next) => {
+    let currentPage = this.pages.find((page) => {
+      return page.name == name;
+    });
+
+    next ? index++ : index--;
+
+    let pane = document.querySelectorAll(
+      `section[data-page="${name}"][data-page-index="${index}"]`
+    )[0];
+
+    if (pane === undefined)
+      return;
+
+    if (next) pane.classList.add("page-flip");
+    else pane.classList.add("page-flip-reverse");
+
+    pane.addEventListener(
+      "animationend",
+      (evt) => {
+        evt.target.classList.remove("page-flip");
+        evt.target.classList.remove("page-flip-reverse");
+      },
+      { passive: true }
+    );
+
+    if (currentPage) currentPage.index = index;
+
+    document
+      .querySelectorAll(`section[data-page=${name}]`)
+      .forEach(async (section) => {
+        if (parseInt(section.dataset.pageIndex) != index) {
+          section.classList.add("hidden");
+        } else {
+          section.classList.remove("hidden");
+        }
+
+        document
+          .querySelectorAll(`span[data-page="${name}"]`)
+          .forEach((nav) => {
+            nav.classList.remove("active");
+          });
+        document
+          .querySelectorAll(
+            `span[data-page="${name}"][data-page-index="${index}"]`
+          )
+          .forEach((nav) => {
+            nav.classList.add("active");
+          });
+        document.querySelector(
+          `article[data-page="${name}"] > h2`
+        ).innerHTML = `${currentPage.description}`;
+      });
+
+    sessionStorage.setItem("_cache", JSON.stringify(this.pages));
+  };
+  
+  /*
+    Navigator inizialization
+  */
+  init = async () => {
+    
+    window.addEventListener("hashchange", ()=> {
+      this.change(window.location.hash);
+    });
+
+    document.querySelectorAll('nav[data-role="navigator"]>div[data-role=button]').forEach((div)=> {
+      div.addEventListener("click", async (evt) => {
+         await this.change(evt.target.dataset.route ?? "root");
+      });
+    });
+
+    this.change();
+
+  };
+  
   ui = () => {
     document.querySelectorAll(".swipeable").forEach((pane) => {
       pane.addEventListener(
@@ -110,99 +250,6 @@ class Alchemy {
       );
     });
   };
-  defaultOrCachePages = async () => {
-    let cache = null;
-    if (cache == null) {
-      this.pages = [];
-      document
-        .querySelectorAll(`article[data-page]`)
-        .forEach(async (section) => {
-          let page = {
-            name: section.dataset.page,
-            index: 0,
-            max: parseInt(section.dataset.pageMax),
-            description: section.dataset.pageDescription,
-          };
-          this.pages.currentPage = 1;
-          this.pages.push(page);
-        });
-    } else {
-      this.pages = JSON.parse(cache);
-    }
-    sessionStorage.setItem("_cache", JSON.stringify(this.pages));
-  };
-  get = async (name) => {
-    const response = await fetch(`leaf/${name}.html`);
-    const page = await response.text();
-    return page;
-  };
-  placeHolder = async (name, val, str) => {
-    return str.replace(name, val);
-  };
-  swipe = async (name, index, description, next) => {
-    let currentPage = this.pages.find((page) => {
-      return page.name == name;
-    });
-
-    next ? index++ : index--;
-
-    let pane = document.querySelectorAll(
-      `section[data-page="${name}"][data-page-index="${index}"]`
-    )[0];
-
-    if (pane === undefined)
-      return;
-
-    if (next) pane.classList.add("page-flip");
-    else pane.classList.add("page-flip-reverse");
-
-    pane.addEventListener(
-      "animationend",
-      (evt) => {
-        evt.target.classList.remove("page-flip");
-        evt.target.classList.remove("page-flip-reverse");
-      },
-      { passive: true }
-    );
-
-    if (currentPage) currentPage.index = index;
-
-    document
-      .querySelectorAll(`section[data-page=${name}]`)
-      .forEach(async (section) => {
-        if (parseInt(section.dataset.pageIndex) != index) {
-          section.classList.add("hidden");
-        } else {
-          section.classList.remove("hidden");
-        }
-
-        document
-          .querySelectorAll(`span[data-page="${name}"]`)
-          .forEach((nav) => {
-            nav.classList.remove("active");
-          });
-        document
-          .querySelectorAll(
-            `span[data-page="${name}"][data-page-index="${index}"]`
-          )
-          .forEach((nav) => {
-            nav.classList.add("active");
-          });
-        document.querySelector(
-          `article[data-page="${name}"] > h2`
-        ).innerHTML = `${currentPage.description}`;
-      });
-
-    sessionStorage.setItem("_cache", JSON.stringify(this.pages));
-  };
-  init = async () => {
-    this.find("main header").innerHTML = await this.get("header");
-    this.find("#socialMedia").innerHTML = await this.get("socialMedia");
-    this.pages = await this.defaultOrCachePages();
-    await this.restore();
-    this.ui();
-    this.startBreakingNews();
-  };
   bday = () => {
     let d2 = new Date(new Date().getFullYear(), 3, 5);
     let d3 = new Date();
@@ -215,19 +262,14 @@ class Alchemy {
       d: days,
     };
   };
+  
+  /*
+  Find a object in document
+  */
   find = (search) => {
     return document.querySelector(search);
   };
-  updateBreakingNews = async () => {
-    let news = document.getElementById("__breakingNews");
-    news.innerText = await this.getBreakingNews();
-  };
-  startBreakingNews = async () => {
-    this.updateBreakingNews();
-  };
-  getBreakingNews = async () => {
-    return this.breakingNews[this.__lastBreakingNewsIndex].news;
-  };
+  
   restore = async () => {
     this.pages = JSON.parse(sessionStorage.getItem("_cache"));
     this.pages.forEach((element) => {
@@ -240,6 +282,11 @@ class Alchemy {
     });
   };
 }
+
+
+/*
+  Alchemy initialization
+*/
 
 document.addEventListener(
   "DOMContentLoaded",

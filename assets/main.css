@@ -77,7 +77,6 @@ body .container article {
   background: linear-gradient(to right bottom, rgba(245, 240, 180, 0.2), rgba(200, 90, 252, 0.1));
   border-radius: 1em;
   padding: 20px;
-  width: 80%;
   text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.295);
   box-shadow: 2px 2px 40px rgba(49, 17, 40, 0.17);
   border-left: 1em solid rgba(230, 23, 175, 0.04);
@@ -187,6 +186,10 @@ body .container h4 {
   width: 100%;
   line-height: 1.2em;
 }
+.html .container section,
+body .container section {
+  width: 100%;
+}
 .html .container section.portrait img,
 body .container section.portrait img {
   border-radius: 90px;
@@ -288,6 +291,7 @@ body footer {
   border-radius: 1em;
   padding: 25px;
   width: 80%;
+  height: 14em;
   text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.295);
 }
 .html footer img,
@@ -381,7 +385,7 @@ body footer a {
   --animate-duration: 5s;
 }
 
-.navigator {
+nav[data-role=navigator] {
   width: 100%;
   height: 70px;
   align-items: center;
@@ -393,22 +397,25 @@ body footer a {
   border-top: 2px solid #785e79;
   z-index: 1;
 }
-.navigator div {
+nav[data-role=navigator] div[data-role=button] {
   background-position: center;
   background-size: 32px;
   background-repeat: no-repeat;
   height: 32px;
   filter: invert(0.6);
 }
-.navigator div:hover {
+nav[data-role=navigator] div[data-role=button]:hover {
   filter: invert(1);
 }
-.navigator div.home {
+nav[data-role=navigator] div[data-role=button][data-icon=home] {
   background-image: url(ui/book.svg);
+  cursor: pointer;
 }
-.navigator div.news {
+nav[data-role=navigator] div[data-role=button][data-icon=log] {
   background-image: url(ui/blog-pencil.svg);
+  cursor: pointer;
 }
-.navigator div.onfire {
+nav[data-role=navigator] div[data-role=button][data-icon=info] {
   background-image: url(ui/claw-marks.svg);
+  cursor: pointer;
 }/*# sourceMappingURL=main.css.map */
