@@ -1,17 +1,25 @@
-class Alchemy {
+const DOMContentLoaded = "DOMContentLoaded";
+const TIME_MINUTE = 6000;
+class Alchemy {1
   constructor() {
     this.pages = [];
     this.touchStartX = 0;
     this.touchEndX = 0;
     this.touchStartY = 0;
-    this.breakingNews = [
-      {
-        news: `Days 'til bday:"${this.bday().d}" days.`,
-      },
-    ];
-    this.__lastBreakingNewsIndex = 0;
   }
 
+  getVisitorsCount = async ()=> {
+    let response = await fetch(`/public/report.json`);
+    const json = await response.json();
+
+    json.visitors.data.forEach((visitor)=> {
+      let counter = document.querySelector("span[data-visit=counter]")
+      return `${visitor.visitors.count} ghosts passed through here, so who brought the marshmallows?`;
+    });
+  };
+  schedule = async (fun)=> {
+    setInterval(fun, TIME_MINUTE);
+  }
   ui = () => {
     document.querySelectorAll(".swipeable").forEach((pane) => {
       pane.addEventListener(
@@ -201,7 +209,6 @@ class Alchemy {
     this.pages = await this.defaultOrCachePages();
     await this.restore();
     this.ui();
-    this.startBreakingNews();
   };
   bday = () => {
     let d2 = new Date(new Date().getFullYear(), 3, 5);
@@ -218,16 +225,6 @@ class Alchemy {
   find = (search) => {
     return document.querySelector(search);
   };
-  updateBreakingNews = async () => {
-    let news = document.getElementById("__breakingNews");
-    news.innerText = await this.getBreakingNews();
-  };
-  startBreakingNews = async () => {
-    this.updateBreakingNews();
-  };
-  getBreakingNews = async () => {
-    return this.breakingNews[this.__lastBreakingNewsIndex].news;
-  };
   restore = async () => {
     this.pages = JSON.parse(sessionStorage.getItem("_cache"));
     this.pages.forEach((element) => {
@@ -242,7 +239,7 @@ class Alchemy {
 }
 
 document.addEventListener(
-  "DOMContentLoaded",
+  DOMContentLoaded,
   async () => {
     const alchemy = new Alchemy();
     await alchemy.init();
