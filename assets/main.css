@@ -135,6 +135,10 @@ body .container article.highlights p {
   animation-timing-function: step-end;
   animation-name: step-in;
 }
+.html .container article.highlights p #highlitedItem,
+body .container article.highlights p #highlitedItem {
+  border-bottom: 2px dotted rgba(213, 255, 44, 0.32);
+}
 .html .container article nav[data-page=swiper],
 body .container article nav[data-page=swiper] {
   width: 100%;

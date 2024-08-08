@@ -159,6 +159,11 @@ body {
                     animation-iteration-count: 1;
                     animation-timing-function: step-end;
                     animation-name: step-in;
+
+                    #highlitedItem{
+
+                        border-bottom: 2px dotted $darkGreenA;
+                    }
                 }
             }
 
