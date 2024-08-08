@@ -11,7 +11,7 @@ const MOUSE_MOVE = "mousemove";
 const EVT_CLICK = "click";
 
 class Alchemy {
-  1;
+
   constructor() {
     this.pages = [];
     this.touchStartX = 0;
@@ -19,6 +19,7 @@ class Alchemy {
     this.touchStartY = 0;
   }
 
+  
   ghostsAppaerance = async () => {
     let response = await fetch(`/public/report.json`);
     const json = await response.json();
@@ -27,21 +28,20 @@ class Alchemy {
       return visitor.visitors.count;
     };
   };
-  schedule = async (fun, runNow = true) => {
-    if (runNow)
-        fun();
 
+  
+  schedule = async (fun, runNow = true) => {
+    if (runNow) fun();
     setInterval(fun, TIME_MINUTE);
   };
+
   ui = async () => {
     this.all(".swipeable").forEach(async (pane) => {
       await this.UIEvents(pane);
     });
 
     this.schedule( async ()=> {
-
         this.single("#highlitedItem").innerHTML = await this.ghostsAppaerance();
-
     });
   };
 
@@ -165,10 +165,6 @@ class Alchemy {
     return page;
   };
   
-  placeHolder = async (name, val, str) => {
-    return str.replace(name, val);
-  };
-  
   swipe = async (name, index, description, next) => {
     let currentPage = this.pages.find((page) => {
       return page.name == name;
@@ -218,6 +214,7 @@ class Alchemy {
 
     sessionStorage.setItem("_cache", JSON.stringify(this.pages));
   };
+
   init = async () => {
     this.single("main header").innerHTML = await this.getFlake("header");
     this.single("#socialMedia").innerHTML = await this.getFlake("socialMedia");
@@ -225,6 +222,7 @@ class Alchemy {
     await this.restore();
     await this.ui();
   };
+
   bday = () => {
     let d2 = new Date(new Date().getFullYear(), 3, 5);
     let d3 = new Date();
@@ -241,6 +239,7 @@ class Alchemy {
   single = (search) => {
     return document.querySelector(search);
   };
+
   all = (search) => {
     return document.querySelectorAll(search);
   };
@@ -256,6 +255,7 @@ class Alchemy {
       );
     });
   };
+
 }
 
 document.addEventListener(
