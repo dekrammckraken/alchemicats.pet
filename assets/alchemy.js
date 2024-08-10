@@ -1,16 +1,4 @@
-const DOMContentLoaded = "DOMContentLoaded";
-const TIME_MINUTE = 60000;
-
-const ANI_END = "animationend";
-const TOUCH_START = "touchstart";
-const TOUCH_MOVE = "touchmove";
-const TOUCH_END = "touchend";
-
-const MOUSE_LEAVE = "mouseleave";
-const MOUSE_MOVE = "mousemove";
-const EVT_CLICK = "click";
-
-class Alchemy {
+export class Alchemy {
 
   constructor() {
     this.pages = [];
@@ -19,30 +7,18 @@ class Alchemy {
     this.touchStartY = 0;
   }
 
-  
-  ghostsAppaerance = async () => {
-    let response = await fetch(`/public/report.json`);
-    const json = await response.json();
-
-    for (const visitor of json.visitors.data) {
-      return visitor.visitors.count;
-    };
-  };
-
-  
-  schedule = async (fun, runNow = true) => {
-    if (runNow) fun();
-    setInterval(fun, TIME_MINUTE);
-  };
-
   ui = async () => {
     this.all(".swipeable").forEach(async (pane) => {
       await this.UIEvents(pane);
     });
 
-    this.schedule( async ()=> {
-        this.single("#highlitedItem").innerHTML = await this.ghostsAppaerance();
+    this.schedule(async () => {
+      this.setHtml("#highlitedItem",await this.ghostsAppaerance());
     });
+
+    let d = await this.getBday().d;
+
+    this.setHtml("#bday", d);
   };
 
   UIEvents = async (item) => {
@@ -138,7 +114,7 @@ class Alchemy {
       { passive: true }
     );
   }
-  
+
   defaultPages = async () => {
     let cache = null;
     if (cache == null) {
@@ -158,13 +134,7 @@ class Alchemy {
     }
     sessionStorage.setItem("_cache", JSON.stringify(this.pages));
   };
-  
-  getFlake = async (name) => {
-    const response = await fetch(`leaf/${name}.html`);
-    const page = await response.text();
-    return page;
-  };
-  
+
   swipe = async (name, index, description, next) => {
     let currentPage = this.pages.find((page) => {
       return page.name == name;
@@ -215,25 +185,15 @@ class Alchemy {
     sessionStorage.setItem("_cache", JSON.stringify(this.pages));
   };
 
-  init = async () => {
+  /*
+    Load a page using flake extension
+  */
+  spawn = async () => {
     this.single("main header").innerHTML = await this.getFlake("header");
     this.single("#socialMedia").innerHTML = await this.getFlake("socialMedia");
     this.pages = await this.defaultPages();
     await this.restore();
     await this.ui();
-  };
-
-  bday = () => {
-    let d2 = new Date(new Date().getFullYear(), 3, 5);
-    let d3 = new Date();
-    d3.setHours(0, 0, 0, 0);
-
-    if (d3 > d2) d2 = new Date(new Date().getFullYear() + 1, 3, 5);
-
-    let days = Math.round((d2 - d3) / (1000 * 60 * 60 * 24));
-    return {
-      d: days,
-    };
   };
 
   single = (search) => {
@@ -243,6 +203,10 @@ class Alchemy {
   all = (search) => {
     return document.querySelectorAll(search);
   };
+
+  setHtml = (item, safeHtml) => {
+      this.single(item).innerHTML = safeHtml;
+  }
 
   restore = async () => {
     this.pages = JSON.parse(sessionStorage.getItem("_cache"));
@@ -257,12 +221,3 @@ class Alchemy {
   };
 
 }
-
-document.addEventListener(
-  DOMContentLoaded,
-  async () => {
-    const alchemy = new Alchemy();
-    await alchemy.init();
-  },
-  { passive: true }
-);

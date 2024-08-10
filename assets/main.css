@@ -41,11 +41,11 @@ body .container header {
 }
 .html .container header .logo,
 body .container header .logo {
-  height: 6em;
+  height: 5em;
 }
 .html .container header .logo_text,
 body .container header .logo_text {
-  height: 4em;
+  height: 3em;
   margin-top: -1em;
 }
 .html .container .divider,
@@ -137,6 +137,7 @@ body .container article.highlights p {
 }
 .html .container article.highlights p #highlitedItem,
 body .container article.highlights p #highlitedItem {
+  color: #ccff00;
   border-bottom: 2px dotted rgba(213, 255, 44, 0.32);
 }
 .html .container article nav[data-page=swiper],
@@ -150,7 +151,7 @@ body .container article nav a {
 .html .container article nav img,
 body .container article nav img {
   background-color: transparent;
-  width: 20%;
+  width: 3.5em;
   opacity: 0.4;
 }
 .html .container article nav img:hover,
