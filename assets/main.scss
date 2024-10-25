@@ -151,7 +151,7 @@ body {
 
                 .progress-bar {
                     opacity: 0.5;
-                    width: 70%;
+                    width: 100%;
                     background-color: $darkGreenA;
                     border-radius: 15px;
                     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -164,17 +164,19 @@ body {
                         width: 20%; // Questo valore può essere modificato dinamicamente
 
                         p {
+                            margin-top: +1;
                             font-size: 1em;
                             filter: invert(1);
-                            text-align: center; // Centra il testo
-                            line-height: 30px; // Allinea verticalmente il testo
-                            margin: 0; // Rimuove il margine predefinito
+                            text-align: center;
+                            line-height: 30px;
+                            margin: 0; 
+                            white-space: nowrap;
+                            padding-left:1em;
                         }
                     }
                 }
 
                 p {
-                    margin: 1em;
                     color: $softPink;
                     animation-duration: 1s;
                     animation-iteration-count: 1;

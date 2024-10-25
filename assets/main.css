@@ -129,7 +129,7 @@ body .container article.highlights {
 .html .container article.highlights .progress-bar,
 body .container article.highlights .progress-bar {
   opacity: 0.5;
-  width: 70%;
+  width: 100%;
   background-color: rgba(213, 255, 44, 0.32);
   border-radius: 15px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -144,15 +144,17 @@ body .container article.highlights .progress-bar .value {
 }
 .html .container article.highlights .progress-bar .value p,
 body .container article.highlights .progress-bar .value p {
+  margin-top: 1;
   font-size: 1em;
   filter: invert(1);
   text-align: center;
   line-height: 30px;
   margin: 0;
+  white-space: nowrap;
+  padding-left: 1em;
 }
 .html .container article.highlights p,
 body .container article.highlights p {
-  margin: 1em;
   color: #cec6ca;
   animation-duration: 1s;
   animation-iteration-count: 1;
