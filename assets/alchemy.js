@@ -19,8 +19,14 @@ export class Alchemy {
     let d = await this.getBday().d;
 
     this.setHtml("#bday", d);
+    this.updateProgress((d / 360) * 100);
   };
 
+  updateProgress(percentage) {
+    //document.querySelector('.highlights').style.borderImageSlice = 1;
+    //document.querySelector('.highlights').style.borderImageSource = `linear-gradient(to right, rgba(213, 255, 44, 1) 45%, rgba(213, 255, 44, 0.3) 45%)`;
+    document.querySelector('.highlights .progress-bar .value').style.width = `${percentage}%`;
+  }
   UIEvents = async (item) => {
 
     item.addEventListener(
