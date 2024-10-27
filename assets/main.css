@@ -33,20 +33,18 @@ body .container {
 }
 .html .container header,
 body .container header {
+  display: flex;
+}
+.html .container header div,
+body .container header div {
   margin-top: 2em;
   display: flex;
-  flex-direction: column;
-  transition: height 0.3s;
-  line-height: 2em;
+  justify-content: center;
+  align-items: center;
 }
-.html .container header .logo,
-body .container header .logo {
-  height: 5em;
-}
-.html .container header .logo_text,
-body .container header .logo_text {
-  height: 3em;
-  margin-top: -1em;
+.html .container header div img,
+body .container header div img {
+  height: 8em;
 }
 .html .container .divider,
 body .container .divider {
