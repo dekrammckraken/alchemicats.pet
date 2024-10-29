@@ -234,6 +234,10 @@ body {
             font-size: 1.2em;
             text-align: left;
             margin: 0.6em;
+            a {
+                color:white;
+                text-decoration: none;
+            }
         }
 
         h4 {
@@ -243,7 +247,9 @@ body {
             width: 100%;
             line-height: 1.2em;
             text-align: justify;
+            
         }
+       
 
         section {
             &.portrait {
