@@ -10,7 +10,8 @@ $subtitle-color: #343335;
 $article-fore-color: #e3e3e3;
 $footer-fore-color: #dbe4e7;
 $ornament-color: #785e79;
-
+$story-accent:#959595;
+$story-title:#3f3f3f;
 * {
     font-family: "Roboto Bold";
     src: url("fonts/Roboto-Bold.ttf");
@@ -64,7 +65,7 @@ body {
                 align-items: center;
                 img {
                 
-                    height: 8em;
+                    height: 5em;
                 }
             }
 
@@ -95,7 +96,7 @@ body {
             }
 
             &.left {
-                border-left: " ";
+                border-left: "";
                 border-right: 1em solid $darkGreenA;
             }
 
@@ -126,6 +127,26 @@ body {
             border-right: 1em solid $darkPinkA;
             background-color: rgba(213, 255, 44, 0.15);
 
+            &[data-page="story"] {
+                background-color: rgba(255, 255, 255, 0.7);
+                color:$story-title;
+                border-radius: 1em;
+                padding:1em;
+                h2 {
+                    color:$story-title;
+                }
+                nav[data-page="swiper"]>span.active {
+                    background-color: $story-accent;
+                }
+            }
+            &[data-page="story"].right {
+                border-right: "";
+                border-left: 1em solid $story-accent;
+            }
+            &[data-page="story"].left {
+                border-left: "";
+                border-right: 1em solid $story-accent;
+            }
             h2 {
                 color: $green;
             }
@@ -157,22 +178,10 @@ body {
                     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 
                     .value {
-                        height: 30px;
                         border-radius: 25px;
+                        height: 0.5em;
                         background-color: $green;
                         transition: width 0.5s ease;
-                        width: 20%; // Questo valore può essere modificato dinamicamente
-
-                        p {
-                            margin-top: +1;
-                            font-size: 1em;
-                            filter: invert(1);
-                            text-align: center;
-                            line-height: 30px;
-                            margin: 0; 
-                            white-space: nowrap;
-                            padding-left:1em;
-                        }
                     }
                 }
 
