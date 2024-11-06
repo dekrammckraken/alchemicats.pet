@@ -81,10 +81,7 @@ body .container article {
   border-left: 1em solid rgba(230, 23, 175, 0.04);
   border-right: 1em solid rgba(230, 23, 175, 0.04);
   background-color: rgba(213, 255, 44, 0.15);
-}
-.html .container article[data-role=article],
-body .container article[data-role=article] {
-  min-height: 400px;
+  scrollbar-color: red;
 }
 .html .container article.right,
 body .container article.right {

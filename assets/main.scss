@@ -86,23 +86,6 @@ body {
         }
 
         article {
-            &[data-role="article"] {
-                min-height: 400px;
-            }
-
-            &.right {
-                border-right: "";
-                border-left: 1em solid $darkGreenA;
-            }
-
-            &.left {
-                border-left: "";
-                border-right: 1em solid $darkGreenA;
-            }
-
-            strong {
-                border-bottom: 2px dotted $darkPink;
-            }
 
             user-select: none;
             display: flex;
@@ -126,6 +109,30 @@ body {
             border-left: 1em solid $darkPinkA;
             border-right: 1em solid $darkPinkA;
             background-color: rgba(213, 255, 44, 0.15);
+            scrollbar-color:red;
+            &[data-role="swiped"] {
+               
+            }
+            &[data-role="box"] {
+                
+            }
+            &[data-role="story"] {
+               
+            }
+
+            &.right {
+                border-right: "";
+                border-left: 1em solid $darkGreenA;
+            }
+
+            &.left {
+                border-left: "";
+                border-right: 1em solid $darkGreenA;
+            }
+
+            strong {
+                border-bottom: 2px dotted $darkPink;
+            }
 
             &[data-page="story"] {
                 background-color: rgba(255, 255, 255, 0.7);

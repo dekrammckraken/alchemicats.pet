@@ -187,6 +187,10 @@ export class Alchemy {
         `article[data-page="${name}"] > h2`
       ).innerHTML = `${currentPage.description}`;
     });
+    
+    this.single(
+      `article[data-page="${name}"] > h2`
+    ).scrollIntoView({ behavior: 'smooth' });
 
     sessionStorage.setItem("_cache", JSON.stringify(this.pages));
   };
