@@ -124,6 +124,30 @@ body .container article.highlights {
   animation-iteration-count: 1;
   animation-timing-function: ease-in-out;
   animation-name: flip-down;
+  transition: width 0.5s ease;
+}
+.html .container article.highlights .progress-bar,
+body .container article.highlights .progress-bar {
+  width: 100%;
+  background-color: rgba(213, 255, 44, 0.32);
+  border-radius: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.html .container article.highlights .progress-bar .value,
+body .container article.highlights .progress-bar .value {
+  height: 30px;
+  border-radius: 25px;
+  background-color: #ccff00;
+  transition: width 0.5s ease;
+  width: 20%;
+}
+.html .container article.highlights .progress-bar .value p,
+body .container article.highlights .progress-bar .value p {
+  font-size: 1em;
+  filter: invert(1);
+  text-align: center;
+  line-height: 30px;
+  margin: 0;
 }
 .html .container article.highlights p,
 body .container article.highlights p {
@@ -190,6 +214,7 @@ body .container h4 {
   margin: 1em;
   width: 100%;
   line-height: 1.2em;
+  text-align: justify;
 }
 .html .container section.portrait img,
 body .container section.portrait img {

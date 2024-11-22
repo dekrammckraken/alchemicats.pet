@@ -20,23 +20,21 @@ $ornament-color: #785e79;
 
 .html,
 body {
-    background-image: linear-gradient(
-        210deg,
-        hsl(313deg 34% 48%) 3%,
-        hsl(312deg 31% 45%) 5%,
-        hsl(310deg 28% 41%) 7%,
-        hsl(307deg 25% 38%) 10%,
-        hsl(301deg 21% 35%) 14%,
-        hsl(293deg 18% 32%) 19%,
-        hsl(279deg 16% 30%) 26%,
-        hsl(257deg 13% 27%) 36%,
-        hsl(223deg 15% 24%) 47%,
-        hsl(194deg 5% 25%) 58%,
-        hsl(94deg 7% 28%) 68%,
-        hsl(80deg 15% 30%) 75%,
-        hsl(76deg 23% 31%) 81%,
-        hsl(75deg 30% 33%) 86%
-    );
+    background-image: linear-gradient(210deg,
+            hsl(313deg 34% 48%) 3%,
+            hsl(312deg 31% 45%) 5%,
+            hsl(310deg 28% 41%) 7%,
+            hsl(307deg 25% 38%) 10%,
+            hsl(301deg 21% 35%) 14%,
+            hsl(293deg 18% 32%) 19%,
+            hsl(279deg 16% 30%) 26%,
+            hsl(257deg 13% 27%) 36%,
+            hsl(223deg 15% 24%) 47%,
+            hsl(194deg 5% 25%) 58%,
+            hsl(94deg 7% 28%) 68%,
+            hsl(80deg 15% 30%) 75%,
+            hsl(76deg 23% 31%) 81%,
+            hsl(75deg 30% 33%) 86%);
 
     .container {
         display: flex;
@@ -90,6 +88,7 @@ body {
             &[data-role="article"] {
                 min-height: 400px;
             }
+
             &.right {
                 border-right: "";
                 border-left: 1em solid $darkGreenA;
@@ -113,11 +112,9 @@ body {
             text-align: center;
             margin: 1em;
 
-            background: linear-gradient(
-                to right bottom,
+            background: linear-gradient(to right bottom,
                 rgba(245, 240, 180, 0.2),
-                rgba(200, 90, 252, 0.1)
-            );
+                rgba(200, 90, 252, 0.1));
 
             border-radius: 1em;
             padding: 20px;
@@ -137,7 +134,7 @@ body {
                 background-color: transparent;
             }
 
-            &.highlights{
+            &.highlights {
                 margin-top: -1em;
                 background: rgba(0, 0, 0, 0.1);
                 border: none;
@@ -150,6 +147,30 @@ body {
                 animation-iteration-count: 1;
                 animation-timing-function: ease-in-out;
                 animation-name: flip-down;
+                transition: width 0.5s ease;
+
+                .progress-bar {
+                    width: 100%;
+                    background-color: $darkGreenA;
+                    border-radius: 15px;
+                    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+                    .value {
+                        height: 30px;
+                        border-radius: 25px;
+                        background-color: $green;
+                        transition: width 0.5s ease;
+                        width: 20%; // Questo valore può essere modificato dinamicamente
+
+                        p {
+                            font-size: 1em;
+                            filter: invert(1);
+                            text-align: center; // Centra il testo
+                            line-height: 30px; // Allinea verticalmente il testo
+                            margin: 0; // Rimuove il margine predefinito
+                        }
+                    }
+                }
 
                 p {
                     color: $softPink;
@@ -159,10 +180,11 @@ body {
                     animation-timing-function: step-end;
                     animation-name: step-in;
 
-                    #highlitedItem{
+                    #highlitedItem {
 
                         color: $green;
                         border-bottom: 2px dotted $darkGreenA;
+
                     }
                 }
             }
@@ -213,13 +235,14 @@ body {
             text-align: left;
             margin: 0.6em;
         }
+
         h4 {
             font-size: 1em;
             text-align: center;
             margin: 1em;
             width: 100%;
-
             line-height: 1.2em;
+            text-align: justify;
         }
 
         section {
