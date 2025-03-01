@@ -61,7 +61,6 @@ body {
             flex-direction: column;
             transition: height 0.3s;
             line-height: 2em;
-
             .logo {
                 height: 5em;
             }
@@ -112,7 +111,7 @@ body {
             line-height: 2em;
             text-align: center;
             margin: 1em;
-
+            font-size: 1.2em;
             background: linear-gradient(
                 to right bottom,
                 rgba(245, 240, 180, 0.2),
@@ -135,6 +134,10 @@ body {
 
             &.no-color {
                 background-color: transparent;
+                font-style: italic;
+                font-size: 1.5em;
+                line-height: 1em;
+                color:$softPink;
             }
 
             &.highlights{
@@ -214,7 +217,7 @@ body {
             margin: 0.6em;
         }
         h4 {
-            font-size: 1em;
+            font-size: 1.3em;
             text-align: center;
             margin: 1em;
             width: 100%;
@@ -259,7 +262,7 @@ body {
             }
 
             p::first-letter {
-                font-size: 1.3em;
+                font-size: 1.4em;
                 font-weight: bold;
                 font-style: italic;
                 letter-spacing: 0.2em;
@@ -320,7 +323,7 @@ body {
     footer {
         letter-spacing: 0.1em;
         line-height: 2em;
-        font-size: 0.8em;
+        font-size: 1.4em;
         color: $footer-fore-color;
         border-radius: 1em;
         padding: 25px;
