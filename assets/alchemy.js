@@ -13,7 +13,7 @@ export class Alchemy {
     });
 
     this.schedule(async () => {
-      this.setHtml("#highlitedItem",await this.ghostsAppaerance());
+      this.setHtml("#highlitedItem", await this.ghostsAppaerance());
     });
 
     let d = await this.getBday().d;
@@ -177,10 +177,14 @@ export class Alchemy {
           nav.classList.add("active");
         }
       );
-      this.single(
+      let article =  this.single(
         `article[data-page="${name}"] > h2`
-      ).innerHTML = `${currentPage.description}`;
+      );
+
+     article.innerHTML = `${currentPage.description}`;
+     article.scrollIntoView({ behavior: "smooth" });
     });
+
 
     sessionStorage.setItem("_cache", JSON.stringify(this.pages));
   };
@@ -205,7 +209,7 @@ export class Alchemy {
   };
 
   setHtml = (item, safeHtml) => {
-      this.single(item).innerHTML = safeHtml;
+    this.single(item).innerHTML = safeHtml;
   }
 
   restore = async () => {
