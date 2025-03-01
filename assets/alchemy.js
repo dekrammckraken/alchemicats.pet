@@ -59,6 +59,7 @@ export class Alchemy {
         let index = parseInt(swipeable.dataset.pageIndex);
         let next = clickX > paneCenterX;
 
+        
         this.swipe(
           swipeable.dataset.page,
           index,
@@ -139,9 +140,10 @@ export class Alchemy {
     let currentPage = this.pages.find((page) => {
       return page.name == name;
     });
-
+    currentPage.pageDescription = description;
     next ? index++ : index--;
 
+    console.debug(`${description}`);
     let pane = this.single(
       `section[data-page="${name}"][data-page-index="${index}"]`
     );
@@ -177,12 +179,12 @@ export class Alchemy {
           nav.classList.add("active");
         }
       );
-      let article =  this.single(
+      let articleTitle =  this.single(
         `article[data-page="${name}"] > h2`
       );
 
-     article.innerHTML = `${currentPage.description}`;
-     article.scrollIntoView({ behavior: "smooth" });
+      articleTitle.innerHTML = `${currentPage.pageDescription}`;
+      articleTitle.scrollIntoView({ behavior: "smooth" });
     });
 
 
