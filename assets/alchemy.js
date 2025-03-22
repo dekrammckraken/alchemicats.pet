@@ -217,7 +217,16 @@ export class Alchemy {
 
   restore = async () => {
     this.pages = JSON.parse(sessionStorage.getItem("_cache"));
-    this.swipe(this.pages[0].name, this.pages[0].index, this.pages[0].description, true);
+    
+
+     for (const page of this.pages) {
+        await this.swipe(page.name, page.index, page.description, true);
+    }
+
+    this.scrollOnTop();
   };
 
+  scrollOnTop = async () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+};
 }
