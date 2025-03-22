@@ -74,6 +74,7 @@ body .container article {
   line-height: 2em;
   text-align: center;
   margin: 1em;
+  font-size: 1.2em;
   background: linear-gradient(to right bottom, rgba(245, 240, 180, 0.2), rgba(200, 90, 252, 0.1));
   border-radius: 1em;
   padding: 20px;
@@ -109,6 +110,10 @@ body .container article h2 {
 .html .container article.no-color,
 body .container article.no-color {
   background-color: transparent;
+  font-style: italic;
+  font-size: 1.5em;
+  line-height: 1em;
+  color: #cec6ca;
 }
 .html .container article.highlights,
 body .container article.highlights {
@@ -185,7 +190,7 @@ body .container h3 {
 }
 .html .container h4,
 body .container h4 {
-  font-size: 1em;
+  font-size: 1.3em;
   text-align: center;
   margin: 1em;
   width: 100%;
@@ -226,7 +231,7 @@ body .container section figure img {
 }
 .html .container section p::first-letter,
 body .container section p::first-letter {
-  font-size: 1.3em;
+  font-size: 1.4em;
   font-weight: bold;
   font-style: italic;
   letter-spacing: 0.2em;
@@ -287,7 +292,7 @@ body .container section p a img {
 body footer {
   letter-spacing: 0.1em;
   line-height: 2em;
-  font-size: 0.8em;
+  font-size: 1.4em;
   color: #dbe4e7;
   border-radius: 1em;
   padding: 25px;

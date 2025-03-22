@@ -13,7 +13,7 @@ export class Alchemy {
     });
 
     this.schedule(async () => {
-      this.setHtml("#highlitedItem",await this.ghostsAppaerance());
+      this.setHtml("#highlitedItem", await this.ghostsAppaerance());
     });
 
     let d = await this.getBday().d;
@@ -59,6 +59,7 @@ export class Alchemy {
         let index = parseInt(swipeable.dataset.pageIndex);
         let next = clickX > paneCenterX;
 
+        
         this.swipe(
           swipeable.dataset.page,
           index,
@@ -139,7 +140,7 @@ export class Alchemy {
     let currentPage = this.pages.find((page) => {
       return page.name == name;
     });
-
+    currentPage.pageDescription = description;
     next ? index++ : index--;
 
     let pane = this.single(
@@ -163,6 +164,7 @@ export class Alchemy {
     if (currentPage) currentPage.index = index;
 
     this.all(`section[data-page=${name}]`).forEach(async (section) => {
+
       if (parseInt(section.dataset.pageIndex) != index) {
         section.classList.add("hidden");
       } else {
@@ -172,16 +174,21 @@ export class Alchemy {
       this.all(`span[data-page="${name}"]`).forEach((nav) => {
         nav.classList.remove("active");
       });
+
       this.all(`span[data-page="${name}"][data-page-index="${index}"]`).forEach(
         (nav) => {
           nav.classList.add("active");
         }
       );
-      this.single(
-        `article[data-page="${name}"] > h2`
-      ).innerHTML = `${currentPage.description}`;
     });
 
+    let articleTitle =  this.single(
+      `article[data-page="${name}"] > h2`
+    );
+
+    console.log(name);
+    articleTitle.innerHTML = `${currentPage.pageDescription}`;
+    articleTitle.scrollIntoView({ behavior: "smooth" });
     sessionStorage.setItem("_cache", JSON.stringify(this.pages));
   };
 
@@ -205,19 +212,12 @@ export class Alchemy {
   };
 
   setHtml = (item, safeHtml) => {
-      this.single(item).innerHTML = safeHtml;
+    this.single(item).innerHTML = safeHtml;
   }
 
   restore = async () => {
     this.pages = JSON.parse(sessionStorage.getItem("_cache"));
-    this.pages.forEach((element) => {
-      this.swipe(
-        element.name,
-        parseInt(element.index),
-        element.description,
-        true
-      );
-    });
+    this.swipe(this.pages[0].name, this.pages[0].index, this.pages[0].description, true);
   };
 
 }
