@@ -192,9 +192,6 @@ export class Alchemy {
     sessionStorage.setItem("_cache", JSON.stringify(this.pages));
   };
 
-  /*
-    Load a page using flake extension
-  */
   spawn = async () => {
     this.single("main header").innerHTML = await this.getFlake("header");
     this.single("#socialMedia").innerHTML = await this.getFlake("socialMedia");
