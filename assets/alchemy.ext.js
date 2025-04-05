@@ -8,8 +8,9 @@ Alchemy.prototype.getBday = () => {
   if (d3 > d2) d2 = new Date(new Date().getFullYear() + 1, 3, 5);
 
   let days = Math.round((d2 - d3) / (1000 * 60 * 60 * 24));
+  
   return {
-    d: days,
+    d: days == 0 ?  "Happy birthday" : `Waiting for ${days} day/s`,
   };
 };
 
